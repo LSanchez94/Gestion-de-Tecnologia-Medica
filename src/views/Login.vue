@@ -12,12 +12,23 @@
           <div id="linea3"></div>
         </div>
         <div id="formulario" class="col-4">
-            <h2 id="login">LOGIN</h2>
-            <form>
-                <input type="text">
-                <input type="password">
-                <button>ENTRAR</button>
-            </form>
+          
+          <div class="d-flex justify-content-center  flex-wrap">
+              <div class="col-10">
+          <h2 class="w-100" id="login">LOGIN</h2>
+              </div>
+          <form class="col-10">
+            <div class="form-group">
+              <label for="exampleInputPassword1">Usuario</label>
+              <input type="text" class="form-control" v-model="user" id="exampleInputPassword1" />
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Contraseña</label>
+              <input type="password" class="form-control" v-model="password" id="exampleInputPassword1" />
+            </div>
+            <button class="btn" id="login_button" @click="validarUsuario()">ENTRAR</button>
+          </form>
+          </div>
         </div>
       </div>
     </div>
@@ -25,7 +36,23 @@
 </template>
 
 <script>
-export default {};
+export default {
+    data(){
+        return{
+            user: "",
+            password: ""
+        }
+    },
+    methods:{
+        validarUsuario(){
+            if(this.user == 'Luis' && this.password == '123'){
+                alert("Usuario Correcto")
+            } else{
+                alert("Usuario No Encontrado")
+            }
+        }
+    }
+};
 </script>
 
 <style scoped>
@@ -60,6 +87,14 @@ export default {};
   border-radius: 84px;
 }
 
+#login_button{
+    background-color: #000839;
+    color: #ffffff;
+    font-size: 36px;
+    border-radius: 25px;
+    width: 100%;
+}
+
 #titulo {
   height: 100vh;
 }
@@ -80,8 +115,20 @@ export default {};
   color: #000000;
 }
 
+#login {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 72px;
+  line-height: 108px;
+  /* identical to box height */
+
+  color: #ffffff;
+}
+
 #formulario {
   background-color: #ffa41b;
   height: 100vh;
+  padding-top: 300px;
 }
 </style>
