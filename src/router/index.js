@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
+import Dashboard from '../views/Dashboard.vue'
+import Configuracion from '../views/Configuracion.vue'
 import AgregarProveedor from '../views/AgregarProveedor.vue'
-import  ConfiguracionDR from '../views/ConfiguracionDR.vue'
 
 Vue.use(VueRouter)
 
@@ -14,16 +14,21 @@ const routes = [
     component: Login
   },
   {
-    path: '/',
-    name: 'AgregarProveedor',
+    path: '/Dashboard',
+    name: 'Dashboard',
+    component: Dashboard
+  },
+  {
+    path: '/Configuracion',
+    name: 'Configuracion',
+    component: Configuracion
+  },
+  {
+    path: '/AgregarProveedor',
+    name: 'Agregar Proveedor',
     component: AgregarProveedor
   },
 
-  {
-    path: '/',
-    name: 'ConfiguracionDR',
-    component: ConfiguracionDR
-  },
 ]
 
 const router = new VueRouter({
