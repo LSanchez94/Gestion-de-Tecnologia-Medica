@@ -27,9 +27,8 @@
           <div id="DireccionEmpresa"></div>
           <div id="NumTelefono"></div>
           <div id="Email"></div>
-
-
-               </div>
+          </div>
+  </div>
 </template>
 
 <style scoped>
