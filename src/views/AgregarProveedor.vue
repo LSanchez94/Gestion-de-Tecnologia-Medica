@@ -27,8 +27,14 @@
           <div id="DireccionEmpresa"></div>
           <div id="NumTelefono"></div>
           <div id="Email"></div>
+<<<<<<< HEAD:src/views/AgregarProvedor.vue
           </div>
   </div>
+=======
+
+      </div>
+               </div>
+>>>>>>> 9b372b9ac2c74b7ab26c8f31d0b95c270bd1095a:src/views/AgregarProveedor.vue
 </template>
 
 <style scoped>

@@ -45,11 +45,7 @@ export default {
     },
     methods:{
         validarUsuario(){
-            if(this.user == 'Luis' && this.password == '123'){
-                alert("Usuario Correcto")
-            } else{
-                alert("Usuario No Encontrado")
-            }
+            this.$router.push('/Dashboard')
         }
     }
 };
