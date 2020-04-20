@@ -5,6 +5,7 @@ import Dashboard from '../views/Dashboard.vue'
 import Configuracion from '../views/Configuracion.vue'
 import AgregarProveedor from '../views/AgregarProveedor.vue'
 import AgregarMantenimiento from '../views/AgregarMantenimiento.vue'
+import AltasBajas from '../views/AltasBajas.vue'
 
 Vue.use(VueRouter)
 
@@ -33,6 +34,12 @@ const routes = [
     path: '/AgregarMantenimiento',
     name: 'AgregarMantenimiento',
     component: AgregarMantenimiento
+  },
+
+  {
+    path: '/AltasBajas',
+    name: 'AltasBajas',
+    component: AltasBajas
   },
 
 ]
