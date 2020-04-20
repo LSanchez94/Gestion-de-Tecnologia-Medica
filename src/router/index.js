@@ -4,6 +4,7 @@ import Login from '../views/Login.vue'
 import Dashboard from '../views/Dashboard.vue'
 import Configuracion from '../views/Configuracion.vue'
 import AgregarProveedor from '../views/AgregarProveedor.vue'
+import AgregarMantenimiento from '../views/AgregarMantenimiento.vue'
 
 Vue.use(VueRouter)
 
@@ -27,6 +28,11 @@ const routes = [
     path: '/AgregarProveedor',
     name: 'Agregar Proveedor',
     component: AgregarProveedor
+  },
+  {
+    path: '/AgregarMantenimiento',
+    name: 'AgregarMantenimiento',
+    component: AgregarMantenimiento
   },
 
 ]

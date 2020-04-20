@@ -125,32 +125,6 @@
           <h4>100</h4>
         </div>
       </div>
-      <!-- <div id="LogOut" class="col-8">
-        <div id="PanelNaranja"></div>
-        <div id="CuadroBlanco"></div>
-        <div id="RectanguloAzul"></div>
-        <div id="LogOut"></div>
-        <div id="CajaReportes"></div>
-        <div id="CajaUsuarios"></div>
-        <div id="HeaderReportes"></div>
-        <div id="TituloReportes"></div>
-        <div id="AgregarMantenimientosRecuadro"></div>
-        <div id="AgregarMantenimientosTexto"></div>
-        <div id="TextoCalendario"></div>
-        <div id="TextoDepartamentos"></div>
-        <div id="TextoAltasYBajas"></div>
-        <div id="TextoAgregarProvedor"></div>
-        <div id="TextoConfiguracion"></div>
-        <div id="RecuadroUsuarios"></div>
-        <div id="TextoUsuarios"></div>
-        <div id="NumUsuarios"></div>
-        <div id="RecuadroEquipos"></div>
-        <div id="TextoEquipos"></div>
-        <div id="NumEquipos"></div>
-        <div id="RecuadroProveedores"></div>
-        <div id="TextoProveedores"></div>
-        <div id="NumProveedores"></div>
-      </div>-->
     </div>
   </div>
 </template>
