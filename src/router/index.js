@@ -4,7 +4,7 @@ import Login from '../views/Login.vue'
 import Dashboard from '../views/Dashboard.vue'
 import Configuracion from '../views/Configuracion.vue'
 import AgregarProveedor from '../views/AgregarProveedor.vue'
-import Mantenimiento from '../views/AgregarMantenimiento.vue'
+import Mantenimiento from '../views/Mantenimiento.vue'
 import AltasBajas from '../views/AltasBajas.vue'
 
 Vue.use(VueRouter)
