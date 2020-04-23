@@ -60,6 +60,8 @@
           </div>
         </form>
       </div>
+
+      
       <h2 class="mt-3">Usuarios Registrados</h2>
       <!-- {{usuarios}} -->
       <div class="table-container w-100 mt-1">
