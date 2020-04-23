@@ -6,6 +6,7 @@ import Configuracion from '../views/Configuracion.vue'
 import AgregarProveedor from '../views/AgregarProveedor.vue'
 import Mantenimiento from '../views/Mantenimiento.vue'
 import AltasBajas from '../views/AltasBajas.vue'
+import Calendario from '../views/Calendario.vue'
 
 Vue.use(VueRouter)
 
@@ -42,6 +43,11 @@ const routes = [
     component: AltasBajas
   },
 
+  {
+    path: '/Calendario',
+    name: 'Calendario',
+    component: Calendario
+  },
 ]
 
 const router = new VueRouter({
