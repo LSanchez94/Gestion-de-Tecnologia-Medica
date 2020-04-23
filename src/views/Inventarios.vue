@@ -1,0 +1,58 @@
+<template>
+  <div class="container-fluid">
+    <div class="row">
+      <h2>Inventario: </h2>
+      <!-- Tabla inventario-->
+      <div class="table-container w-100 mt-1" id="Tabla">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Serie</th>
+              <th scope="col">Estado</th>
+              <th scope="col">Adquisición</th>
+              <th scope="col">Marca</th>
+              <th scope="col">Garantía</th>
+              <th scope="col">Departamento</th>
+              <th scope="col">Modelo</th>
+              <th scope="col">Mttos. preventivos</th>
+            </tr>
+          </thead>
+          
+        </table>
+      </div>
+
+    </div>
+  </div>
+</template>
+
+
+<script>
+    export default {
+    
+    };
+</script>
+
+
+<style scoped>
+h2 {
+  font-size: 1.6em;
+  margin-left:50px;
+  margin-top:35px;
+}
+
+.table-container {
+  overflow-y: scroll;
+  min-height: 41vh;
+  max-height: 41vh;
+}
+#Tabla{
+  position: relative;
+  border-radius: 20px;
+  padding: 0;
+  border: 4px solid #ffa41b;
+  overflow: hidden;
+  font-size: 1em;
+}
+
+</style>

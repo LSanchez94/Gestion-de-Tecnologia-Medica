@@ -2,9 +2,8 @@
   <div class="container-fluid">  
     
     <div class="row">
-      
+      <!-- inicia formulario falta agregar funcionalidades-->
       <div id="formulario" class="col-4">
-  
 
         <form class="col-10">
 
@@ -54,15 +53,7 @@ export default {
 </script>
 
 <style scoped>
-  /*h2 {
-    font-size: 1.6em;
-    position: absolute;
-    font-weight: bold;
-    margin-left: 65px;
-    margin-top: 25px;
-    color:black;
-  }*/
-  
+
   #formulario{
     font-size: 1.6em;
     position: absolute;
