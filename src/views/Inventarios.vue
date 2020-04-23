@@ -37,7 +37,7 @@
 <style scoped>
 h2 {
   font-size: 1.6em;
-  margin-left:50px;
+  margin-left:45px;
   margin-top:35px;
 }
 
@@ -49,8 +49,9 @@ h2 {
 #Tabla{
   position: relative;
   border-radius: 20px;
-  padding: 0;
-  border: 4px solid #ffa41b;
+  margin-left:35px;
+  margin-right: 35px;
+  border: 4px solid #005082;
   overflow: hidden;
   font-size: 1em;
 }
