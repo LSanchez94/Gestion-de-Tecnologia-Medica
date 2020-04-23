@@ -7,6 +7,9 @@ import AgregarProveedor from '../views/AgregarProveedor.vue'
 import Mantenimiento from '../views/Mantenimiento.vue'
 import AltasBajas from '../views/AltasBajas.vue'
 import Capacitacion from '../views/Capacitacion.vue'
+import DashboardDr from '../views/DashboardDr.vue'
+import Reportes from '../views/Reportes.vue'
+import Calendario from '../views/Calendario.vue'
 
 Vue.use(VueRouter)
 
@@ -49,6 +52,23 @@ const routes = [
     component: Capacitacion
   },
 
+ {
+     path: '/DashboardDr',
+     name: 'DashboardDr',
+     component: DashboardDr
+  },
+
+  {
+    path: '/Reportes',
+    name: 'Reportes',
+    component: Reportes
+  },
+
+  {
+    path: '/Calendario',
+    name: 'Calendario',
+    component: Calendario
+  },
 ]
 
 const router = new VueRouter({

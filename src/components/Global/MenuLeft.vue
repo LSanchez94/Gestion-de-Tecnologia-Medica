@@ -8,7 +8,9 @@
             <li><router-link to="/Calendario">Calendario</router-link> </li>
             <li><router-link to="/Departamentos">Departamentos</router-link> </li>
             <li><router-link to="/Mantenimiento">Agregar Mantenimiento</router-link> </li>
-             <li><router-link to="/Capacitacion">Agregar<br /> Capacitación</router-link> </li>            
+            <li><router-link to="/Capacitacion">Agregar<br /> Capacitación</router-link> </li>                    
+            <li><router-link to="/DashboardDr">Dashboard Doctores</router-link> </li>      
+            <li><router-link to="/Reportes">Reportes</router-link> </li>        
 
         </ul>
     </div>
