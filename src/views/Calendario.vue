@@ -3,7 +3,9 @@
       <div class="row">
           <div id="PanelNaranja"></div>
           <div id="CuadroBlanco"></div>
-          <div id="RectanguloAzul"></div>
+          <div id="RectanguloAzul">
+            <h3>Agregar Mantenimiento</h3>
+          </div>
           <div id="LogOut"></div>
           <div id="RectanguloMasOscuro"></div>
           <div id="TextoCalendario"></div>
@@ -19,8 +21,9 @@
           <div id="TextoAgregarCap"></div>
           <div id="RectanguloRegresar"></div>
           <div id="TextoRegresar"></div>
+        </div>
+      </div>
 
-               </div>
 </template>
 
 <style scoped>

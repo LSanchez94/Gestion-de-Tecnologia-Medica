@@ -8,6 +8,7 @@ import Mantenimiento from '../views/Mantenimiento.vue'
 import AltasBajas from '../views/AltasBajas.vue'
 import DashboardDr from '../views/DashboardDr.vue'
 import Reportes from '../views/Reportes.vue'
+import Calendario from '../views/Calendario.vue'
 
 Vue.use(VueRouter)
 
@@ -54,7 +55,13 @@ const routes = [
     path: '/Reportes',
     name: 'Reportes',
     component: Reportes
-  }
+  },
+
+  {
+    path: '/Calendario',
+    name: 'Calendario',
+    component: Calendario
+  },
 ]
 
 const router = new VueRouter({
