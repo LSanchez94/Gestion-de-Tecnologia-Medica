@@ -1,7 +1,10 @@
 <template>
   <div class="container-fluid">
+    
     <div class="row">
       <h2>Inventario: </h2>
+      <button class="btn" id="Linkmtto">Último mantenimiento</button>
+
       <!-- Tabla inventario-->
       <div class="table-container w-100 mt-1" id="Tabla">
         <table class="table table-striped">
@@ -21,6 +24,8 @@
           
         </table>
       </div>
+
+      
 
     </div>
   </div>
@@ -54,6 +59,16 @@ h2 {
   border: 4px solid #005082;
   overflow: hidden;
   font-size: 1em;
+}
+
+#Linkmtto{
+    color:#FFFF;
+    background: #F09204;
+    height: 45px;
+    border-radius: 25px;
+    margin-left:500px;
+    margin-top: 20px;
+    width:22%;
 }
 
 </style>
