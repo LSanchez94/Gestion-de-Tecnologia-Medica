@@ -138,7 +138,10 @@ h2 {
   width: 100%;
 }
 
+#Linkreportes{
+  color:#FFFF;
 
+}
 h3{
   font-size: 2em;
   font-weight: bolder;
