@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="row">
       
-      <h2 class="mt-3">Reportes:</h2>
+      <h2 class= "mt-3"> Reportes:</h2>
       <!-- {{reportes}} -->
       <div class="table-container w-100 mt-1">
         <table class="table table-striped">
@@ -114,6 +114,7 @@ export default {
 
 h2 {
   font-size: 1.6em;
+  color: #0000
 }
 
 #boton
