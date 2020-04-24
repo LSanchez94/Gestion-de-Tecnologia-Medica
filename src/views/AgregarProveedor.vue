@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid">
       <div class="row">
-          <div id="Agregar Proveedor" class="col-8">
+          <div id="Agregar Proveedor">
              <h1>Datos:</h1>
 
     <div class = "Linea1" >
@@ -149,11 +149,10 @@ color: #000000;
 .Linea1
 {
 position: absolute;
-width: 1043px;
-height: 49px;
-left: 660px;
-top: 377px;
-
+width: 410px;
+height: 48px;
+left: 500px;
+top: 300px;
 background: #7ACEE0;
 border: 1px solid #00A8CC;
 box-sizing: border-box;
