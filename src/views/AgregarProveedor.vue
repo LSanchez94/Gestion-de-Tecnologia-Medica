@@ -6,7 +6,7 @@
 
     <div class = "Linea1" >
           <form>
-          <div class="form-group">
+          <div class="form-group Linea1">
           <input type="text" class="form-control" id="exampleInputNSerie1" aria-describedby="nserieHelp" placeholder="Nombre de la empresa">
           </div>
           </form>
@@ -14,7 +14,7 @@
 
       <div class = "Linea2" >
           <form>
-          <div class="form-group">
+          <div class="form-group Linea2">
           <input type="text" class="form-control" id="exampleInputNSerie1" aria-describedby="nserieHelp" placeholder="Nombre del contacto">
           </div>
           </form>
@@ -22,7 +22,7 @@
 
       <div class = "Linea3" >
           <form>
-          <div class="form-group">
+          <div class="form-group Linea3">
            <input type="email" class="form-control" id="exampleInputNSerie1" aria-describedby="nserieHelp" placeholder="Correo electrónico">
           </div>
           </form>
@@ -30,7 +30,7 @@
 
       <div class = "Linea4" >
           <form>
-          <div class="form-group">
+          <div class="form-group Linea4">
           <input type="number" class="form-control" id="exampleInputNSerie1" aria-describedby="nserieHelp" placeholder="Numero de teléfono">
           </div>
           </form>
@@ -38,7 +38,7 @@
 
       <div class = "Linea5" >
           <form>
-          <div class="form-group">
+          <div class="form-group Linea5">
          <input type="text" class="form-control" id="exampleInputNSerie1" aria-describedby="nserieHelp" placeholder="Dirección">
           </div>
           </form>
