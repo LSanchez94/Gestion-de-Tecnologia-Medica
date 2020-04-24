@@ -18,17 +18,22 @@ import LeftMenu from "@/components/Global/MenuLeft.vue";
 export default {
   data() {
     return {
-      menuVisible: true
+      // menuVisible: true
     };
+  },
+  computed:{
+    menuVisible: function (){
+      var ruta = this.$route.path;
+      if (ruta == "/") {
+        return false;
+      } else {
+        return true;
+      } 
+    }
   },
   methods: {
     checkRoute() {
-      var ruta = this.$route.path;
-      if (ruta == "/") {
-        this.menuVisible = false;
-      } else {
-        this.menuVisible = true;
-      }
+      
     }
   },
   components: {
