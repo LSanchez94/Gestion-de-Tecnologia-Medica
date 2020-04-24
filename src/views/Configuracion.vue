@@ -171,6 +171,7 @@ h4 {
   overflow-y: scroll;
   min-height: 41vh;
   max-height: 41vh;
+  
 }
 
 .color1 {
