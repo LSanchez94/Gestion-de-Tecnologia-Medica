@@ -2,7 +2,7 @@
   <div>
     <div class="d-flex flex-wrap">
       <div class="col-12 border1">
-        <h2>REPORTES</h2>
+        <h2><router-link to="/Reportes" id="Linkreportes"> REPORTES</router-link></h2>
 
 
         <div class="table-container">

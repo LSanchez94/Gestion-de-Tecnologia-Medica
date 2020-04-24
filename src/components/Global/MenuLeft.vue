@@ -8,7 +8,7 @@
             <li v-if="userProfile == 'Administrador'"><router-link to="/Calendario">Calendario</router-link> </li>
             <li v-if="userProfile == 'Administrador'"><router-link to="/Departamentos">Departamentos</router-link> </li>
             <li v-if="userProfile == 'Administrador'"><router-link to="/Capacitacion">Agregar<br /> Capacitación</router-link> </li>                    
-            <li v-if="userProfile == 'Administrador'"><router-link to="/Reportes">Reportes</router-link> </li>        
+            <li v-if="userProfile == 'Administrador'"><router-link to="/Reportes">Reportes</router-link> </li>     
             <li v-if="userProfile == 'Administrador'"><router-link to="/Mantenimiento">Mantenimiento</router-link> </li>  
             <li v-if="userProfile == 'Administrador'"><router-link to="/Inventarios">Inventario</router-link> </li>           
             
