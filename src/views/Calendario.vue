@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid">
-      <div class="row">
-          <div id="PanelNaranja"></div>
+      <div class="row"> 
+         <!--<div id="PanelNaranja"></div>
           <div id="CuadroBlanco"></div>
           <div id="RectanguloAzul">
             <h3>Agregar Mantenimiento</h3>
@@ -20,13 +20,23 @@
           <div id="RectanguloAgregarCap"></div>
           <div id="TextoAgregarCap"></div>
           <div id="RectanguloRegresar"></div>
-          <div id="TextoRegresar"></div>
-        </div>
+          <div id="TextoRegresar"></div>-->
+        </div>  
       </div>
 
 </template>
 
 <style scoped>
+
+.Prueba {
+  background: #00A8CC;
+  position: absolute;
+  width: 188px;
+  height: 75px;
+  left: 58px;
+  top: 200px;
+
+}
 
 #RectanguloAzul
 {
