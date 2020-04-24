@@ -1,9 +1,9 @@
 <template>
   <div class="container-fluid">
-      <div class="row">
+    <div class="row">
       
       <h2 class="mt-3">Reportes:</h2>
-      <!-- {{usuarios}} -->
+      <!-- {{reportes}} -->
       <div class="table-container w-100 mt-1">
         <table class="table table-striped">
           <thead>
@@ -11,35 +11,106 @@
               <th scope="col">#</th>
               <th scope="col">Departamento</th>
               <th scope="col">Número de Serie</th>
-              <th scope="col">Descripción </th>
+              <th scope="col">Descripción</th>
               <th scope="col">Estado</th>
             </tr>
           </thead>
           <tbody>
-            <tr v-for="(r, index) in reportes" :key="index">
+            <tr v-for="(u, index) in reportes" :key="index">
               <th scope="row">{{index+1}}</th>
-              <td>{{r.Departamento}}</td>
-              <td>{{r.NumeroSerie}}</td>
-              <td>{{r.info}}</td>
-              <td>{{r.Estado}}</td>
+              <td>{{u.Departamento}}</td>
+              <td>{{u.NumeroSerie}}</td>
+              <td>{{u.info}}</td>
+              <td>{{u.estado}}</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <!-- EMPIEZA TABLA DE USUARIOS    -->
+    
+    </div>
+  
+  <input type="button" value="Regresar" onClick="history.go(-1);">
 
-        </div>
-
-
-          <input type="button" value="Regresar" onClick="history.go(-1);">
   </div>
 
-      
-               
 </template>
 
+
+<script>
+
+import axios from "axios";
+export default {
+  data() {
+    return {
+      reporte: {
+        Departamento: "",
+        info: "",
+        estado: "",
+        NumSerie: "",
+      },
+      reportes: [],
+      numeroreportes: 0,
+      Realizados: 0,
+      NoRealizados: 0
+    };
+  },
+  methods: {
+    agregarReporte() {
+      axios
+        .post("http://localhost:3000/Reportes/addReporte", this.reporte)
+        .then(response => {
+          alert(response.data);
+          this.traerReportes();
+        })
+        .catch(err => {
+          alert("NO FUNCIONA EL API");
+          console.log(err);
+        });
+    },
+    
+    traerUsuarios() {
+      axios
+        .get("http://localhost:3000/Reportes/getReportes")
+        .then(response => {
+          this.reportes = response.data;
+          this.numeroreportes = response.data.length;
+
+          this.Realizados = 0;
+          this.NoRealizados = 0;
+          response.data.forEach(element => {
+            if (element.perfil == "He recibido asistencia") {
+              this.Realizados++;
+            } else {
+              this.NoRealizados++;
+            }
+          });
+        })
+        .catch(err => {
+          alert("NO FUNCIONA EL API");
+          console.log(err);
+        });
+    }
+  },
+  mounted() {
+    this.traerReportes();
+  }
+};
+</script>
+
+
 <style scoped>
+
+.table-container {
+  overflow-y: scroll;
+  min-height: 41vh;
+  max-height: 41vh;
+  margin-left:35px;
+  margin-right: 35px;
+  border: 4px solid #005082;
+  
+}
 
 h2 {
   font-size: 1.6em;
