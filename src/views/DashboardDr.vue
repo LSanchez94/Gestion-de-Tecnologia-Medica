@@ -78,7 +78,7 @@ export default {
   methods: {
     agregarReporte() {
       axios
-        .post("http://localhost:3000/Usuarios/addReporte", this.reporte)
+        .post("http://localhost:3000/Reportes/addReporte", this.reporte)
         .then(response => {
           alert(response.data);
           this.traerReportes();
@@ -90,7 +90,7 @@ export default {
     },
     traerReportes() {
       axios
-        .get("http://localhost:3000/Usuarios/getReportes")
+        .get("http://localhost:3000/Reportes/getReportes")
         .then(response => {
           this.reportes = response.data;
           this.numeroReportes = response.data.length;

@@ -25,9 +25,9 @@
               data-toggle="dropdown"
               aria-haspopup="true"
               aria-expanded="false"
-            >Nombre del Usuario</a>
+            >{{userName}}</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Log Out</a>
+              <router-link to="/">Log Out</router-link>
             </div>
           </li>
         </ul>
@@ -38,7 +38,17 @@
 </template>
 
 <script>
-export default {};
+export default {
+
+  computed:{
+    userName: function(){
+      var name = localStorage.getItem('name');
+      var perfil = localStorage.getItem('perfil');
+      console.log(name)
+      return (name+' - '+ perfil);
+    }
+  }
+};
 </script>
 
 <style scoped>

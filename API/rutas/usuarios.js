@@ -12,6 +12,16 @@ router.get('/getUsers', (req,res) => {
     })
 })
 
+
+//TRAE USUARIO SOLICITADO
+router.post('/Validate', (req,res) => {
+    Usuarios.find({ correo: req.body.email}).then(response => {
+        res.send(response)
+    }).catch(err => {
+        res.send(err)
+    })  
+})
+
 //INSERTA USUARIO
 router.post('/addUser', (req,res) => {
     console.log(req.body.name)

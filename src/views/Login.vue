@@ -20,13 +20,13 @@
           <form class="col-10">
             <div class="form-group">
               <label for="exampleInputPassword1">Usuario</label>
-              <input type="text" class="form-control" v-model="user" id="exampleInputPassword1" />
+              <input type="email" class="form-control" v-model="user" id="exampleInputPassword1" />
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Contraseña</label>
               <input type="password" class="form-control" v-model="password" id="exampleInputPassword1" />
             </div>
-            <button class="btn" id="login_button" @click="validarUsuario()">ENTRAR</button>
+            <button class="btn" type="button" id="login_button" @click="validarUsuario()">ENTRAR</button>
           </form>
           </div>
         </div>
@@ -36,6 +36,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
     data(){
         return{
@@ -45,8 +46,22 @@ export default {
     },
     methods:{
         validarUsuario(){
-          
-            this.$router.push('/Dashboard')
+
+          axios.post("http://localhost:3000/Usuarios/Validate", {email: this.user}).then(response => {
+              if(response.data[0].password == this.password){
+                this.$store.state.user = response.data[0];
+                console.log(response.data[0])
+                localStorage.setItem('name', response.data[0].name);
+                localStorage.setItem('perfil', response.data[0].perfil);
+                localStorage.setItem('correo', response.data[0].correo);
+                this.$router.push('/Dashboard')
+              } else{
+                alert('Valores Erroneos')
+              }
+          }).catch(err => {
+            alert('API NO FUNCIONA')
+            console.log(err)
+          })
         }
     }
 };

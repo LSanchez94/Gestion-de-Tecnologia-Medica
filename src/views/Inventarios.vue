@@ -3,7 +3,7 @@
     
     <div class="row">
       <h2>Inventario: </h2>
-      <button class="btn" id="Linkmtto">Último mantenimiento</button>
+      <router-link to="/mantenimiento" class="btn" id="Linkmtto">Último mantenimiento</router-link>
 
       <!-- Tabla inventario-->
       <div class="table-container w-100 mt-1" id="Tabla">

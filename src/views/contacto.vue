@@ -43,7 +43,8 @@ export default {
     background: #FFA41B;
 }
 
-#configuracion{
+#configuracion
+{
   position: absolute;
   width: 337px;
   height: 68px;
