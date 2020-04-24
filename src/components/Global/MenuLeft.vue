@@ -1,15 +1,13 @@
 <template>
     <div id="menuleft">
         <ul>
-<<<<<<< HEAD
             <li><router-link to="/Dashboard">Dashboard</router-link> </li>
             <li><router-link to="/Configuracion">Configuración</router-link> </li>
             <li><router-link to="/AgregarProveedor">Agregar Proveedor</router-link> </li>
             <li><router-link to="/AltasBajas">Altas y Bajas</router-link> </li>
             <li><router-link to="/Calendario">Calendario</router-link> </li>
             <li><router-link to="/Departamentos">Departamentos</router-link> </li>
-            <li><router-link to="/Mantenimiento">Mantenimiento</router-link> </li>          
-=======
+            <li><router-link to="/Mantenimiento">Mantenimiento</router-link> </li>         
             <li v-if="userProfile == 'Administrador'"><router-link to="/Dashboard">Dashboard</router-link> </li>
             <li v-if="userProfile == 'Administrador'"><router-link to="/Configuracion">Configuración</router-link> </li>
             <li v-if="userProfile == 'Administrador'"><router-link to="/AgregarProveedor">Agregar Proveedor</router-link> </li>
@@ -20,10 +18,7 @@
             <li v-if="userProfile == 'Administrador'"><router-link to="/Reportes">Reportes</router-link> </li>        
             <li v-if="userProfile == 'Administrador'"><router-link to="/Mantenimiento">Mantenimiento</router-link> </li>  
             <li v-if="userProfile == 'Administrador'"><router-link to="/Inventarios">Inventario</router-link> </li>           
-            
-            
             <li v-if="userProfile == 'Médico'"><router-link to="/DashboardDr">Dashboard Doctores</router-link> </li>      
->>>>>>> 72dff180cab5e8b803fa7e429f2cb4914ced6f77
         </ul>
     </div>
 </template>
