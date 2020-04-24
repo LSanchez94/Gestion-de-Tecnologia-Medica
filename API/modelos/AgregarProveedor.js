@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 
 var datos = mongoose.Schema({
+    nameE: String,
     nameC: String,
     correo: String,
     tel: String,
