@@ -1,6 +1,90 @@
 <template>
   <div class="container-fluid">
       <div class="row">
+          <div id="Agregar Proveedor" class="col-8">
+             <h1>Datos:</h1>
+
+    <div class = "Linea1" >
+          <form>
+          <div class="form-group">
+          <label for="exampleInputEmail1">Nombre de la empresa:</label>
+          <input type="text" class="form-control" id="exampleInputNSerie1" aria-describedby="nserieHelp" placeholder="Nombre de la empresa">
+          </div>
+          </form>
+      </div>
+
+      <div class = "Linea2" >
+          <form>
+          <div class="form-group">
+          <label for="exampleInputEmail1">Nombre del contacto:</label>
+          <input type="text" class="form-control" id="exampleInputNSerie1" aria-describedby="nserieHelp" placeholder="Nombre del contacto">
+          </div>
+          </form>
+      </div>
+
+      <div class = "Linea3" >
+          <form>
+          <div class="form-group">
+          <label for="exampleInputEmail1">Correo electrónico :</label>
+          <input type="email" class="form-control" id="exampleInputNSerie1" aria-describedby="nserieHelp" placeholder="Correo electrónico">
+          </div>
+          </form>
+      </div>
+
+      <div class = "Linea4" >
+          <form>
+          <div class="form-group">
+          <label for="exampleInputEmail1">Número de teléfono:</label>
+          <input type="number" class="form-control" id="exampleInputNSerie1" aria-describedby="nserieHelp" placeholder="Numero de teléfono">
+          </div>
+          </form>
+      </div>
+
+      <div class = "Linea5" >
+          <form>
+          <div class="form-group">
+          
+          <input type="text" class="form-control" id="exampleInputNSerie1" aria-describedby="nserieHelp" placeholder="Dirección">
+          </div>
+          </form>
+      </div>
+
+          </div>
+
+          <!-- <div class="Linea1">
+            <h3 align = center>Nombre de la empresa</h3>
+          </div>
+
+          <div class="Linea2">
+            <h3 align = center>Nombre del contacto</h3>
+          </div>
+
+          <div class="Linea3">
+            <h3 align = center>Dirección de la empresa</h3>
+    
+          </div>
+
+          <div class="Linea4">
+            <h3 align = center>Número de teléfono</h3>
+            
+          </div>
+
+          <div class="Linea5">
+            <h3 align = center>Email</h3>
+          </div>
+       -->
+  
+          <div class="RectanguloGuardar">
+              <h2 align = center>Guardar</h2>
+           </div>
+
+        <div class="RectanguloRegresar">
+              <h2 align = center>Regresar</h2>
+           </div> 
+
+
+
+          
           <div id="PanelNaranja"></div>
           <div id="CuadroBlanco"></div>
           <div id="RectanguloAzul"></div>
@@ -29,205 +113,45 @@
           <div id="Email"></div>
           </div>
   </div>
-
-      </div>
-               </div>
+<!-- 
+    <input type="button" value="Regresar" onClick="history.go(-1);">   -->
+     
+      
+               
 </template>
 
 <style scoped>
+h3 {
+ font-family: Poppins;
+font-style: normal;
+font-weight: normal;
+font-size: 30px;
+line-height: 45px;
+color: #000000;
+  }
 
-#RectanguloAzul
-{
-position: absolute;
-width: 1920px;
-height: 161px;
-left: 0px;
-top: -1px;
-}
-
-
-#LogOut
-{
-position: absolute;
-width: 188px;
-height: 75px;
-left: 58px;
-top: 25px;
-
+h2 {
 font-family: Poppins;
 font-style: normal;
-font-weight: 800;
-font-size: 50px;
-line-height: 75px;
+font-weight: 600;
+font-size: 30px;
+line-height: 45px;
 color: #FFFFFF;
 }
 
-#NombreUsuario
-{
-position: absolute;
-width: 495px;
-height: 75px;
-left: 1336px;
-top: 42px;
-
-
-
-font-family: Poppins;
-font-style: normal;
-font-weight: 800;
-font-size: 50px;
-line-height: 75px;
-color: #FFFFFF;
-
-}
-#PanelNaranja
-{
-position: relative;
-width: 1920px;
-height: 1080px;
-
-background: #FFA41B;
-}
-
-#CuadroBlanco
-{
-position: absolute;
-width: 1412px;
-height: 1080px;
-left: 525px;
-top: 0px;
-
-background: #FFFFFF;
-}
-
-#NombreUsuario
-{
-position: absolute;
-width: 495px;
-height: 75px;
-left: 1336px;
-top: 42px;
-
-
-
-font-family: Poppins;
-font-style: normal;
-font-weight: 800;
-font-size: 50px;
-line-height: 75px;
-color: #FFFFFF;
-
-}
-
-#TextoCalendario
-{
-position: absolute;
-width: 261px;
-height: 68px;
-left: 21px;
-top: 209px;
-
-font-family: Poppins;
-font-style: normal;
-font-weight: 800;
-font-size: 45px;
-line-height: 67px;
-color: #000000;
-}
-
-#TextoDepartamentos
-{
-position: absolute;
-width: 394px;
-height: 73px;
-left: 21px;
-top: 304px;
-
-font-family: Poppins;
-font-style: normal;
-font-weight: 800;
-font-size: 45px;
-line-height: 67px;
-
-color: #000000;
-}
-
-#TextoAltasYBajas
-{
-position: absolute;
-width: 273px;
-height: 68px;
-left: 21px;
-top: 404px;
-
-font-family: Poppins;
-font-style: normal;
-font-weight: 800;
-font-size: 45px;
-line-height: 67px;
-color: #000000;
-}
-
-#TextoAgregarProvedor
-{
-position: absolute;
-width: 446px;
-height: 68px;
-left: 21px;
-top: 499px;
-
-font-family: Poppins;
-font-style: normal;
-font-weight: 800;
-font-size: 45px;
-line-height: 67px;
-color: #000000;
-}
-
-#TextoConfiguracion
-{
-position: absolute;
-width: 337px;
-height: 68px;
-left: 21px;
-top: 599px;
-
-font-family: Poppins;
-font-style: normal;
-font-weight: 800;
-font-size: 45px;
-line-height: 67px;
-color: #000000;
-}
-
-#RectanguloMasOscuro
-{
-position: absolute;
-width: 519px;
-height: 99px;
-left: 0px;
-top: 488px;
-
-background: #F09204;
-}
-
-#Datos 
-{
-position: absolute;
-width: 130px;
-height: 60px;
-left: 660px;
-top: 299px;
-
+h1 {
 font-family: Poppins;
 font-style: normal;
 font-weight: 600;
 font-size: 40px;
 line-height: 60px;
 color: #000000;
+
 }
 
-#Linea1
+
+
+.Linea1
 {
 position: absolute;
 width: 1043px;
@@ -241,7 +165,7 @@ box-sizing: border-box;
 border-radius: 25px;
 }
 
-#Linea2
+.Linea2
 {
 position: absolute;
 width: 1043px;
@@ -253,7 +177,7 @@ background: #7ACEE0;
 border-radius: 25px
 }
 
-#Linea3
+.Linea3
 {
 position: absolute;
 width: 1043px;
@@ -265,7 +189,7 @@ background: #7ACEE0;
 border-radius: 25px;
 }
 
-#Linea4
+.Linea4
 {
 position: absolute;
 width: 1043px;
@@ -277,7 +201,7 @@ background: #7ACEE0;
 border-radius: 25px;
 }
 
-#Linea5
+.Linea5
 {
 position: absolute;
 width: 1043px;
@@ -290,7 +214,7 @@ border-radius: 25px;
 }
 
 
-#NombreEmpresa
+.NombreEmpresa
 {
 position: absolute;
 width: 348px;
@@ -306,7 +230,7 @@ line-height: 45px;
 color: #000000;
 }
 
-#NombreContacto
+.NombreContacto
 {
 position: absolute;
 width: 320px;
@@ -322,7 +246,7 @@ line-height: 45px;
 color: #000000;
 }
 
-#DireccionEmpresa
+.DireccionEmpresa
 {
 position: absolute;
 width: 367px;
@@ -339,7 +263,7 @@ color: #000000;
 }
 
 
-#NumTelefono
+.NumTelefono
 {
 position: absolute;
 width: 299px;
@@ -355,7 +279,7 @@ line-height: 45px;
 color: #000000;
 }
 
-#Email
+.Email
 {
 position: absolute;
 width: 82px;
@@ -371,7 +295,7 @@ line-height: 45px;
 color: #000000;
 }
 
-#RectanguloGuardar
+.RectanguloGuardar
 {
 position: absolute;
 width: 509px;
@@ -385,7 +309,7 @@ box-sizing: border-box;
 border-radius: 25px;
 }
 
-#TextoGuardar
+.TextoGuardar
 {
 position: absolute;
 width: 147px;
@@ -402,7 +326,7 @@ color: #FFFFFF;
 
 }
 
-#RectanguloRegresar
+.RectanguloRegresar
 {
 position: absolute;
 width: 228px;
@@ -416,7 +340,7 @@ box-sizing: border-box;
 border-radius: 25px;
 }
 
-#TextoRegresar
+.TextoRegresar
 {
 position: absolute;
 width: 153px;
