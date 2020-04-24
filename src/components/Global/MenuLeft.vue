@@ -7,8 +7,7 @@
             <li><router-link to="/AltasBajas">Altas y Bajas</router-link> </li>
             <li><router-link to="/Calendario">Calendario</router-link> </li>
             <li><router-link to="/Departamentos">Departamentos</router-link> </li>
-            <li><router-link to="/Mantenimiento">Agregar Mantenimiento</router-link> </li>            
-
+            <li><router-link to="/Mantenimiento">Mantenimiento</router-link> </li>          
         </ul>
     </div>
 </template>
