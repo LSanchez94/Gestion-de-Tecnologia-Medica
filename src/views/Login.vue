@@ -45,6 +45,7 @@ export default {
     },
     methods:{
         validarUsuario(){
+          
             this.$router.push('/Dashboard')
         }
     }

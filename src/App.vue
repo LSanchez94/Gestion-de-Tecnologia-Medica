@@ -18,6 +18,7 @@ import LeftMenu from "@/components/Global/MenuLeft.vue";
 export default {
   data() {
     return {
+
       menuVisible: true
     };
   },
