@@ -28,7 +28,7 @@
               <input type="text" class="form-control" id="Persona" placeholder="Encargado"/>
             </div>
 
-            <button class="btn" id="Button">AGREGAR</button>
+            <button class="btn" id="Button" >AGREGAR</button>
 
         </form>
 
