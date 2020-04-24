@@ -3,11 +3,12 @@
       <div class="row">
           <div id="Agregar Proveedor" class="col-8">
              <h1>Datos:</h1>
-
+             
+<!-- Formulario para agregar datos de proveedor -->
     <div class = "Linea1" >
           <form>
           <div class="form-group Linea1">
-          <input type="text" class="form-control" id="Linea1" aria-describedby="nserieHelp" placeholder="Nombre de la empresa">
+          <input type="text" class="form-control" id="Linea1" aria-describedby="nserieHelp" placeholder="Nombre de la empresa"/>
           </div>
           </form>
       </div>
@@ -15,7 +16,7 @@
       <div class = "Linea2" >
           <form>
           <div class="form-group Linea2">
-          <input type="text" class="form-control" id="Linea2" aria-describedby="nserieHelp" placeholder="Nombre del contacto">
+          <input type="text" class="form-control" id="Linea2" aria-describedby="nserieHelp" placeholder="Nombre del contacto" >
           </div>
           </form>
       </div>
@@ -23,7 +24,7 @@
       <div class = "Linea3" >
           <form>
           <div class="form-group Linea3">
-           <input type="email" class="form-control" id="Linea3" aria-describedby="nserieHelp" placeholder="Correo electrónico">
+           <input type="email" class="form-control" id="Linea3" aria-describedby="nserieHelp" placeholder="Correo electrónico" >
           </div>
           </form>
       </div>
@@ -31,7 +32,7 @@
       <div class = "Linea4" >
           <form>
           <div class="form-group Linea4">
-          <input type="text" class="form-control" id="Linea4" aria-describedby="nserieHelp" placeholder="Numero de teléfono">
+          <input type="text" class="form-control" id="Linea4" aria-describedby="nserieHelp" placeholder="Numero de teléfono" >
           </div>
           </form>
       </div>
@@ -39,33 +40,29 @@
       <div class = "Linea5" >
           <form>
           <div class="form-group Linea5">
-         <input type="text" class="form-control" id="Linea5" aria-describedby="nserieHelp" placeholder="Dirección">
+         <input type="text" class="form-control" id="Linea5" aria-describedby="nserieHelp" placeholder="Dirección" >
           </div>
           </form>
       </div>
 
           </div>
-
+<!-- 
      <div class="RectanguloRegresar">
-      <router-link to="/Dashboard" id="TextoRegresar"> Regresar </router-link>
-    </div>
+      <router-link to="/Dashboard" class = "btn" id="TextoRegresar">Regresar </router-link>
+    </div> -->
 
         
           <div class="RectanguloGuardar">
               <h2 align = center>Guardar</h2>
            </div>
 
-        <div class="RectanguloRegresar">
+        <!-- <div class="RectanguloRegresar">
               <h2 align = center>Regresar</h2>
-           </div> 
+           </div>  -->
 
  <button class="btn" id="RectanguloGuardar">Guardar</button>
+ <button class="Regresar" onClick="history.go(-1);">Regresar</button>
 
-      
-
-
-
-          
           <div id="PanelNaranja"></div>
           <div id="CuadroBlanco"></div>
           <div id="RectanguloAzul"></div>
@@ -193,7 +190,7 @@ border-radius: 25px; */
 }
 
 
-.NombreEmpresa
+/* .NombreEmpresa
 {
 position: absolute;
 width: 348px;
@@ -272,7 +269,7 @@ font-weight: normal;
 font-size: 30px;
 line-height: 45px;
 color: #000000;
-}
+} */
 
 .RectanguloGuardar
 {
@@ -306,31 +303,27 @@ color: #FFFFFF;
 
 .RectanguloRegresar
 {
-position: absolute;
 width: 228px;
 height: 49px;
 left: 1150px;
 top: 600px;
-
 background: #005082;
 border: 1px solid #005082;
 box-sizing: border-box;
 border-radius: 25px;
+text-align: center;
+
 }
 
 #TextoRegresar
 {
-position: absolute;
-width: 153px;
-height: 45px;
-left: 1643px;
-top: 980px;
-
+color: #FFFFFF;
 font-family: Poppins;
 font-style: normal;
 font-weight: 600;
 font-size: 30px;
-line-height: 45px;
+background: #005082;
+margin-left: 5px;
 color: #FFFFFF;
 }
 
