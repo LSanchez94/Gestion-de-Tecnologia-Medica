@@ -38,6 +38,54 @@
       
                
 </template>
+<script>
+
+import axios from "axios";
+export default {
+  data() {
+    return {
+      reporte: {
+        Departamento: "",
+        info: "",
+        estado: "",
+        NumSerie: "",
+      },
+      reportes: [],
+      numeroreportes: 0,
+      Realizados: 0,
+      NoRealizados: 0
+    };
+  },
+  methods: {
+    
+    traerUsuarios() {
+      axios
+        .get("http://localhost:3000/Reportes/getReportes")
+        .then(response => {
+          this.reportes = response.data;
+          this.numeroreportes = response.data.length;
+
+          this.Realizados = 0;
+          this.NoRealizados = 0;
+          response.data.forEach(element => {
+            if (element.perfil == "He recibido asistencia") {
+              this.Realizados++;
+            } else {
+              this.NoRealizados++;
+            }
+          });
+        })
+        .catch(err => {
+          alert("NO FUNCIONA EL API");
+          console.log(err);
+        });
+    }
+  },
+  mounted() {
+    this.traerReportes();
+  }
+};
+</script>
 
 <style scoped>
 

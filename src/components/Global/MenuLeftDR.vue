@@ -2,7 +2,7 @@
     <div id="menuleft">
         <ul>                   
             <li><router-link to="/DashboardDr">Dashboard</router-link> </li>      
-            <li><router-link to="/Reportes">Reportes</router-link> </li>        
+            <li><router-link to="/contacto">Contacto</router-link> </li>        
 
         </ul>
     </div>
