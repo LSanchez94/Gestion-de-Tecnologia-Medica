@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid">
       <div class="row">
-          <div id="Agregar Proveedor" class="col-8">
+          <div id="Agregar Proveedor">
              <h1>Datos:</h1>
              
 <!-- Formulario para agregar datos de proveedor -->
@@ -131,11 +131,19 @@ color: #000000;
 .Linea1
 {
 position: absolute;
+<<<<<<< HEAD
+width: 410px;
+height: 48px;
+left: 500px;
+top: 300px;
+background: #7ACEE0;
+=======
 width: 900px;
 height: 49px;
 left: 60px;
 top: 75px;
 /* background: #7ACEE0;
+>>>>>>> 92268f7bffd125f2e657699f5a1aa9ebefa63c2d
 border: 1px solid #00A8CC;
 box-sizing: border-box;
 border-radius: 25px; */
