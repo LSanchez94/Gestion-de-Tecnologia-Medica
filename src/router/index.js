@@ -6,6 +6,7 @@ import Configuracion from '../views/Configuracion.vue'
 import AgregarProveedor from '../views/AgregarProveedor.vue'
 import Mantenimiento from '../views/Mantenimiento.vue'
 import AltasBajas from '../views/AltasBajas.vue'
+import AgregarMtto from '../views/AgregarMtto.vue'
 import Capacitacion from '../views/Capacitacion.vue'
 import DashboardDr from '../views/DashboardDr.vue'
 import Reportes from '../views/Reportes.vue'
@@ -46,6 +47,12 @@ const routes = [
     path: '/AltasBajas',
     name: 'AltasBajas',
     component: AltasBajas
+  },
+
+  {
+    path: '/AgregarMtto',
+    name: 'AgregarMtto',
+    component: AgregarMtto
   },
 
   {
