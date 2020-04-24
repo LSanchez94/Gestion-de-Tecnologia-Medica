@@ -12,9 +12,14 @@ app.use(bodyParser.json());
 const { mongoose } = require('./db/db-connect');
 const usuarios = require('./rutas/usuarios')
 const reportes = require('./rutas/reportes')
+const inventario= require('./rutas/inventario')
+const capacitacion= require('./rutas/Capacitacion')
+
 
 app.use('/Usuarios', usuarios);
 app.use('/Reportes', reportes);
+app.use('/Inventario', inventario);
+app.use('/Capacitacion', capacitacion);
 
 
 app.listen(port, () =>{

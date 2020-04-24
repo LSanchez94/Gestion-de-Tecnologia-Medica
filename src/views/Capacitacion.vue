@@ -9,26 +9,26 @@
 
             <div class="form-group">
               <label for="Tema">Datos de capacitación: </label>
-              <input type="text" class="form-control" id="Tema" placeholder="Tema"/>
+              <input type="text" class="form-control" id="Tema" placeholder="Tema" v-model="capacitacion.tema"/>
             </div>
 
             <div class="form-group">
-              <input type="text" class="form-control" id="Departamento" placeholder="Departamento"/>
+              <input type="text" class="form-control" id="Departamento" placeholder="Departamento" v-model="capacitacion.departamento"/>
             </div>
 
             <div class="form-group">
-              <input type="text" class="form-control" id="Descripcion" placeholder="Breve descripción"/>
+              <input type="text" class="form-control" id="Descripcion" placeholder="Breve descripción" v-model="capacitacion.descripción"/>
             </div>
 
             <div class="form-group">
-              <input type="text" class="form-control" id="Fecha" placeholder="Fecha"/>
+              <input type="text" class="form-control" id="Fecha" placeholder="Fecha" v-model="capacitacion.fecha"/>
             </div>
 
             <div class="form-group">
-              <input type="text" class="form-control" id="Persona" placeholder="Encargado"/>
+              <input type="text" class="form-control" id="Persona" placeholder="Encargado" v-model="capacitacion.persona"/>
             </div>
 
-            <button class="btn" id="Button" >AGREGAR</button>
+            <button class="btn" id="Button" @click="agregarCapacitacion()" >AGREGAR</button>
 
         </form>
 
@@ -43,13 +43,39 @@
 
 
 <script>
+import axios from "axios"
 export default {
   
     data() {
       return {
-        value: ''
-      }
-}}
+        capacitacion: {
+          tema:"",
+          departamento: "",
+          descripcion: "",
+          fecha: "",
+          persona: "",
+        }, 
+        capacitaciones:[],
+      };
+  }
+
+
+  /*methods:{
+    agregarCapacitacion() {
+      axios
+        .post("http://localhost:3000/Capacitacion/addCap", this.capacitacion)
+        .then(response => {
+          alert(response.data);
+          //this.traerUsuarios();
+        })
+        .catch(err => {
+          alert("NO FUNCIONA EL API");
+          console.log(err);
+        });
+  },*/
+
+}
+
 </script>
 
 <style scoped>
