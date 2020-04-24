@@ -1,13 +1,7 @@
 <template>
     <div id="menuleft">
         <ul>
-            <li><router-link to="/Dashboard">Dashboard</router-link> </li>
-            <li><router-link to="/Configuracion">Configuración</router-link> </li>
-            <li><router-link to="/AgregarProveedor">Agregar Proveedor</router-link> </li>
-            <li><router-link to="/AltasBajas">Altas y Bajas</router-link> </li>
-            <li><router-link to="/Calendario">Calendario</router-link> </li>
-            <li><router-link to="/Departamentos">Departamentos</router-link> </li>
-            <li><router-link to="/Mantenimiento">Mantenimiento</router-link> </li>         
+                  
             <li v-if="userProfile == 'Administrador'"><router-link to="/Dashboard">Dashboard</router-link> </li>
             <li v-if="userProfile == 'Administrador'"><router-link to="/Configuracion">Configuración</router-link> </li>
             <li v-if="userProfile == 'Administrador'"><router-link to="/AgregarProveedor">Agregar Proveedor</router-link> </li>
@@ -15,9 +9,10 @@
             <li v-if="userProfile == 'Administrador'"><router-link to="/Calendario">Calendario</router-link> </li>
             <li v-if="userProfile == 'Administrador'"><router-link to="/Departamentos">Departamentos</router-link> </li>
             <li v-if="userProfile == 'Administrador'"><router-link to="/Capacitacion">Agregar<br /> Capacitación</router-link> </li>                    
-            <li v-if="userProfile == 'Administrador'"><router-link to="/Reportes">Reportes</router-link> </li>        
+            <li v-if="userProfile == 'Administrador'"><router-link to="/Reportes">Reportes</router-link> </li>     
             <li v-if="userProfile == 'Administrador'"><router-link to="/Mantenimiento">Mantenimiento</router-link> </li>  
             <li v-if="userProfile == 'Administrador'"><router-link to="/Inventarios">Inventario</router-link> </li>           
+           
             <li v-if="userProfile == 'Médico'"><router-link to="/DashboardDr">Dashboard Doctores</router-link> </li>      
         </ul>
     </div>
