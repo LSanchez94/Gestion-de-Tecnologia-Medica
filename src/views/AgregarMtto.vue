@@ -7,7 +7,8 @@
       <div class = "NumSerie" >
           <form>
           <div class="form-group">
-          <input type="text" class="form-control" id="NumSerie" placeholder="Numero de Serie">
+          <label for="exampleInputEmail1">Numero de Serie:</label>
+          <input type="text" class="form-control" id="exampleInputNSerie1" aria-describedby="nserieHelp" placeholder="Numero de Serie">
           </div>
           </form>
       </div>
@@ -15,7 +16,8 @@
       <div class = "Departamento" >
           <form>
           <div class="form-group">
-          <input type="text" class="form-control" id="Departamento" placeholder="Departamento">
+          <label for="exampleInputDepartamento1">Departamento:</label>
+          <input type="text" class="form-control" id="exampleInputDepartamento1" aria-describedby="departamentoHelp" placeholder="Departamento">
           </div>
           </form>
       </div>
@@ -23,7 +25,8 @@
         <div class = "TipoMtto" >
           <form>
           <div class="form-group">
-          <input type="text" class="form-control" id="TipoMtto" placeholder="Tipo de Mantenimiento">
+          <label for="exampleInputTipoMantenimiento1">Tipo de Mantenimiento:</label>
+          <input type="text" class="form-control" id="exampleInputTipoMantenimiento1" aria-describedby="tipomttoHelp" placeholder="Tipo de Mantenimiento">
           </div>
           </form>
       </div>
@@ -31,7 +34,8 @@
          <div class = "FechaMtto">
           <form>
           <div class="form-group">
-          <input type="text" class="form-control" id="FechaMtto" placeholder="Fecha a dar Mantenimiento">
+          <label for="exampleInputFechaMtto1">Fecha a dar Mantenimiento:</label>
+          <input type="text" class="form-control" id="exampleInputFechaMtto1" aria-describedby="fechamttoHelp" placeholder="Fecha a dar Mantenimiento">
           </div>
           </form>
        </div>
@@ -39,13 +43,14 @@
       <div class = "Encargado">
           <form>
           <div class="form-group">
-          <input type="text" class="form-control" id="Encargado" placeholder="Encargado">
+          <label for="exampleInputEncargado1">Encargado:</label>
+          <input type="text" class="form-control" id="exampleInputEncargado1" aria-describedby="encargadoHelp" placeholder="Encargado">
           </div>
           </form>
       </div>
 
        <button class="Agregar" id="login_button" @click="validarUsuario()">Agregar</button>
-       <button class="Regresar" onClick="history.go(-1);">Regresar</button>
+       <button class="Regresar" id="login_button" @click="validarUsuario()">Regresar</button>
       </div>
     </div>
 </div>
@@ -94,12 +99,12 @@ line-height: 52px;
 color: #FFFFFF;
 }
 
-#NumSerie{
+.NumSerie{
 position: absolute;
 width: 410px;
 height: 48px;
-left: 320px;
-top: 140px;
+left: 639px;
+top: 343px;
 background: #7ACEE0;
 border: 1px solid #7ACEE0;
 box-sizing: border-box;
@@ -107,12 +112,12 @@ box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
 border-radius: 10px;
 }
 
-#Departamento{
+.Departamento{
 position: absolute;
 width: 632px;
 height: 48px;
-left: 758px;
-top: 140px;
+left: 1078px;
+top: 343px;
 background: #7ACEE0;
 border: 1px solid #7ACEE0;
 box-sizing: border-box;
@@ -120,12 +125,12 @@ box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
 border-radius: 10px;
 }
 
-#TipoMtto{
+.TipoMtto{
 position: absolute;
 width: 1071px;
 height: 48px;
-left: 320px;
-top: 225px;
+left: 639px;
+top: 425px;
 background: #7ACEE0;
 border: 1px solid #7ACEE0;
 box-sizing: border-box;
@@ -133,12 +138,12 @@ box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
 border-radius: 10px;
 }
 
-#FechaMtto{
+.FechaMtto{
 position: absolute;
 width: 616px;
 height: 48px;
-left: 320px;
-top: 310px;
+left: 639px;
+top: 510px;
 background: #7ACEE0;
 border: 1px solid #7ACEE0;
 box-sizing: border-box;
@@ -146,12 +151,12 @@ box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
 border-radius: 10px;
 }
 
-#Encargado{
+.Encargado{
 position: absolute;
 width: 410px;
 height: 48px;
-left: 980px;
-top: 310px;
+left: 1300px;
+top: 503px;
 background: #7ACEE0;
 border: 1px solid #7ACEE0;
 box-sizing: border-box;
@@ -163,8 +168,8 @@ border-radius: 10px;
 position: absolute;
 width: 410px;
 height: 50px;
-left: 980px;
-top: 399px;
+left: 1300px;
+top: 599px;
 background: #1DA0F2;
 border: 1px solid #00A8CC;
 box-sizing: border-box;
@@ -176,11 +181,13 @@ border-radius: 25px;
 position: absolute;
 width: 228px;
 height: 49px;
-left: 1160px;
-top: 468px;
+left: 1624px;
+top: 988px;
 background: #005082;
 border: 1px solid #005082;
 box-sizing: border-box;
 border-radius: 25px;
 }
+
+</style>
 </style>
