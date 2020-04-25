@@ -5,6 +5,7 @@
           <!--ALTA DE DM -->
           <h1> Alta de Dispositivos Medicos: </h1>
           </div>
+          
           <form>
           <div class="form-group NumSerie">
           <input type="text" class="form-control" id="NumSerie" placeholder="Numero de Serie">
@@ -138,7 +139,7 @@ h4{
 position: absolute;
 height: 60px;
 left: 320px;
-top: 442px;
+top: 462px;
 font-family: Poppins;
 font-style: normal;
 font-weight: 600;
