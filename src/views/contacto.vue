@@ -90,7 +90,7 @@ export default {
   color: #000000;
 }
 
-#Logout{
+/* #Logout{
   position: absolute;
   width: 188px;
   height: 75px;
@@ -105,8 +105,8 @@ export default {
   /* identical to box height */
 
 
-  color: #FFFFFF;
-}
+  /* color: #FFFFFF;
+} */ */
 
 #Regresar{
   position: absolute;
@@ -120,8 +120,8 @@ border: 1px solid #005082;
 box-sizing: border-box;
 border-radius: 25px;
 
-
-/* REGRESAR */
+/* 
+REGRESAR
 position: absolute;
 width: 153px;
 height: 45px;
@@ -134,8 +134,8 @@ font-weight: 600;
 font-size: 30px;
 line-height: 45px;
 /* identical to box height */
-
+/* 
 
 color: #FFFFFF;
-}
+} */ 
 </style>

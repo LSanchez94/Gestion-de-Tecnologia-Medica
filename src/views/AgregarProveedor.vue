@@ -3,83 +3,60 @@
       <div class="row">
           <div id="Agregar Proveedor" class="col-8">
              <h1>Datos:</h1>
-
+             
+<!-- Formulario para agregar datos de proveedor -->
     <div class = "Linea1" >
           <form>
-          <div class="form-group">
-          <input type="text" class="form-control" id="exampleInputNSerie1" aria-describedby="nserieHelp" placeholder="Nombre de la empresa">
+          <div class="form-group Linea1">
+          <input type="text" class="form-control" id="Linea1" aria-describedby="nserieHelp" placeholder="Nombre de la empresa"/>
           </div>
           </form>
       </div>
 
       <div class = "Linea2" >
           <form>
-          <div class="form-group">
-          <input type="text" class="form-control" id="exampleInputNSerie1" aria-describedby="nserieHelp" placeholder="Nombre del contacto">
+          <div class="form-group Linea2">
+          <input type="text" class="form-control" id="Linea2" aria-describedby="nserieHelp" placeholder="Nombre del contacto" >
           </div>
           </form>
       </div>
 
       <div class = "Linea3" >
           <form>
-          <div class="form-group">
-           <input type="email" class="form-control" id="exampleInputNSerie1" aria-describedby="nserieHelp" placeholder="Correo electrónico">
+          <div class="form-group Linea3">
+           <input type="email" class="form-control" id="Linea3" aria-describedby="nserieHelp" placeholder="Correo electrónico" >
           </div>
           </form>
       </div>
 
       <div class = "Linea4" >
           <form>
-          <div class="form-group">
-          <input type="number" class="form-control" id="exampleInputNSerie1" aria-describedby="nserieHelp" placeholder="Numero de teléfono">
+          <div class="form-group Linea4">
+          <input type="text" class="form-control" id="Linea4" aria-describedby="nserieHelp" placeholder="Numero de teléfono" >
           </div>
           </form>
       </div>
 
       <div class = "Linea5" >
           <form>
-          <div class="form-group">
-         <input type="text" class="form-control" id="exampleInputNSerie1" aria-describedby="nserieHelp" placeholder="Dirección">
+          <div class="form-group Linea5">
+         <input type="text" class="form-control" id="Linea5" aria-describedby="nserieHelp" placeholder="Dirección" >
           </div>
           </form>
       </div>
 
           </div>
+ 
+     <div class="RectanguloRegresar">
+      <router-link to="/Dashboard" class = "btn" id="TextoRegresar">Regresar </router-link>
+    </div> 
 
-          <!-- <div class="Linea1">
-            <h3 align = center>Nombre de la empresa</h3>
-          </div>
+        
+      
 
-          <div class="Linea2">
-            <h3 align = center>Nombre del contacto</h3>
-          </div>
+  | <button class="btn" id="RectanguloGuardar">Guardar</button>
+ <!-- <button class="<RectanguloRegresar" onClick="history.go(-1);">Regresar</button>  -->
 
-          <div class="Linea3">
-            <h3 align = center>Dirección de la empresa</h3>
-    
-          </div>
-
-          <div class="Linea4">
-            <h3 align = center>Número de teléfono</h3>
-            
-          </div>
-
-          <div class="Linea5">
-            <h3 align = center>Email</h3>
-          </div>
-       -->
-  
-          <div class="RectanguloGuardar">
-              <h2 align = center>Guardar</h2>
-           </div>
-
-        <div class="RectanguloRegresar">
-              <h2 align = center>Regresar</h2>
-           </div> 
-
-
-
-          
           <div id="PanelNaranja"></div>
           <div id="CuadroBlanco"></div>
           <div id="RectanguloAzul"></div>
@@ -107,247 +84,120 @@
           <div id="NumTelefono"></div>
           <div id="Email"></div>
           </div>
-  </div>
-<!-- 
-    <input type="button" value="Regresar" onClick="history.go(-1);">   -->
+  </div> 
      
-      
-               
+                  
 </template>
 
 <style scoped>
-h3 {
- font-family: Poppins;
-font-style: normal;
-font-weight: normal;
-font-size: 30px;
-line-height: 45px;
-color: #000000;
-  }
-
-h2 {
-font-family: Poppins;
-font-style: normal;
-font-weight: 600;
-font-size: 30px;
-line-height: 45px;
-color: #FFFFFF;
-}
-
-h1 {
-font-family: Poppins;
-font-style: normal;
-font-weight: 600;
-font-size: 40px;
-line-height: 60px;
-color: #000000;
-
-}
-
-
 
 .Linea1
 {
-position: absolute;
-width: 1043px;
+   position: absolute;
+width: 900px;
 height: 49px;
-left: 660px;
-top: 377px;
-
-background: #7ACEE0;
+left: 60px;
+top: 75px;
+/* background: #7ACEE0;
 border: 1px solid #00A8CC;
 box-sizing: border-box;
-border-radius: 25px;
+border-radius: 25px; */
 }
 
 .Linea2
 {
 position: absolute;
-width: 1043px;
+width: 900px;
 height: 49px;
-left: 660px;
-top: 458px;
+left: 60px;
+top: 100px;
 
-background: #7ACEE0;
-border-radius: 25px
+ /* background: #7ACEE0;
+border-radius: 25px  */
 }
 
 .Linea3
 {
 position: absolute;
-width: 1043px;
+width: 900px;
 height: 49px;
-left: 660px;
-top: 539px;
+left: 60px;
+top: 125px;
 
-background: #7ACEE0;
-border-radius: 25px;
+/* background: #7ACEE0;
+border-radius: 25px; */
 }
 
 .Linea4
 {
 position: absolute;
-width: 1043px;
+width: 900px;
 height: 49px;
-left: 660px;
-top: 618px;
+left: 60px;
+top: 150px;
 
+/* 
 background: #7ACEE0;
-border-radius: 25px;
+border-radius: 25px; */
 }
 
 .Linea5
 {
 position: absolute;
-width: 1043px;
+width: 900px;
 height: 49px;
-left: 660px;
-top: 701px;
+left: 60px;
+top: 175px;
 
-background: #7ACEE0;
-border-radius: 25px;
+/* background: #7ACEE0;
+border-radius: 25px; */
 }
 
-
-.NombreEmpresa
-{
-position: absolute;
-width: 348px;
-height: 45px;
-left: 683px;
-top: 377px;
-
-font-family: Poppins;
-font-style: normal;
-font-weight: normal;
-font-size: 30px;
-line-height: 45px;
-color: #000000;
-}
-
-.NombreContacto
-{
-position: absolute;
-width: 320px;
-height: 45px;
-left: 683px;
-top: 460px;
-
-font-family: Poppins;
-font-style: normal;
-font-weight: normal;
-font-size: 30px;
-line-height: 45px;
-color: #000000;
-}
-
-.DireccionEmpresa
-{
-position: absolute;
-width: 367px;
-height: 45px;
-left: 683px;
-top: 539px;
-
-font-family: Poppins;
-font-style: normal;
-font-weight: normal;
-font-size: 30px;
-line-height: 45px;
-color: #000000;
-}
-
-
-.NumTelefono
-{
-position: absolute;
-width: 299px;
-height: 45px;
-left: 683px;
-top: 622px;
-
-font-family: Poppins;
-font-style: normal;
-font-weight: normal;
-font-size: 30px;
-line-height: 45px;
-color: #000000;
-}
-
-.Email
-{
-position: absolute;
-width: 82px;
-height: 45px;
-left: 683px;
-top: 701px;
-
-font-family: Poppins;
-font-style: normal;
-font-weight: normal;
-font-size: 30px;
-line-height: 45px;
-color: #000000;
-}
-
-.RectanguloGuardar
+#RectanguloGuardar
 {
 position: absolute;
 width: 509px;
-height: 49px;
-left: 927px;
-top: 897px;
-
+margin-left: 600px;
+margin-top: 500px;
 background: #005082;
-border: 1px solid #005082;
-box-sizing: border-box;
+box-sizing: border-box; 
 border-radius: 25px;
 }
 
-.TextoGuardar
+#TextoGuardar
 {
-position: absolute;
-width: 147px;
-height: 45px;
-left: 1108px;
-top: 899px;
 
+color: #FFFFFF;
 font-family: Poppins;
 font-style: normal;
 font-weight: 600;
 font-size: 30px;
-line-height: 45px;
+margin-left: 5px;
 color: #FFFFFF;
 
 }
 
 .RectanguloRegresar
 {
-position: absolute;
 width: 228px;
 height: 49px;
-left: 1603px;
-top: 976px;
-
+left: 1150px;
+top: 600px;
 background: #005082;
-border: 1px solid #005082;
 box-sizing: border-box;
 border-radius: 25px;
+text-align: center;
+
 }
 
-.TextoRegresar
+#TextoRegresar
 {
-position: absolute;
-width: 153px;
-height: 45px;
-left: 1643px;
-top: 980px;
-
+color: #FFFFFF;
 font-family: Poppins;
 font-style: normal;
 font-weight: 600;
 font-size: 30px;
-line-height: 45px;
+margin-left: 5px;
 color: #FFFFFF;
 }
 
