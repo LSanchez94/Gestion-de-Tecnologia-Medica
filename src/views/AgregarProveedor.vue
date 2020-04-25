@@ -134,13 +134,11 @@ color: #000000;
 .Linea1
 {
 position: absolute;
-<<<<<<< HEAD
 width: 410px;
 height: 48px;
 left: 500px;
 top: 300px;
 background: #7ACEE0;
-=======
 width: 900px;
 height: 49px;
 left: 60px;
