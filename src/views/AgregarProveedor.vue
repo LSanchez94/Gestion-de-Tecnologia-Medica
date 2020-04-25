@@ -91,7 +91,7 @@
 
 <style scoped>
 
-#Linea1
+.Linea1
 {
    position: absolute;
 width: 900px;
@@ -162,6 +162,7 @@ margin-top: 500px;
 background: #005082;
 box-sizing: border-box; 
 border-radius: 25px;
+color:#fff;
 }
 
 #TextoGuardar

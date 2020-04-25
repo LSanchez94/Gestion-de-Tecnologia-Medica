@@ -13,6 +13,8 @@ import Reportes from '../views/Reportes.vue'
 import Calendario from '../views/Calendario.vue'
 import Inventario from '../views/Inventarios.vue'
 import Tarea from '../views/AgregarTarea.vue'
+import Departamentos from '../views/Departamentos.vue'
+import Contacto from '../views/contacto.vue'
 
 Vue.use(VueRouter)
 
@@ -89,6 +91,18 @@ const routes = [
     path: '/Tarea',
     name: 'Tarea',
     component: Tarea
+  },
+
+  {
+    path: '/Departamentos',
+    name: 'Departamentos',
+    component: Departamentos
+  },
+
+  {
+    path: '/Contacto',
+    name: 'Contacto',
+    component: Contacto
   },
 
 ]
