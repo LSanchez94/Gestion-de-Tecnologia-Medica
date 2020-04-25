@@ -118,11 +118,11 @@
         </div>
         <div class="color2">
           <h3>EQUIPOS</h3>
-          <h4>100</h4>
+          <h4>200</h4>
         </div>
         <div class="color3">
           <h3>PROVEEDORES</h3>
-          <h4>100</h4>
+          <h4>300</h4>
         </div>
       </div>
     </div>
@@ -138,10 +138,7 @@ h2 {
   width: 100%;
 }
 
-#Linkreportes{
-  color:#FFFF;
 
-}
 h3{
   font-size: 2em;
   font-weight: bolder;

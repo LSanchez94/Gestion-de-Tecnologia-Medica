@@ -26,6 +26,8 @@
           <div id="TextoRegresar"></div>
 
                 </div>
+  </div>
+
 </template>
 
 <style scoped>

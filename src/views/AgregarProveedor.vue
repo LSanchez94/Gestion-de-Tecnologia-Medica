@@ -93,7 +93,7 @@
 
 .Linea1
 {
-   position: absolute;
+position: absolute;
 width: 900px;
 height: 49px;
 left: 60px;
@@ -162,6 +162,7 @@ margin-top: 500px;
 background: #005082;
 box-sizing: border-box; 
 border-radius: 25px;
+color:#fff;
 }
 
 #TextoGuardar

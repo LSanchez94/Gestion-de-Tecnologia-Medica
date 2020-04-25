@@ -12,6 +12,7 @@
        <button class="btn" id="Regresar" @click="/*FUNCION DE BOTON*/">REGRESAR</button>
        
     </div>
+    </div>
 
 </template>
 
@@ -106,7 +107,7 @@ export default {
 
 
   /* color: #FFFFFF;
-} */ */
+} */
 
 #Regresar{
   position: absolute;
@@ -119,6 +120,7 @@ background: #005082;
 border: 1px solid #005082;
 box-sizing: border-box;
 border-radius: 25px;
+}
 
 /* 
 REGRESAR
