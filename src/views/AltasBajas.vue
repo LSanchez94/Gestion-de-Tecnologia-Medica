@@ -118,7 +118,6 @@ color: #FFFFFF;
 }
 
 h4{
-<<<<<<< HEAD
 position: absolute;
 height: 60px;
 left: 320px;
@@ -129,9 +128,7 @@ font-weight: 600;
 font-size: 40px;
 line-height: 60px;
 color: #000000;
-=======
-    left: 20px
->>>>>>> 82a473537417d051613a53eefe4448b322ce8318
+left: 20px
 }
 
 .color1 {
