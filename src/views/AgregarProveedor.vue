@@ -91,7 +91,7 @@
 
 <style scoped>
 
-.Linea1
+#Linea1
 {
    position: absolute;
 width: 900px;
