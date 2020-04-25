@@ -131,8 +131,8 @@
 
 <style scoped>
 h2 {
-  background-color: #ffa41b;
-  color: #fff;
+  background: #ffa41b;
+  color: #FFF;
   text-align: center;
   padding: 10px 0;
   width: 100%;
