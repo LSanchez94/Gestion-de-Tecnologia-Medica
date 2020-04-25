@@ -93,7 +93,11 @@
 
 .Linea1
 {
+<<<<<<< HEAD
    position: absolute;
+=======
+position: absolute;
+>>>>>>> parent of 5516d53... Merge branch 'master' of https://github.com/LSanchez94/Gestion-de-Tecnologia-Medica
 width: 900px;
 height: 49px;
 left: 60px;
