@@ -163,10 +163,10 @@ h4{
   color: #fff;
   font-weight: bold;
   margin: 0 10px;
-    width: 33%;
+  width: 33%;
   padding: 15px;
   text-align: center;
-    border-radius: 25px;
+  border-radius: 25px;
 
 }
 .color3 {
@@ -174,10 +174,10 @@ h4{
   color: #fff;
   font-weight: bold;
   margin-left: 10px;
-    width: 33%;
+  width: 33%;
   padding: 15px;
   text-align: center;
-    border-radius: 25px;
+  border-radius: 25px;
 }
 
 .border1 {

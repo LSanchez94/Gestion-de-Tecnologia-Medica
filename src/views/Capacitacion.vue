@@ -3,7 +3,7 @@
     
     <div class="row">
       <!-- inicia formulario en proceso de agregar funcionalidades-->
-      <div id="formulario" class="mt-3 w-100">
+      <div id="formulario">
         <form class="col-10">
 
             <div class="form-group">
@@ -146,8 +146,9 @@ mounted(){
   }
 
   #Departamento{
-    margin-top:15px;
+    margin-top:80px;
     width:750px;
+    margin-left:0px;
     background-color:#7ACEE0;
   }
 
