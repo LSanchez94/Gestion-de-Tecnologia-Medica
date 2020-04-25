@@ -15,6 +15,7 @@ router.get('/getEventData', (req,res) => {
 
 //CREA CAPACITACION
 router.post('/addCap', (req,res) => {
+    console.log(req.body.name)
     Capacitacion.create({
         tema: req.body.tema,
         departamento: req.body.departamento,
