@@ -11,6 +11,7 @@
             <li v-if="userProfile == 'Administrador'"><router-link to="/Calendario">Calendario</router-link> </li>
             <li v-if="userProfile == 'Administrador'"><router-link to="/AltasBajas">Altas y Bajas</router-link> </li>
             <li v-if="userProfile == 'Administrador'"><router-link to="/Departamentos">Departamentos</router-link> </li>
+            <li v-if="userProfile == 'Administrador'"><router-link to="/Capacitacion">Agregar Capacitación</router-link> </li>
             <li v-if="userProfile == 'Médico'"><router-link to="/DashboardDr">Dashboard </router-link> </li>
             <li v-if="userProfile == 'Médico'"><router-link to="/ConfiguracionDR">Configuración</router-link> </li>         
         </ul>
