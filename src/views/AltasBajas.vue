@@ -121,7 +121,7 @@ h4{
 position: absolute;
 height: 60px;
 left: 320px;
-top: 462px;
+top: 468px;
 font-family: Poppins;
 font-style: normal;
 font-weight: 600;
@@ -276,6 +276,19 @@ background: #7ACEE0;
 border: 1px solid #7ACEE0;
 box-sizing: border-box;
 border-radius: 10px;
+}
+
+.Agregar{
+position: absolute;
+width: 410px;
+height: 50px;
+left: 1162px;
+top: 360px;
+background: #1DA0F2;
+border: 1px solid #00A8CC;
+box-sizing: border-box;
+box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
+border-radius: 25px;
 }
 
 .DarBaja{
