@@ -4,6 +4,7 @@
       <div class="row">
           <h1> Alta de Dispositivos Medicos: </h1>
           </div>
+          
           <form>
           <div class="form-group NumSerie">
           <label for="exampleInputEmail1">Numero de Serie:</label>
@@ -117,7 +118,20 @@ color: #FFFFFF;
 }
 
 h4{
+<<<<<<< HEAD
+position: absolute;
+height: 60px;
+left: 320px;
+top: 462px;
+font-family: Poppins;
+font-style: normal;
+font-weight: 600;
+font-size: 40px;
+line-height: 60px;
+color: #000000;
+=======
     left: 20px
+>>>>>>> 82a473537417d051613a53eefe4448b322ce8318
 }
 
 .color1 {

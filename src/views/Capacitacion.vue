@@ -146,7 +146,7 @@ mounted(){
   }
 
   #Departamento{
-    margin-top:80px;
+    margin-top:15px;
     width:750px;
     margin-left:0px;
     background-color:#7ACEE0;
