@@ -33,8 +33,18 @@
 
 
 <script>
+import axios from 'axios'
     export default {
-    
+      methods: {
+        getInventario(){
+          axios.get('http://localhost:3000/Inventario/getDMdata').then(response => {
+            console.log(response)
+          })
+        }
+      },
+      created(){
+        this.getInventario();
+      }
     };
 </script>
 
@@ -44,6 +54,7 @@ h2 {
   font-size: 1.6em;
   margin-left:45px;
   margin-top:35px;
+  color:black;
 }
 
 .table-container {

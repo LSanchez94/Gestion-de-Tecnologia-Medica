@@ -156,6 +156,7 @@ export default {
 <style scoped>
 h2 {
   font-size: 1.6em;
+  color:black;
 }
 h3 {
   font-size: 2em;

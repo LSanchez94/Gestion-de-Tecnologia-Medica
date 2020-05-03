@@ -54,7 +54,12 @@ export default {
                 localStorage.setItem('name', response.data[0].name);
                 localStorage.setItem('perfil', response.data[0].perfil);
                 localStorage.setItem('correo', response.data[0].correo);
-                this.$router.push('/Dashboard')
+
+                if(response.data[0].perfil == 'Médico'){
+                  this.$router.push('/DashboardDr')
+                }else {
+                  this.$router.push('/Dashboard')
+                }
               } else{
                 alert('Valores Erroneos')
               }

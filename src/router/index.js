@@ -12,7 +12,7 @@ import DashboardDr from '../views/DashboardDr.vue'
 import Reportes from '../views/Reportes.vue'
 import Calendario from '../views/Calendario.vue'
 import Inventario from '../views/Inventarios.vue'
-import Tarea from '../views/AgregarTarea.vue'
+import AgregarTarea from '../views/AgregarTarea.vue'
 import Departamentos from '../views/Departamentos.vue'
 import Contacto from '../views/contacto.vue'
 
@@ -88,9 +88,9 @@ const routes = [
   },
 
   {
-    path: '/Tarea',
-    name: 'Tarea',
-    component: Tarea
+    path: '/AgregarTarea',
+    name: 'AgregarTarea',
+    component: AgregarTarea
   },
 
   {
