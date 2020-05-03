@@ -87,7 +87,6 @@
         </table>
       </div>
 
-      <!-- EMPIEZA TABLA DE USUARIOS    -->
     </div>
   </div>
 </template>
