@@ -16,7 +16,7 @@
                 v-model="capacitacion.tema"
               />
             </div>
-
+              
             <div class="form-group">
               <input 
                 type="text" 
@@ -33,7 +33,7 @@
                 class="form-control" 
                 id="Descripcion" 
                 placeholder="Breve descripción" 
-                v-model="capacitacion.descripción"
+                v-model="capacitacion.descripcion"
               />
             </div>
 
@@ -57,7 +57,7 @@
               />
             </div>
 
-            <button class="btn" id="Button" @click="agregarCapacitacion()" >AGREGAR</button>
+            <button class="btn" type="button" id="Button" @click="agregarCapacitacion()" >AGREGAR</button>
 
         </form>
 
@@ -90,9 +90,10 @@ export default {
 methods:{
     agregarCapacitacion() {
       axios
-        .post("http://localhost:3000/capacitacion/addCap", this.capacitacion)
+        .post("http://localhost:3000/Capacitacion/addCap", this.capacitacion)
         .then(response => {
           alert(response.data);
+          console.log(response.data);
           //this.traerUsuarios();
         })
         .catch(err => {
@@ -102,9 +103,9 @@ methods:{
     },
     traerCapacitacion() {
       axios
-        .get("http://localhost:3000/Usuarios/getEventData")
+        .get("http://localhost:3000/Capacitacion/getEventData")
         .then(response => {
-          this.capacitacion = response.data;
+          this.capacitaciones = response.data;
           this.numerocapacitaciones = response.data.length;
 
           response.data.forEach(element => {
@@ -122,7 +123,7 @@ methods:{
     }
 },
 mounted(){
-    this.traerUsuarios();
+    this.traerCapacitacion();
 }
 };
 
