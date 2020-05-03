@@ -7,7 +7,7 @@
         <h2>Realizar Reporte</h2>
         <form class="row">
           <div class="form-group col-12">
-            <!-- <label for="exampleInputEmail1">Nombre Completo</label> -->
+     
             <input
               type="text"
               class="form-control"
@@ -24,7 +24,7 @@
               id="exampleInputEmail2"
               aria-describedby="NumSerieHelp"
               placeholder="Número de Serie"
-              v-model="reporte.NumeroSerie"
+              v-model="reporte.NumSerie"
             />
           </div>
           <div class="form-group col-6">

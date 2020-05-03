@@ -2,7 +2,7 @@
   <div>
     <div class="d-flex flex-wrap">
       <div class="col-12 border1">
-        <h2><router-link to="/Reportes" id="Linkreportes"> REPORTES</router-link></h2>
+        <h2><router-link to="/Reportes" id="Linkreportes"> REPORTES (<td>{{numeroreportes}})</td></router-link></h2>
 
 
         <div class="table-container">
@@ -11,7 +11,7 @@
             <tr>
               <th scope="col">#</th>
               <th scope="col">Departamento</th>
-              <th scope="col">N. serie</th>
+              <th scope="col">Serie</th>
               <th scope="col">Información</th>
               <th scope="col">Estado</th>
             </tr>
@@ -58,7 +58,7 @@ export default {
         info: "",
         estado: ""
       },
-      reportess: [],
+      reportes: [],
       numeroreportes: 0,
     };
   },
