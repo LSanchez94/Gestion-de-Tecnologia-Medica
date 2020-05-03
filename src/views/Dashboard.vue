@@ -132,7 +132,7 @@
 <style scoped>
 h2 {
   background: #ffa41b;
-  color: #FFF;
+  color:blanchedalmond;
   text-align: center;
   padding: 10px 0;
   width: 100%;
