@@ -2,7 +2,7 @@
 <div>
     <div class="container-fluid">
       <div class="row">
-      <h1> DATOS DEL DISPOSITIVO MEDICO: </h1>
+      <h1> Datos del Dispositivo Médico: </h1>
       <div class = "NumSerie" >
           <form>
           <div class="form-group">
@@ -43,8 +43,8 @@
           </form>
       </div>
 
-       <button class="Agregar" id="login_button" @click="validarUsuario()">Agregar</button>
-       <button class="Regresar" onClick="history.go(-1);">Regresar</button>
+       <button class="Agregar" id="login_button" @click="validarUsuario()">AGREGAR</button>
+       <button class="Regresar" onClick="history.go(-1);">REGRESAR</button>
       </div>
     </div>
 </div>
@@ -53,132 +53,79 @@
 
 <style scoped>
 h1{
-font-family: Poppins;
-font-style: normal;
-font-weight: 600;
-font-size: 40px;
-line-height: 60px;
-color: #000000;
-}
-
-h2{
-font-family: Poppins;
-font-style: normal;
-font-weight: normal;
-font-size: 35px;
-line-height: 52px;
-color: #FFFFFF;
-}
-
-h3{
-font-family: Poppins;
-font-style: normal;
-font-weight: 600;
-font-size: 35px;
-line-height: 52px;
-color: #FFFFFF;
-}
-
-h4{
-position: absolute;
-height: 60px;
-left: 320px;
-top: 462px;
-font-family: Poppins;
-font-style: normal;
-font-weight: 600;
-font-size: 40px;
-line-height: 60px;
-color: #000000;
-left: 20px
+    font: bold;
+    font-weight: 600;
+    font-size: 1.6em;
+    color: #000000;
+    margin-top: 40px;
+    margin-left: 30px;
 }
 
 #NumSerie{
-position: absolute;
-width: 410px;
-height: 48px;
-left: 320px;
-top: 140px;
-background: #7ACEE0;
-border: 1px solid #7ACEE0;
-box-sizing: border-box;
-box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
-border-radius: 10px;
+    position: absolute;
+    width: 350px;
+    height: 48px;
+    left: 350px;
+    top: 175px;
+    background: #7ACEE0;
 }
 
 #Departamento{
-position: absolute;
-width: 632px;
-height: 48px;
-left: 758px;
-top: 140px;
-background: #7ACEE0;
-border: 1px solid #7ACEE0;
-box-sizing: border-box;
-box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
-border-radius: 10px;
+    position: absolute;
+    width: 500px;
+    height: 48px;
+    left: 715px;
+    top: 175px;
+    background: #7ACEE0;
 }
 
 #TipoMtto{
-position: absolute;
-width: 1071px;
-height: 48px;
-left: 320px;
-top: 225px;
-background: #7ACEE0;
-border: 1px solid #7ACEE0;
-box-sizing: border-box;
-box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
-border-radius: 10px;
+    position: absolute;
+    width: 865px;
+    height: 48px;
+    left: 350px;
+    top: 230px;
+    background: #7ACEE0;
 }
 
 #FechaMtto{
-position: absolute;
-width: 616px;
-height: 48px;
-left: 320px;
-top: 310px;
-background: #7ACEE0;
-border: 1px solid #7ACEE0;
-box-sizing: border-box;
-box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
-border-radius: 10px;
+    position: absolute;
+    width: 350px;
+    height: 48px;
+    left: 350px;
+    top: 285px;
+    background: #7ACEE0;
 }
 
 #Encargado{
-position: absolute;
-width: 410px;
-height: 48px;
-left: 980px;
-top: 310px;
-background: #7ACEE0;
-border: 1px solid #7ACEE0;
-box-sizing: border-box;
-border-radius: 10px;
+    position: absolute;
+    width: 500px;
+    height: 48px;
+    left: 715px;
+    top: 285px;
+    background: #7ACEE0;
 }
 
 .Agregar{
-position: absolute;
-width: 410px;
-height: 50px;
-left: 980px;
-top: 379px;
-background: #1DA0F2;
-border: 1px solid #00A8CC;
-box-sizing: border-box;
-box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
-border-radius: 25px;
+    position: absolute;
+    color:#FFF;
+    width: 200px;
+    height: 40px;
+    left: 1000px;
+    top: 350px;
+    background: #005082;
+    border-radius: 25px;
 }
 
 .Regresar{
-position: absolute;
-width: 228px;
-height: 49px;
-left: 1160px;
-top: 445px;
-background: #005082;
-border: 1px solid #005082;
-box-sizing: border-box;
-border-radius: 25px;
+    position: absolute;
+    color:#FFF;
+    width: 228px;
+    height: 49px;
+    left: 975px;
+    top: 550px;
+    background:#1DA0F2;
+    border-radius: 25px;
+    font-size:1.2em;
 }
 </style>

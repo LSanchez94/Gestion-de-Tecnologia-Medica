@@ -4,7 +4,7 @@
       <div class="row">
         <div class="d-flex flex-wrap justify-content-between">
 <!--ALTA DE DM -->
-          <h1 class="w-100"> Alta de Dispositivos Medicos: </h1>
+          <h1 class="w-100">  Alta de Dispositivos Medicos: </h1>
           
           <form>
           <div class="form-group">
@@ -71,7 +71,7 @@
 
 <!--BAJA DE DM -->
 <div class="w-100">
-          <h4> Baja de Dispositivos Medicos: </h4>
+          <h1>Baja de Dispositivos Medicos: </h1>
 
 </div>
           <form>
@@ -94,7 +94,7 @@
 
     <button class="DarBaja" id="login_button" @click="validarUsuario()">Dar de Baja</button>
     <button class="Inventario" id="login_button" @click="validarUsuario()">Inventario</button>
-    <button class="Regresar" onClick="history.go(-1);">Regresar</button>
+    <button class="Regresar" onClick="history.go(-1);">REGRESAR</button>
 
 
           </div>
@@ -104,8 +104,6 @@
 </template> 
 
 <style scoped>
-
-
 .form-group input{
 background: #7ACEE0;
 border: 1px solid #7ACEE0;
@@ -114,43 +112,12 @@ border-radius: 10px;
 }
 
 h1{
-font-family: Poppins;
-font-style: normal;
+margin-left:20px;
+font-style: bold;
 font-weight: 600;
-font-size: 40px;
+font-size: 1.6em;
 line-height: 60px;
 color: #000000;
-}
-
-h2{
-font-family: Poppins;
-font-style: normal;
-font-weight: normal;
-font-size: 35px;
-line-height: 52px;
-color: #FFFFFF;
-}
-
-h3{
-font-family: Poppins;
-font-style: normal;
-font-weight: 600;
-font-size: 35px;
-line-height: 52px;
-color: #FFFFFF;
-}
-
-h4{
-height: 60px;
-left: 320px;
-top: 468px;
-font-family: Poppins;
-font-style: normal;
-font-weight: 600;
-font-size: 40px;
-line-height: 60px;
-color: #000000;
-left: 20px
 }
 
 #NumSerie{
@@ -326,16 +293,16 @@ border-radius: 25px;
 }
 
 .Regresar{
-width: 228px;
-height: 49px;
-left: 1304px;
-top: 728px;
-background: #005082;
-border: 1px solid #005082;
-box-sizing: border-box;
-box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
-border-radius: 25px;
+    margin-left: 620px;
+    margin-top: 20px;
+    background: #1DA0F2;
+    box-sizing: border-box; 
+    border-radius: 25px;
+    color:#fff;
+    width: 228px;
+    font-size:1.2em;
 }
+
 
 </style>
 

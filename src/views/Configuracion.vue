@@ -86,7 +86,7 @@
           </tbody>
         </table>
       </div>
-
+ <button class="btn" id="RectanguloRegresar" onClick="history.go(-1);">REGRESAR</button>
     </div>
   </div>
 </template>
@@ -203,5 +203,20 @@ h4 {
   padding: 15px;
   text-align: center;
   border-radius: 25px;
+}
+#RectanguloRegresar{
+    width: 228px;
+    margin-left: 650px;
+    top:100px;
+    background: #1DA0F2;
+    box-sizing: border-box; 
+    border-radius: 25px;
+    color:#fff;
+}
+
+#TextoRegresar{
+    color: #FFFFFF;
+    margin-left: 45px;
+    margin-top: 3px;
 }
 </style>

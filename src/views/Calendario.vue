@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid">
     <div class="AgregarMto">
-      <router-link to="/Mantenimiento" id="Linkmtto"> Agregar Mantenimiento </router-link>
+      <router-link to="/AgregarMtto" id="Linkmtto"> Agregar Mantenimiento </router-link>
     </div>
     <div class="AgregarCap">
       <router-link to="/Capacitacion" id="Linkcap"> Agregar Capacitación </router-link>
@@ -13,6 +13,7 @@
     </div>
     <div class="Semana">
     </div>
+    <button class="Regresar" onClick="history.go(-1);">REGRESAR</button>
   </div>
 
 </template>
@@ -23,33 +24,36 @@
   /* Rectangulo */
   width: 40%;
   margin-left: 25px ;
-  top: 170px;
+  margin-top: 40px;
   background: #00A8CC;
   border: 1px solid #00A8CC;
-  box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
   border-radius: 25px;
   text-align: center;
+  font-size: 0.9em;
   
-  
+}
+.Regresar{
+    width: 200px;
+    margin-left: 600px;
+    margin-top: 50px;
+    background: #1DA0F2;
+    box-sizing: border-box; 
+    border-radius: 25px;
+    color:#fff;
+    height: 49px;
+    font-size:1.2em;
+    
 }
 
-h2 {
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: bolder;
-  font-size: 1.6em;
-  margin-left: 5px;
-  color: #FFFFFF;
-}
 
 .AgregarCap {
   
   width: 40%;
   margin-left: 25px;
-  margin-top: 30px;
+  margin-top: 10px;
   background: #00A8CC;
   border: 1px solid #00A8CC;
-  box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
+  font-size: 0.9em;
   border-radius: 25px;
   text-align: center;
 }
@@ -57,11 +61,11 @@ h2 {
 .AgregarTarea {
   width: 40%;
   margin-left: 25px;
-  margin-top: 30px;
-
+  margin-top: 10px;
+  font-size: 0.9em;
   background: #00A8CC;
   border: 1px solid #00A8CC;
-  box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
+
   border-radius: 25px;
   text-align: center;
 

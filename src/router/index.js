@@ -15,6 +15,7 @@ import Inventario from '../views/Inventarios.vue'
 import AgregarTarea from '../views/AgregarTarea.vue'
 import Departamentos from '../views/Departamentos.vue'
 import Contacto from '../views/contacto.vue'
+import ConfiguracionDR from '../views/ConfiguracionDR.vue'
 
 Vue.use(VueRouter)
 
@@ -103,6 +104,12 @@ const routes = [
     path: '/Contacto',
     name: 'Contacto',
     component: Contacto
+  },
+  
+  {
+    path: '/ConfiguracionDR',
+    name: 'ConfiguracionDR',
+    component: ConfiguracionDR
   },
 
 ]
