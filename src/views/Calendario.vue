@@ -7,7 +7,7 @@
       <router-link to="/Capacitacion" id="Linkcap"> Agregar Capacitación </router-link>
     </div>
     <div class="AgregarTarea">
-      <router-link to="/Tarea" id="Linktarea"> Agregar Tarea </router-link>
+      <router-link to="/Tareas" id="Linktarea"> Agregar Tarea </router-link>
     </div>
     <div class="Calendario"> 
     </div>
