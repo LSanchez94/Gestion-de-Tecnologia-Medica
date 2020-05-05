@@ -2,112 +2,30 @@
   <div>
     <div class="d-flex flex-wrap">
       <div class="col-12 border1">
-        <h2><router-link to="/Reportes" id="Linkreportes"> REPORTES</router-link></h2>
+        <h2><router-link to="/Reportes" id="Linkreportes"> REPORTES (<td>{{numeroreportes}})</td></router-link></h2>
 
 
         <div class="table-container">
         <table class="table table-striped">
-          <thead>
+           <thead>
             <tr>
               <th scope="col">#</th>
-              <th scope="col">Titulo</th>
-              <th scope="col">Fecha</th>
-              <th scope="col">Ver Reporte</th>
+              <th scope="col">Departamento</th>
+              <th scope="col">Serie</th>
+              <th scope="col">Información</th>
+              <th scope="col">Estado</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
+            <tr v-for="(r, index) in reportes" :key="index">
+              <th scope="row">{{index+1}}</th>
+              <td>{{r.Departamento}}</td>
+              <td>{{r.NumSerie}}</td>
+              <td>{{r.info}}</td>
+              <td>{{r.estado}}</td>
             </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
-            </tr>
-                        <tr>
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
-            </tr>
-                        <tr>
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
-            </tr>
-                        <tr>
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
-            </tr>
-                        <tr>
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
-            </tr>
-
           </tbody>
+
         </table>
         </div>
       </div>
@@ -129,6 +47,41 @@
   </div>
 </template>
 
+<script>
+import axios from "axios";
+export default {
+  data() {
+    return {
+      reportes: {
+        Departamento: "",
+        NumSerie: "",
+        info: "",
+        estado: ""
+      },
+      reportes: [],
+      numeroreportes: 0,
+    };
+  },
+  methods: {
+    traerReportes() {
+      axios
+        .get("http://localhost:3000/reportes/getReportes")
+        .then(response => {
+          this.reportes = response.data;
+          this.numeroreportes = response.data.length;
+          })
+        .catch(err => {
+          alert("NO FUNCIONA EL API");
+          console.log(err);
+        });
+    }
+  },
+  mounted() {
+    this.traerReportes();
+  }
+};
+</script>
+
 <style scoped>
 h2 {
   background: #ffa41b;
@@ -142,11 +95,13 @@ h2 {
 h3{
   font-size: 2em;
   font-weight: bolder;
+  color: #FFF;
 }
 
 h4{
   font-size: 3em;
   font-weight: bolder;
+  color: #FFF;
 }
 .color1 {
   background-color: #00a8cc;

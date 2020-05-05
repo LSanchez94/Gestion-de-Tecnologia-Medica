@@ -1,122 +1,117 @@
-<template>
-<div>
-    <div class="container-fluid">
+ <template>
+ <div>
+    <div class="container-fluid" style="position:relative">
       <div class="row">
-          <h1> Alta de Dispositivos Medicos: </h1>
-          </div>
+        <div class="d-flex flex-wrap justify-content-between">
+<!--ALTA DE DM -->
+          <h1 class="w-100">  Alta de Dispositivos Medicos: </h1>
           
           <form>
-          <div class="form-group NumSerie">
-          <label for="exampleInputEmail1">Numero de Serie:</label>
-          <input type="text" class="form-control" id="exampleInputNSerie1" aria-describedby="nserieHelp" placeholder="Numero de Serie">
+          <div class="form-group">
+          <input type="text" class="form-control"  placeholder="Numero de Serie">
           </div>
           </form>
     
           <form>
-          <div class="form-group Marca">
-          <label for="exampleInputMarca1">Marca:</label>
-          <input type="text" class="form-control" id="exampleInputMarca1" aria-describedby="marcaHelp" placeholder="Marca">
+          <div class="form-group">
+          <input type="text" class="form-control" placeholder="Marca">
           </div>
           </form>
 
           <form>
-          <div class="form-group Modelo">
-          <label for="exampleInputModelo1">Modelo:</label>
-          <input type="text" class="form-control" id="exampleInputModelo1" aria-describedby="modeloHelp" placeholder="Modelo">
+          <div class="form-group ">
+          <input type="text" class="form-control"  placeholder="Modelo">
           </div>
           </form>
 
           <form>
-          <div class="form-group Alias">
-          <label for="exampleInputAlias1">Alias:</label>
-          <input type="text" class="form-control" id="exampleInputAlias1" aria-describedby="aliasHelp" placeholder="Alias">
+          <div class="form-group">
+          <input type="text" class="form-control"  placeholder="Alias">
           </div>
           </form>
 
           <form>
-          <div class="form-group Departamento">
-          <label for="exampleInputDepartamento1">Departamento:</label>
-          <input type="text" class="form-control" id="exampleInputDepartamento1" aria-describedby="departamentoHelp" placeholder="Departamento">
+          <div class="form-group">
+          <input type="text" class="form-control"  placeholder="Departamento">
           </div>
           </form>
 
           <form>
-          <div class="form-group EdoFuncional">
-          <label for="exampleInputEdoFuncional1">Estado Funcional:</label>
-          <input type="text" class="form-control" id="exampleInputEdoFuncional1" aria-describedby="edofuncionalHelp" placeholder="Estado Funcional">
+          <div class="form-group">
+          <input type="text" class="form-control" placeholder="Estado Funcional">
           </div>
           </form>
 
           <form>
-          <div class="form-group FAdq">
-          <label for="exampleInputFecha1">Fecha de Adquisicion:</label>
-          <input type="text" class="form-control" id="exampleInputFecha1" aria-describedby="fechaHelp" placeholder="Fecha de Adquisicion">
+          <div class="form-group">
+          <input type="text" class="form-control" placeholder="Fecha de Adquisicion">
           </div>
           </form>
 
           <form>
-          <div class="form-group Garantia">
-          <label for="exampleInputGarantia1">Garantia:</label>
-          <input type="text" class="form-control" id="exampleInputGarantia1" aria-describedby="garantiaHelp" placeholder="Garantia">
+          <div class="form-group ">
+          <input type="text" class="form-control" placeholder="Garantia">
           </div>
           </form>
 
           <form>
-          <div class="form-group MttoRealizados">
-          <label for="exampleInputMRealizados1">Mantenimientos Realizados:</label>
-          <input type="text" class="form-control" id="exampleInputMRealizados1" aria-describedby="mrealizadosHelp" placeholder="Mantenimientos Realizados">
+          <div class="form-group">
+          <input type="text" class="form-control"  placeholder="Mantenimientos Realizados">
           </div>
           </form>
-
+        <div class="w-100">
        <button class="Agregar" id="login_button" @click="validarUsuario()">Agregar</button>
+        </div>
+
+</div>
+        </div>
+          
+          <div class="mt-5 d-flex flex-wrap justify-content-between">
+
+
+<!--BAJA DE DM -->
+<div class="w-100">
+          <h1>Baja de Dispositivos Medicos: </h1>
+
+</div>
+          <form>
+          <div class="form-group">
+          <input type="text" class="form-control"  placeholder="Numero de Serie">
+          </div>
+          </form>
+
+          <form>
+          <div class="form-group">
+          <input type="text" class="form-control"  placeholder="Modelo">
+          </div>
+          </form>
+
+          <form>
+          <div class="form-group">
+          <input type="text" class="form-control"  placeholder="Alias">
+          </div>
+          </form>
+
+    <button class="DarBaja" id="login_button" @click="validarUsuario()">Dar de Baja</button>
+    <button class="Inventario" id="login_button" @click="validarUsuario()">Inventario</button>
+    <button class="Regresar" onClick="history.go(-1);">REGRESAR</button>
+
+
+          </div>
+          
       </div>
     </div>
 </template> 
 
-<!-- -------------------------------------------------------------------------------------------------------------- -->
-<script>
-export default {
-    data(){
-        return{
-        }
-    },
-    methods:{
-        validarUsuario(){
-            this.$router.push('/Dashboard')
-        }
-    }
-};
-</script>
-
-
-<style scooped>
-h1{
-font-family: Poppins;
-font-style: normal;
-font-weight: 600;
-font-size: 40px;
-line-height: 60px;
-color: #000000;
+<style scoped>
+.form-group input{
+background: #7ACEE0;
+border: 1px solid #7ACEE0;
+box-sizing: border-box;
+border-radius: 10px;
 }
 
-h2{
-font-family: Poppins;
-font-style: normal;
-font-weight: normal;
-font-size: 35px;
-line-height: 52px;
-color: #FFFFFF;
-}
-
-h3{
-font-family: Poppins;
-font-style: normal;
-font-weight: 600;
-font-size: 35px;
-line-height: 52px;
-color: #FFFFFF;
-}
-
+<<<<<<< HEAD
 h4{
     left: 20px
 }
@@ -130,105 +125,110 @@ h4{
   padding: 15px;
   text-align: center;
   border-radius: 25px;
+=======
+h1{
+margin-left:20px;
+font-style: bold;
+font-weight: 600;
+font-size: 1.6em;
+line-height: 60px;
+color: #000000;
+>>>>>>> b7846b8605861b3bfbecb99465b3106d83068a7f
 }
 
-.NumSerie{
-position: absolute;
+#NumSerie{
 width: 410px;
 height: 48px;
-left: 620px;
-top: 355px;
+left: 320px;
+top: 135px;
 background: #7ACEE0;
 border: 1px solid #7ACEE0;
 box-sizing: border-box;
-box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
 border-radius: 10px;
 }
- 
-.Marca{
-position: absolute;
+
+#Marca{
 width: 194px;
 height: 48px;
-left: 1037px;
-top: 355px;
+left: 737px;
+top: 135px;
 background: #7ACEE0;
 border: 1px solid #7ACEE0;
 box-sizing: border-box;
-box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
 border-radius: 10px;
 }
 
-.Modelo{
-position: absolute;
+#Modelo{
 width: 337px;
 height: 48px;
-left: 1238px;
-top: 355px;
+left: 938px;
+top: 135px;
 background: #7ACEE0;
 border: 1px solid #7ACEE0;
 box-sizing: border-box;
-box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
 border-radius: 10px;
 }
 
-.Alias{
-position: absolute;
+#Alias{
 width: 279px;
 height: 48px;
-left: 1593px;
-top: 355px;
+left: 1293px;
+top: 135px;
 background: #7ACEE0;
 border: 1px solid #7ACEE0;
 box-sizing: border-box;
-box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
 border-radius: 10px;
 }
 
-.Departamento{
-position: absolute;
+#Departamento{
 width: 410px;
 height: 48px;
-left: 620px;
-top: 429px;
+left: 320px;
+top: 209px;
 background: #7ACEE0;
 border: 1px solid #7ACEE0;
 box-sizing: border-box;
-box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
 border-radius: 10px;
 }
 
-.EdoFuncional{
-position: absolute;
+#EdoFuncional{
 width: 470px;
 height: 48px;
-left: 1037px;
-top: 429px;
+left: 737px;
+top: 209px;
 background: #7ACEE0;
 border: 1px solid #7ACEE0;
 box-sizing: border-box;
-box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
 border-radius: 10px; 
 }
 
-.FAdq{
-position: absolute;
+#FAdq{
 width: 353px;
 height: 48px;
-left: 1519px;
-top: 429px;
+left: 1219px;
+top: 209px;
 background: #7ACEE0;
 border: 1px solid #7ACEE0;
 box-sizing: border-box;
-box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
 border-radius: 10px;
 }
 
-.Garantia{
-position: absolute;
+#Garantia{
 width: 470px;
 height: 48px;
-left: 620px;
-top: 503px;
+left: 320px;
+top: 283px;
+background: #7ACEE0;
+border: 1px solid #7ACEE0;
+box-sizing: border-box;
+border-radius: 10px;
+}
+
+#MttoRealizados{
+width: 764px;
+height: 48px;
+left: 808px;
+top: 283px;
 background: #7ACEE0;
 border: 1px solid #7ACEE0;
 box-sizing: border-box;
@@ -236,31 +236,89 @@ box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
 border-radius: 10px;
 }
 
-.MttoRealizados{
-position: absolute;
-width: 764px;
+#NumSerie2{
+width: 410px;
 height: 48px;
-left: 1108px;
-top: 503px;
+left: 320px;
+top: 528px;
 background: #7ACEE0;
 border: 1px solid #7ACEE0;
 box-sizing: border-box;
 box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+}
+
+#Modelo2{
+width: 467px;
+height: 48px;
+left: 752px;
+top: 528px;
+background: #7ACEE0;
+border: 1px solid #7ACEE0;
+box-sizing: border-box;
+box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+}
+
+#Alias2{
+position: absolute;
+width: 337px;
+height: 48px;
+left: 1235px;
+top: 528px;
+background: #7ACEE0;
+border: 1px solid #7ACEE0;
+box-sizing: border-box;
 border-radius: 10px;
 }
 
 .Agregar{
-position: absolute;
 width: 410px;
 height: 50px;
-left: 1462px;
-top: 580px;
+left: 1162px;
+top: 360px;
 background: #1DA0F2;
 border: 1px solid #00A8CC;
 box-sizing: border-box;
 box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
 border-radius: 25px;
 }
+
+.DarBaja{
+width: 410px;
+height: 50px;
+left: 1162px;
+top: 608px;
+background: #1DA0F2;
+border: 1px solid #00A8CC;
+box-sizing: border-box;
+box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
+border-radius: 25px;
+}
+
+.Inventario{
+width: 393px;
+height: 60px;
+left: 320px;
+top: 712px;
+background: #005082;
+border: 1px solid #005082;
+box-sizing: border-box;
+box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
+border-radius: 25px;
+}
+
+.Regresar{
+    margin-left: 620px;
+    margin-top: 20px;
+    background: #1DA0F2;
+    box-sizing: border-box; 
+    border-radius: 25px;
+    color:#fff;
+    width: 228px;
+    font-size:1.2em;
+}
+
 
 </style>
 

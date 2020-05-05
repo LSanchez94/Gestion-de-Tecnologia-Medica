@@ -12,9 +12,14 @@ import DashboardDr from '../views/DashboardDr.vue'
 import Reportes from '../views/Reportes.vue'
 import Calendario from '../views/Calendario.vue'
 import Inventario from '../views/Inventarios.vue'
+<<<<<<< HEAD
 import Tareas from '../views/AgregarTarea.vue'
+=======
+import AgregarTarea from '../views/AgregarTarea.vue'
+>>>>>>> b7846b8605861b3bfbecb99465b3106d83068a7f
 import Departamentos from '../views/Departamentos.vue'
 import Contacto from '../views/contacto.vue'
+import ConfiguracionDR from '../views/ConfiguracionDR.vue'
 
 Vue.use(VueRouter)
 
@@ -88,9 +93,15 @@ const routes = [
   },
 
   {
+<<<<<<< HEAD
     path: '/Tareas',
     name: 'Tareas',
     component: Tareas
+=======
+    path: '/AgregarTarea',
+    name: 'AgregarTarea',
+    component: AgregarTarea
+>>>>>>> b7846b8605861b3bfbecb99465b3106d83068a7f
   },
 
   {
@@ -103,6 +114,12 @@ const routes = [
     path: '/Contacto',
     name: 'Contacto',
     component: Contacto
+  },
+  
+  {
+    path: '/ConfiguracionDR',
+    name: 'ConfiguracionDR',
+    component: ConfiguracionDR
   },
 
 ]

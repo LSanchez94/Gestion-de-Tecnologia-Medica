@@ -2,13 +2,11 @@
 <div>
     <div class="container-fluid">
       <div class="row">
-          <h1> DATOS DEL DISPOSITIVO MEDICO: </h1>
-
+      <h1> Datos del Dispositivo Médico: </h1>
       <div class = "NumSerie" >
           <form>
           <div class="form-group">
-          <label for="exampleInputEmail1">Numero de Serie:</label>
-          <input type="text" class="form-control" id="exampleInputNSerie1" aria-describedby="nserieHelp" placeholder="Numero de Serie">
+          <input type="text" class="form-control" id="NumSerie" placeholder="Numero de Serie">
           </div>
           </form>
       </div>
@@ -16,178 +14,118 @@
       <div class = "Departamento" >
           <form>
           <div class="form-group">
-          <label for="exampleInputDepartamento1">Departamento:</label>
-          <input type="text" class="form-control" id="exampleInputDepartamento1" aria-describedby="departamentoHelp" placeholder="Departamento">
+          <input type="text" class="form-control" id="Departamento" placeholder="Departamento">
           </div>
           </form>
       </div>
 
-        <div class = "TipoMtto" >
+       <div class = "TipoMtto" >
           <form>
           <div class="form-group">
-          <label for="exampleInputTipoMantenimiento1">Tipo de Mantenimiento:</label>
-          <input type="text" class="form-control" id="exampleInputTipoMantenimiento1" aria-describedby="tipomttoHelp" placeholder="Tipo de Mantenimiento">
+          <input type="text" class="form-control" id="TipoMtto" placeholder="Tipo de Mantenimiento">
           </div>
           </form>
       </div>
 
-         <div class = "FechaMtto">
+       <div class = "FechaMtto">
           <form>
           <div class="form-group">
-          <label for="exampleInputFechaMtto1">Fecha a dar Mantenimiento:</label>
-          <input type="text" class="form-control" id="exampleInputFechaMtto1" aria-describedby="fechamttoHelp" placeholder="Fecha a dar Mantenimiento">
+          <input type="text" class="form-control" id="FechaMtto" placeholder="Fecha a dar Mantenimiento">
           </div>
           </form>
        </div>
 
-      <div class = "Encargado">
+       <div class = "Encargado">
           <form>
           <div class="form-group">
-          <label for="exampleInputEncargado1">Encargado:</label>
-          <input type="text" class="form-control" id="exampleInputEncargado1" aria-describedby="encargadoHelp" placeholder="Encargado">
+          <input type="text" class="form-control" id="Encargado" placeholder="Encargado">
           </div>
           </form>
       </div>
 
-       <button class="Agregar" id="login_button" @click="validarUsuario()">Agregar</button>
-       <button class="Regresar" id="login_button" @click="validarUsuario()">Regresar</button>
+       <button class="Agregar" id="login_button" @click="validarUsuario()">AGREGAR</button>
+       <button class="Regresar" onClick="history.go(-1);">REGRESAR</button>
       </div>
     </div>
 </div>
+</template>
 
- </template> 
-
-<script>
-export default {
-    data(){
-        return{
-        }
-    },
-    methods:{
-        validarUsuario(){
-            this.$router.push('/Dashboard')
-        }
-    }
-};
-</script>
 
 <style scoped>
 h1{
-font-family: Poppins;
-font-style: normal;
-font-weight: 600;
-font-size: 40px;
-line-height: 60px;
-color: #000000;
+    font: bold;
+    font-weight: 600;
+    font-size: 1.6em;
+    color: #000000;
+    margin-top: 40px;
+    margin-left: 30px;
 }
 
-h2{
-font-family: Poppins;
-font-style: normal;
-font-weight: normal;
-font-size: 35px;
-line-height: 52px;
-color: #FFFFFF;
+#NumSerie{
+    position: absolute;
+    width: 350px;
+    height: 48px;
+    left: 350px;
+    top: 175px;
+    background: #7ACEE0;
 }
 
-h3{
-font-family: Poppins;
-font-style: normal;
-font-weight: 600;
-font-size: 35px;
-line-height: 52px;
-color: #FFFFFF;
+#Departamento{
+    position: absolute;
+    width: 500px;
+    height: 48px;
+    left: 715px;
+    top: 175px;
+    background: #7ACEE0;
 }
 
-.NumSerie{
-position: absolute;
-width: 410px;
-height: 48px;
-left: 639px;
-top: 343px;
-background: #7ACEE0;
-border: 1px solid #7ACEE0;
-box-sizing: border-box;
-box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
-border-radius: 10px;
+#TipoMtto{
+    position: absolute;
+    width: 865px;
+    height: 48px;
+    left: 350px;
+    top: 230px;
+    background: #7ACEE0;
 }
 
-.Departamento{
-position: absolute;
-width: 632px;
-height: 48px;
-left: 1078px;
-top: 343px;
-background: #7ACEE0;
-border: 1px solid #7ACEE0;
-box-sizing: border-box;
-box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
-border-radius: 10px;
+#FechaMtto{
+    position: absolute;
+    width: 350px;
+    height: 48px;
+    left: 350px;
+    top: 285px;
+    background: #7ACEE0;
 }
 
-.TipoMtto{
-position: absolute;
-width: 1071px;
-height: 48px;
-left: 639px;
-top: 425px;
-background: #7ACEE0;
-border: 1px solid #7ACEE0;
-box-sizing: border-box;
-box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
-border-radius: 10px;
-}
-
-.FechaMtto{
-position: absolute;
-width: 616px;
-height: 48px;
-left: 639px;
-top: 510px;
-background: #7ACEE0;
-border: 1px solid #7ACEE0;
-box-sizing: border-box;
-box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
-border-radius: 10px;
-}
-
-.Encargado{
-position: absolute;
-width: 410px;
-height: 48px;
-left: 1300px;
-top: 503px;
-background: #7ACEE0;
-border: 1px solid #7ACEE0;
-box-sizing: border-box;
-box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
-border-radius: 10px;
+#Encargado{
+    position: absolute;
+    width: 500px;
+    height: 48px;
+    left: 715px;
+    top: 285px;
+    background: #7ACEE0;
 }
 
 .Agregar{
-position: absolute;
-width: 410px;
-height: 50px;
-left: 1300px;
-top: 599px;
-background: #1DA0F2;
-border: 1px solid #00A8CC;
-box-sizing: border-box;
-box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
-border-radius: 25px;
+    position: absolute;
+    color:#FFF;
+    width: 200px;
+    height: 40px;
+    left: 1000px;
+    top: 350px;
+    background: #005082;
+    border-radius: 25px;
 }
 
 .Regresar{
-position: absolute;
-width: 228px;
-height: 49px;
-left: 1624px;
-top: 988px;
-background: #005082;
-border: 1px solid #005082;
-box-sizing: border-box;
-border-radius: 25px;
+    position: absolute;
+    color:#FFF;
+    width: 228px;
+    height: 49px;
+    left: 975px;
+    top: 550px;
+    background:#1DA0F2;
+    border-radius: 25px;
+    font-size:1.2em;
 }
-
-</style>
 </style>
