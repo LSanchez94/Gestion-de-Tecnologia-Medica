@@ -26,15 +26,25 @@
       </div>
 
       
-
+      <button class="btn" id="Regresar" onClick="history.go(-1);">REGRESAR</button>
     </div>
   </div>
 </template>
 
 
 <script>
+import axios from 'axios'
     export default {
-    
+      methods: {
+        getInventario(){
+          axios.get('http://localhost:3000/Inventario/getDMdata').then(response => {
+            console.log(response)
+          })
+        }
+      },
+      created(){
+        this.getInventario();
+      }
     };
 </script>
 
@@ -44,6 +54,7 @@ h2 {
   font-size: 1.6em;
   margin-left:45px;
   margin-top:35px;
+  color:black;
 }
 
 .table-container {
@@ -53,7 +64,7 @@ h2 {
 }
 #Tabla{
   position: relative;
-  border-radius: 20px;
+  border-radius: 15px;
   margin-left:35px;
   margin-right: 35px;
   border: 4px solid #005082;
@@ -71,4 +82,14 @@ h2 {
     width:22%;
 }
 
+#Regresar{
+    margin-left: 600px;
+    margin-top: 100px;
+    background: #1DA0F2;
+    box-sizing: border-box; 
+    border-radius: 25px;
+    color:#fff;
+    width: 228px;
+    font-size:0.8em;
+}
 </style>

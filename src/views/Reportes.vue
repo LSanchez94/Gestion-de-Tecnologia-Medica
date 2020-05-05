@@ -1,94 +1,63 @@
 <template>
   <div class="container-fluid">
     <div class="row">
-      
       <h1 class="mt-3" id="TReportes">Reportes:</h1>
-      
-      
-      <!-- {{reportes}} -->
-      <div class="table-container w-100 mt-1">
+      <!-- Tabla reportes -->
+      <div class="table-container">
         <table class="table table-striped">
-          <thead>
+           <thead>
             <tr>
               <th scope="col">#</th>
               <th scope="col">Departamento</th>
-              <th scope="col">Número de Serie</th>
-              <th scope="col">Descripción</th>
+              <th scope="col">Serie</th>
+              <th scope="col">Información</th>
               <th scope="col">Estado</th>
             </tr>
           </thead>
           <tbody>
-            <tr v-for="(u, index) in reportes" :key="index">
+            <tr v-for="(r, index) in reportes" :key="index">
               <th scope="row">{{index+1}}</th>
-              <td>{{u.Departamento}}</td>
-              <td>{{u.NumeroSerie}}</td>
-              <td>{{u.info}}</td>
-              <td>{{u.estado}}</td>
+              <td>{{r.Departamento}}</td>
+              <td>{{r.NumSerie}}</td>
+              <td>{{r.info}}</td>
+              <td>{{r.estado}}</td>
             </tr>
           </tbody>
-        </table>
-      </div>
 
-      <!-- EMPIEZA TABLA DE USUARIOS    -->
+        </table>
+        </div>
     
     </div>
   
-  <input type="button" value="Regresar" onClick="history.go(-1);">
-
+  <button class="btn" type="button" id="Button" onClick="history.go(-1)" >REGRESAR</button>
   </div>
 
 </template>
 
 
 <script>
-
 import axios from "axios";
 export default {
   data() {
     return {
-      reporte: {
+      reportes: {
         Departamento: "",
-        info: "",
-        estado: "",
         NumSerie: "",
+        info: "",
+        estado: ""
       },
       reportes: [],
       numeroreportes: 0,
-      Realizados: 0,
-      NoRealizados: 0
     };
   },
   methods: {
-    agregarReporte() {
+    traerReportes() {
       axios
-        .post("http://localhost:3000/Reportes/addReporte", this.reporte)
-        .then(response => {
-          alert(response.data);
-          this.traerReportes();
-        })
-        .catch(err => {
-          alert("NO FUNCIONA EL API");
-          console.log(err);
-        });
-    },
-    
-    traerUsuarios() {
-      axios
-        .get("http://localhost:3000/Reportes/getReportes")
+        .get("http://localhost:3000/reportes/getReportes")
         .then(response => {
           this.reportes = response.data;
           this.numeroreportes = response.data.length;
-
-          this.Realizados = 0;
-          this.NoRealizados = 0;
-          response.data.forEach(element => {
-            if (element.perfil == "He recibido asistencia") {
-              this.Realizados++;
-            } else {
-              this.NoRealizados++;
-            }
-          });
-        })
+          })
         .catch(err => {
           alert("NO FUNCIONA EL API");
           console.log(err);
@@ -106,28 +75,31 @@ export default {
 
 .table-container {
   overflow-y: scroll;
-  min-height: 41vh;
-  max-height: 41vh;
-  margin-left:35px;
-  margin-right: 35px;
+  margin-left:20px;
+  margin-top: 15px;
   border: 4px solid #005082;
-  
+  width:4000px;
+  font-size:1.2em;
 }
 
 h1 {
-  font-size: 1.2em;
+  font-size: 1.6em;
+  font-weight: 800;
+  color:black;
+  margin-left: 30px;
+  margin-top: 100px;
 }
 
-#boton
-{
-position: absolute;
-width: 228px;
+#Button{
+width: 200px;
 height: 49px;
-left: 1624px;
-top: 988px;
+padding:0px;
+margin-top: 50px;
+margin-left: 725px;
+color:#fff;
+font-size: 20px;
 
-background: #005082;
-border: 1px solid #005082;
+background: #1DA0F2;
 box-sizing: border-box;
 border-radius: 25px;
 }
@@ -140,3 +112,5 @@ border-radius: 25px;
   overflow: hidden;
 
 }
+
+</style>

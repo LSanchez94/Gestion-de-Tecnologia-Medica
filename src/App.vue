@@ -18,7 +18,7 @@ import LeftMenu from "@/components/Global/MenuLeft.vue";
 export default {
   data() {
     return {
-      // menuVisible: true
+      
     };
   },
   computed:{
@@ -67,3 +67,4 @@ ul {
   padding: 15px;
 }
 </style>
+

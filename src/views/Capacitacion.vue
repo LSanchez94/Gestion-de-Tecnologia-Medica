@@ -2,36 +2,65 @@
   <div class="container-fluid">  
     
     <div class="row">
-      <!-- inicia formulario falta agregar funcionalidades-->
-      <div id="formulario" class="col-4">
-
+      <!-- inicia formulario en proceso de agregar funcionalidades-->
+      <div id="formulario">
         <form class="col-10">
 
             <div class="form-group">
               <label for="Tema">Datos de capacitación: </label>
-              <input type="text" class="form-control" id="Tema" placeholder="Tema" v-model="capacitacion.tema"/>
+              <input 
+                type="text" 
+                class="form-control" 
+                id="Tema" 
+                placeholder="Tema" 
+                v-model="capacitacion.tema"
+              />
+            </div>
+              
+            <div class="form-group">
+              <input 
+                type="text" 
+                class="form-control" 
+                id="Departamento" 
+                placeholder="Departamento" 
+                v-model="capacitacion.departamento"
+              />
             </div>
 
             <div class="form-group">
-              <input type="text" class="form-control" id="Departamento" placeholder="Departamento" v-model="capacitacion.departamento"/>
+              <input 
+                type="text" 
+                class="form-control" 
+                id="Descripcion" 
+                placeholder="Breve descripción" 
+                v-model="capacitacion.descripcion"
+              />
             </div>
 
             <div class="form-group">
-              <input type="text" class="form-control" id="Descripcion" placeholder="Breve descripción" v-model="capacitacion.descripción"/>
+              <input 
+                type="text" 
+                class="form-control" 
+                id="Fecha" 
+                placeholder="Fecha" 
+                v-model="capacitacion.fecha"
+              />
             </div>
 
             <div class="form-group">
-              <input type="text" class="form-control" id="Fecha" placeholder="Fecha" v-model="capacitacion.fecha"/>
+              <input 
+                type="text" 
+                class="form-control" 
+                id="Persona" 
+                placeholder="Encargado" 
+                v-model="capacitacion.persona"
+              />
             </div>
 
-            <div class="form-group">
-              <input type="text" class="form-control" id="Persona" placeholder="Encargado" v-model="capacitacion.persona"/>
-            </div>
-
-            <button class="btn" id="Button" @click="agregarCapacitacion()" >AGREGAR</button>
+            <button class="btn" type="button" id="Button" @click="agregarCapacitacion()" >AGREGAR</button>
 
         </form>
-
+        <button class="btn" id="Regresar" onClick="history.go(-1);">REGRESAR</button>
       </div>
 
     </div>
@@ -45,7 +74,6 @@
 <script>
 import axios from "axios"
 export default {
-  
     data() {
       return {
         capacitacion: {
@@ -56,25 +84,48 @@ export default {
           persona: "",
         }, 
         capacitaciones:[],
+        numerocapacitaciones: 0,
       };
-  }
-
-
-  /*methods:{
+    },  
+methods:{
     agregarCapacitacion() {
       axios
         .post("http://localhost:3000/Capacitacion/addCap", this.capacitacion)
         .then(response => {
           alert(response.data);
+          console.log(response.data);
           //this.traerUsuarios();
         })
         .catch(err => {
           alert("NO FUNCIONA EL API");
           console.log(err);
         });
-  },*/
+    },
+    traerCapacitacion() {
+      axios
+        .get("http://localhost:3000/Capacitacion/getEventData")
+        .then(response => {
+          this.capacitaciones = response.data;
+          this.numerocapacitaciones = response.data.length;
 
+          response.data.forEach(element => {
+            if (element.perfil == "Administrador") {
+              this.administradores++;
+            } else {
+              this.medicos++;
+            }
+          });
+        })
+        .catch(err => {
+          alert("NO FUNCIONA EL API");
+          console.log(err);
+        });
+    }
+},
+mounted(){
+    this.traerCapacitacion();
 }
+};
 
 </script>
 
@@ -98,6 +149,7 @@ export default {
   #Departamento{
     margin-top:15px;
     width:750px;
+    margin-left:0px;
     background-color:#7ACEE0;
   }
 
@@ -125,9 +177,22 @@ export default {
     margin-top:35px;
     margin-left:550px;
     color: #ffffff;
-    background: #1DA0F2;
-    border: 1px solid #1DA0F2;
+    background: #005082;
+    border: 1px solid #005082;
     box-sizing: border-box;
     border-radius: 25px;
   }
+
+  #Regresar{
+    margin-left: 600px;
+    margin-top: 100px;
+    background: #1DA0F2;
+    box-sizing: border-box; 
+    border-radius: 25px;
+    color:#fff;
+    width: 228px;
+    font-size:0.8em;
+}
+
+
 </style>

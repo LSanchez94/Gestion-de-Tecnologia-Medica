@@ -1,7 +1,8 @@
 const mongoose = require('mongoose')
 
 var reporte = mongoose.Schema({
-    ReportadoPor: String,
+    Departamento: String,
+    NumSerie: String,
     info: String,
     estado: String,
 })
