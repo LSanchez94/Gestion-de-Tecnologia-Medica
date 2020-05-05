@@ -35,6 +35,14 @@
 
 <style scoped>
 
+.test {
+  background: #7ACEE0;
+  width: 5000px;
+  margin-left: 60px;
+  height: 500px;
+
+}
+
 .formulario {
     background: #7ACEE0;
     margin-left: 60px;
