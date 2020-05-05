@@ -1,5 +1,6 @@
 <template>
   <div class="container-fluid">
+    <div class="row">
     <div>
         <h1>Tarea a realizar:</h1>
     </div>
@@ -25,8 +26,9 @@
     </div>
     <div class="Calendario"> 
     </div>
-    <div class="Semana">
-    </div> -->
+    <div class="Semana">-->
+    </div> 
+
   </div>
 
 </template>
