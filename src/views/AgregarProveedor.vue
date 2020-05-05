@@ -93,7 +93,7 @@
 
 .Linea1
 {
-   position: absolute;
+ position: absolute;
 width: 900px;
 height: 49px;
 left: 60px;
