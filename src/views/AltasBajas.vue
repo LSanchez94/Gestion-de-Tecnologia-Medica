@@ -111,7 +111,6 @@ box-sizing: border-box;
 border-radius: 10px;
 }
 
-<<<<<<< HEAD
 h4{
     left: 20px
 }
@@ -125,15 +124,6 @@ h4{
   padding: 15px;
   text-align: center;
   border-radius: 25px;
-=======
-h1{
-margin-left:20px;
-font-style: bold;
-font-weight: 600;
-font-size: 1.6em;
-line-height: 60px;
-color: #000000;
->>>>>>> b7846b8605861b3bfbecb99465b3106d83068a7f
 }
 
 #NumSerie{
