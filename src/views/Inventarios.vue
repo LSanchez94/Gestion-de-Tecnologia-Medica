@@ -42,6 +42,14 @@ import axios from 'axios'
           })
         }
       },
+     /* computed:{
+        filteredList() {
+      return this.postList.filter(post => {
+        return post.title.Inventario.includes(this.search.toLowerCase())
+      })
+     } */
+    
+  
       created(){
         this.getInventario();
       }
