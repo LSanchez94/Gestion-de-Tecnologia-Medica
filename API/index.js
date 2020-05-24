@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 var app = express();
 app.set('trust proxy', true);
@@ -21,6 +21,10 @@ app.use('/Reportes', reportes);
 app.use('/Inventario', inventario);
 app.use('/Capacitacion', capacitacion);
 
+
+app.get('/', (req,res) => {
+    res.send('HOLO')
+})
 
 app.listen(port, () =>{
     console.log('Me inicie bien en el puerto 3000');

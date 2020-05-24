@@ -47,7 +47,7 @@ export default {
     methods:{
         validarUsuario(){
 
-          axios.post("http://localhost:3000/Usuarios/Validate", {email: this.user}).then(response => {
+          axios.post(this.$store.state.url + "/Usuarios/Validate", {email: this.user}).then(response => {
               if(response.data[0].password == this.password){
                 this.$store.state.user = response.data[0];
                 console.log(response.data[0])

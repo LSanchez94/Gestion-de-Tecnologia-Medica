@@ -37,7 +37,7 @@ import axios from 'axios'
     export default {
       methods: {
         getInventario(){
-          axios.get('http://localhost:3000/Inventario/getDMdata').then(response => {
+          axios.get(this.$store.state.url + '/Inventario/getDMdata').then(response => {
             console.log(response)
           })
         }
