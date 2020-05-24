@@ -29,12 +29,12 @@ export default {
         // Return `true` if the date should be disabled
         return weekday === 0 || weekday === 6
      },
-     SelectedDate(date){
-        const capday=capacitacion.fecha;
+     //SelectedDate(date){
+       // const capday=capacitacion.fecha;
         //const mttoprevoday= mantenimiento.fecha;
         //const mttocorrday= mantenimientoc.fecha;
-        return capday === 0;
-     },
+       
+     //},
    
   }
 };
