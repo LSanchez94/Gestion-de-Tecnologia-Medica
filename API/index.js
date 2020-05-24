@@ -22,6 +22,10 @@ app.use('/Inventario', inventario);
 app.use('/Capacitacion', capacitacion);
 
 
+app.get('/', (req,res) => {
+    res.send('HOLO')
+})
+
 app.listen(port, () =>{
     console.log('Me inicie bien en el puerto 3000');
 })
