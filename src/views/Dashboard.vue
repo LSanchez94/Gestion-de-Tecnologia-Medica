@@ -65,7 +65,7 @@ export default {
   methods: {
     traerReportes() {
       axios
-        .get("http://localhost:3000/reportes/getReportes")
+        .get(this.$store.state.url + "/reportes/getReportes")
         .then(response => {
           this.reportes = response.data;
           this.numeroreportes = response.data.length;

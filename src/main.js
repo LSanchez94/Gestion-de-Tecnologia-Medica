@@ -3,6 +3,8 @@ import App from './App.vue'
 import './registerServiceWorker'
 import router from './router'
 import store from './store'
+import { CalendarPlugin } from 'bootstrap-vue'
+Vue.use(CalendarPlugin)
 
 Vue.config.productionTip = false
 
