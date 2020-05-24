@@ -79,6 +79,9 @@ export default {
   mounted() {
     this.traerReportes();
   }
+
+  
+
 };
 </script>
 
@@ -90,7 +93,6 @@ h2 {
   padding: 10px 0;
   width: 100%;
 }
-
 
 h3{
   font-size: 2em;
