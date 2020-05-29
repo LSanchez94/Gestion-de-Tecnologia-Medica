@@ -6,8 +6,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     user: {},
-    url : "https://gdt-api.herokuapp.com",
-    // url : "http://localhost:3000",
+    // url : "https://gdt-api.herokuapp.com",
+    url : "http://localhost:3000",
   },
   mutations: {
   },
