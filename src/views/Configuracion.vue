@@ -117,7 +117,7 @@ export default {
           alert(response.data);
           this.traerUsuarios();
         })
-        .catch(err => {
+        .catch(err => { 
           alert("NO FUNCIONA EL API");
           console.log(err);
         });
