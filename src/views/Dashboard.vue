@@ -65,7 +65,7 @@ export default {
   methods: {
     traerReportes() {
       axios
-        .get("http://localhost:3000/reportes/getReportes")
+        .get(this.$store.state.url + "/reportes/getReportes")
         .then(response => {
           this.reportes = response.data;
           this.numeroreportes = response.data.length;
@@ -79,6 +79,9 @@ export default {
   mounted() {
     this.traerReportes();
   }
+
+  
+
 };
 </script>
 
@@ -90,7 +93,6 @@ h2 {
   padding: 10px 0;
   width: 100%;
 }
-
 
 h3{
   font-size: 2em;

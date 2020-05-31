@@ -1,10 +1,6 @@
 <template>
   <div class="container-fluid">
-
-    <div class="test">
-      <h1>Hola</h1>
-    </div>
-
+    <div class="row">
     <div>
         <h1>Tarea a realizar:</h1>
     </div>
@@ -18,6 +14,21 @@
     <div>
         <button class="btn" id="Button" >Agregar</button>
     </div>
+    
+    <!-- <div class="AgregarMto">
+      <router-link to="/Mantenimiento" id="Linkmtto"> Agregar Mantenimiento </router-link>
+    </div>
+    <div class="AgregarCap">
+      <router-link to="/Capacitacion" id="Linkcap"> Agregar Capacitación </router-link>
+    </div>
+    <div class="AgregarTarea">
+      <router-link to="/Tarea" id="Linktarea"> Agregar Tarea </router-link>
+    </div>
+    <div class="Calendario"> 
+    </div>
+    <div class="Semana">-->
+    </div> 
+
   </div>
 
 </template>

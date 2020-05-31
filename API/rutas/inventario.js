@@ -13,15 +13,6 @@ router.get('/getDMdata', (req,res) => {
 })
 
 
-//TRAE DATO SOLICITADO
-/*router.post('/ValidateDM', (req,res) => {
-    Inventario.find({ modelo: req.body.modelo}).then(response => {
-        res.send(response)
-    }).catch(err => {
-        res.send(err)
-    })  
-})*/
-
 //INSERTA DATO
 router.post('/addDM', (req,res) => {
     console.log(req.body.name)
