@@ -112,19 +112,19 @@ export default {
   methods: {
     agregarUsuario() {
       axios
-        .post("http://localhost:3000/Usuarios/addUser", this.usuario)
+        .post( this.$store.state.url + "/Usuarios/addUser", this.usuario)
         .then(response => {
           alert(response.data);
           this.traerUsuarios();
         })
-        .catch(err => {
+        .catch(err => { 
           alert("NO FUNCIONA EL API");
           console.log(err);
         });
     },
     traerUsuarios() {
       axios
-        .get("http://localhost:3000/Usuarios/getUsers")
+        .get( this.$store.state.url + "/Usuarios/getUsers")
         .then(response => {
           this.usuarios = response.data;
           this.numeroUsuarios = response.data.length;

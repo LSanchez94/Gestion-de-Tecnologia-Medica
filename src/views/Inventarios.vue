@@ -37,11 +37,41 @@ import axios from 'axios'
     export default {
       methods: {
         getInventario(){
-          axios.get('http://localhost:3000/Inventario/getDMdata').then(response => {
+          axios.get(this.$store.state.url + '/Inventario/getDMdata').then(response => {
             console.log(response)
           })
-        }
+        },
+            consultarDispositivos(){
+            axios
+        .get( this.$store.state.url + "/Dispositivo/getDevices")
+        .then(response => {
+          this.usuarios = response.data;
+          this.numeroUsuarios = response.data.length;
+
+          this.administradores = 0;
+          this.medicos = 0;
+          response.data.forEach(element => {
+            if (element.perfil == "Administrador") {
+              this.administradores++;
+            } else {
+              this.medicos++;
+            }
+          });
+        })
+        .catch(err => {
+          alert("NO FUNCIONA EL API");
+          console.log(err);
+        });
+    }
       },
+     /* computed:{
+        filteredList() {
+      return this.postList.filter(post => {
+        return post.title.Inventario.includes(this.search.toLowerCase())
+      })
+     } */
+    
+  
       created(){
         this.getInventario();
       }

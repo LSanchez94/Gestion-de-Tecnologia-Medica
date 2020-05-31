@@ -1,5 +1,6 @@
 <template>
   <div class="container-fluid">
+    <div class="row">
     <div>
         <h1>Tarea a realizar:</h1>
     </div>
@@ -25,13 +26,22 @@
     </div>
     <div class="Calendario"> 
     </div>
-    <div class="Semana">
-    </div> -->
+    <div class="Semana">-->
+    </div> 
+
   </div>
 
 </template>
 
 <style scoped>
+
+.test {
+  background: #7ACEE0;
+  width: 5000px;
+  margin-left: 60px;
+  height: 500px;
+
+}
 
 .formulario {
     background: #7ACEE0;

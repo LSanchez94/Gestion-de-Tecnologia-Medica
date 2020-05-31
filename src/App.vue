@@ -15,6 +15,7 @@
 import TopMenu from "@/components/Global/MenuTop.vue";
 import LeftMenu from "@/components/Global/MenuLeft.vue";
 
+
 export default {
   data() {
     return {
@@ -30,6 +31,7 @@ export default {
         return true;
       } 
     }
+
   },
   methods: {
     checkRoute() {
