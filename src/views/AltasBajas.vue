@@ -111,7 +111,6 @@
       </div>
 
       <div class="mt-5 d-flex flex-wrap justify-content-between">
-
         <!--BAJA DE DM -->
         <div class="w-100">
           <h1>Baja de Dispositivos Medicos:</h1>
@@ -135,7 +134,8 @@
         </form>
 
         <button class="DarBaja" id="login_button" @click="validarUsuario()">Dar de Baja</button>
-        <router-link to="/Inventarios" class="btn" id="InventarioBtn" placeholder="InventarioBtn">Inventario</router-link>
+        <button class="Inventario" id="login_button" @click="validarUsuario()">Inventario</button>
+        <button class="Regresar" onclick="history.go(-1);">REGRESAR</button>
       </div>
     </div>
   </div>
@@ -171,20 +171,7 @@ export default {
           alert("NO FUNCIONA EL API");
           console.log(err);
         });
-    },
-
-      eliminarDispositivo() {
-      axios
-        .post(this.$store.state.url + "/Dispositivo/deleteDM", this.dispositivo)
-        .then(response => {
-        alert(response.data);
-        })
-        .catch(err => {
-          alert("NO FUNCIONA EL API");
-          console.log(err);
-        });
-    },
-
+    }
   }
 };
 </script>
@@ -384,7 +371,7 @@ export default {
   border-radius: 25px;
 }
 
-#InventarioBtn {
+.Inventario {
   width: 393px;
   height: 60px;
   left: 320px;
@@ -408,4 +395,5 @@ export default {
 }
 ::placeholder { color: rgb(255, 255, 255); }
 </style>
-}
+
+
