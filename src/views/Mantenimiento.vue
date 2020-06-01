@@ -1,5 +1,6 @@
 -<template>
-  <div class="container-fluid">
+ <!-- FALTA PANTALLA DE DISPOSITIVO -->
+     <div class="container-fluid">
       <div class="row">
         <div class="d-flex w-100 mt-3">
             <!--ESTAS SE MODIFICAN PARA QUE QUEDEN CON DATOS DEL INVENTARIO-->

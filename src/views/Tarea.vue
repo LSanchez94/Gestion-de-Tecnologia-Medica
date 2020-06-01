@@ -48,7 +48,7 @@ export default {
   methods: {
     agregarTarea() {
       axios
-        .post( this.$store.state.url + "/Tareas/addTarea", this.tarea)
+        .post(  "http://localhost:3000/tareas/addTarea", this.tarea)
         .then(response => {
           alert(response.data);
           this.traerTareas();
@@ -59,9 +59,9 @@ export default {
         });
     },
     
-    traerTareas() {
+   traerTareas() {
       axios
-        .get( this.$store.state.url + "/Tareas/getTareas")
+        .get("http://localhost:3000/tareas/getTareas")
         .then(response => {
           this.tareas = response.data;
         })
