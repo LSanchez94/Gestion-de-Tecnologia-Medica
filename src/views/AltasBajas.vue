@@ -159,6 +159,7 @@ export default {
       }
     };
   },
+  
   methods: {
     agregarDispositivo() {
       axios
@@ -175,11 +176,6 @@ export default {
   }
 };
 </script>
-
-
-
-
-
 
 
 <style scoped>

@@ -21,7 +21,19 @@
               <th scope="col">Preventivos</th>
             </tr>
           </thead>
-          
+          <tbody>
+            <tr v-for="(r, index) in inventarios" :key="index">
+              <th scope="row">{{index+1}}</th>
+              <td>{{r.serie}}</td>
+              <td>{{r.estado}}</td>
+              <td>{{r.adquisicion}}</td>
+              <td>{{r.marca}}</td>
+              <td>{{r.garantia}}</td>
+              <td>{{r.Departamento}}</td>
+              <td>{{r.modelo}}</td>
+              <td>{{r.mantenimiento}}</td>
+            </tr>
+          </tbody>
         </table>
       </div>
 
@@ -33,16 +45,46 @@
 
 
 <script>
-import axios from 'axios'
-    export default {
-      methods: {
-        getInventario(){
-          axios.get(this.$store.state.url + '/Inventario/getDMdata').then(response => {
-            console.log(response)
-          })
-        },
-            consultarDispositivos(){
-            axios
+import axios from "axios"
+export default {
+    data() {
+      return {
+        inventario: {
+          serie:"",
+          estado: "",
+          adquisicion: "",
+          marca: "",
+          garantia: "",
+          Departamento:"",
+          modelo:"",
+          mantenimientos:"",
+        }, 
+        inventarios:[],
+        numeroinventario: 0,
+      };
+    },  
+methods:{
+    traerDispositivo() {
+      axios
+        .get( this.$store.state.url+"/Inventario/getDMdata")
+        .then(response => {
+          this.inventarios = response.data;
+          this.numeroinventarios = response.data.length;
+        })
+        .catch(err => {
+          alert("NO FUNCIONA EL API");
+          console.log(err);
+        });
+    }
+},
+mounted(){
+    this.traerDispositivo();
+}
+};
+
+        /*
+        consultarDispositivos(){
+        axios
         .get( this.$store.state.url + "/Dispositivo/getDevices")
         .then(response => {
           this.usuarios = response.data;
@@ -62,20 +104,14 @@ import axios from 'axios'
           alert("NO FUNCIONA EL API");
           console.log(err);
         });
-    }
-      },
+    }*/
+      
      /* computed:{
         filteredList() {
       return this.postList.filter(post => {
         return post.title.Inventario.includes(this.search.toLowerCase())
       })
      } */
-    
-  
-      created(){
-        this.getInventario();
-      }
-    };
 </script>
 
 
