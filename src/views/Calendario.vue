@@ -1,9 +1,10 @@
+
 <template>
   <div class="container-fluid">
     <div class="row">
       <b-calendar 
       v-model="value" :date-info-fn="dateClass" 
-      block locale="es" 
+      block locale="es"
       :date-format-options="{ year: 'numeric', month: 'short', day: '2-digit', weekday: 'short' }"
       :date-disabled-fn="dateDisabled"
       today-variant="info"
@@ -28,7 +29,8 @@ export default {
     
      SelectedDate(date){
        const capday=capacitacion.fecha;
-       //const mttoprevoday= mantenimiento.fecha;
+       const mttoprevoday= mantenimiento.fecha;
+      const mttocorrday= mantenimientoc.fecha;
        
      },
    

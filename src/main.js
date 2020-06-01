@@ -3,7 +3,6 @@ import App from './App.vue'
 import './registerServiceWorker'
 import router from './router'
 import store from './store'
-//import FullCalendar from 'vue-fullcalendar';
 import { CalendarPlugin } from 'bootstrap-vue'
 Vue.use(CalendarPlugin)
 
