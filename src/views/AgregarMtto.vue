@@ -50,6 +50,51 @@
 </div>
 </template>
 
+<script>
+import axios from "axios";
+export default {
+  data() {
+    return {
+      dispositivo: {
+        nserie: null,
+        departamento: null,
+        tipomtto: null,
+        fechamtto: null,
+        encargado: null,
+      }
+    };
+  },
+  methods: {
+        agregarMtto() {
+        axios
+        .post(this.$store.state.url + "/AgregarMtto/AddMantenimiento", this.dispositivo)
+        .then(response => {
+          alert(response.data);
+        })
+        .catch(err => {
+          alert("NO FUNCIONA EL API");
+          console.log(err);
+        });
+        },
+
+        traerMtto() {
+        axios
+        .get( this.$store.state.url +"/AgregarMtto/getMtto")
+        .then(response => {
+          this.reportes = response.data;
+          this.numeromtto = response.data.length;
+          })
+        .catch(err => {
+          alert("NO FUNCIONA EL API");
+          console.log(err);
+        });
+    }
+  },
+  mounted() {
+    this.traerMtto();
+  }
+};
+</script>
 
 <style scoped>
 h1{

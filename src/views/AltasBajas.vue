@@ -175,9 +175,9 @@ export default {
 
       eliminarDispositivo() {
       axios
-        .delete(this.$store.state.url + "/Dispositivo/deleteDevice", this.dispositivo)
+        .post(this.$store.state.url + "/Dispositivo/deleteDM", this.dispositivo)
         .then(response => {
-        this.$emit('Dispositivo Eliminado')
+        alert(response.data);
         })
         .catch(err => {
           alert("NO FUNCIONA EL API");
@@ -188,11 +188,6 @@ export default {
   }
 };
 </script>
-
-
-
-
-
 
 
 <style scoped>
