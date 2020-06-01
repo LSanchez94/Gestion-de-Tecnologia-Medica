@@ -26,6 +26,7 @@ export default {
      
      
      },
+    
      SelectedDate(date){
        const capday=capacitacion.fecha;
        const mttoprevoday= mantenimiento.fecha;

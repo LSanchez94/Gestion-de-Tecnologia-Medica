@@ -47,7 +47,7 @@ import axios from 'axios'
         .then(response => {
           this.usuarios = response.data;
           this.numeroUsuarios = response.data.length;
-
+          
           this.administradores = 0;
           this.medicos = 0;
           response.data.forEach(element => {
