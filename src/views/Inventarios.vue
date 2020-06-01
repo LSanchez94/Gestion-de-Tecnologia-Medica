@@ -18,7 +18,7 @@
               <th scope="col">Garantía</th>
               <th scope="col">Departamento</th>
               <th scope="col">Modelo</th>
-              <th scope="col">Mttos. preventivos</th>
+              <th scope="col">Preventivos</th>
             </tr>
           </thead>
           
