@@ -10,17 +10,19 @@ app.use(bodyParser.urlencoded({ extended: false}));
 app.use(bodyParser.json());
 
 const { mongoose } = require('./db/db-connect');
-const usuarios = require('./rutas/usuarios')
-const reportes = require('./rutas/reportes')
-const inventario= require('./rutas/inventario')
-const capacitacion= require('./rutas/Capacitacion')
-const dispositivos= require("./rutas/dispositivos")
+const usuarios = require('./rutas/usuarios');
+const reportes = require('./rutas/reportes');
+const inventario= require('./rutas/inventario');
+const capacitacion= require('./rutas/Capacitacion');
+//const dispositivos = require('./rutas/dispositivos');
+const tareas= require('./rutas/tareas');
 
 app.use('/Usuarios', usuarios);
 app.use('/Reportes', reportes);
 app.use('/Inventario', inventario);
 app.use('/Capacitacion', capacitacion);
-app.use("/Dispositivo", dispositivos)
+//app.use('/Dispositivo', dispositivos);
+app.use('/Tareas', tareas);
 
 app.get('/', (req,res) => {
     res.send('HOLO')

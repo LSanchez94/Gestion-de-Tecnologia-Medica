@@ -18,7 +18,7 @@
               <th scope="col">Garantía</th>
               <th scope="col">Departamento</th>
               <th scope="col">Modelo</th>
-              <th scope="col">Mttos. preventivos</th>
+              <th scope="col">Preventivos</th>
             </tr>
           </thead>
           
@@ -47,7 +47,7 @@ import axios from 'axios'
         .then(response => {
           this.usuarios = response.data;
           this.numeroUsuarios = response.data.length;
-
+          
           this.administradores = 0;
           this.medicos = 0;
           response.data.forEach(element => {

@@ -196,6 +196,10 @@ export default {
 
 
 <style scoped>
+
+#login_button{
+  color: ivory;
+}
 .form-group input {
   background: #7acee0;
   border: 1px solid #7acee0;
@@ -203,8 +207,10 @@ export default {
   border-radius: 10px;
 }
 
-h4 {
-  left: 20px;
+.h4{
+    left: 20px;
+    color: ivory;
+  
 }
 
 .color1 {
@@ -400,5 +406,6 @@ h4 {
   width: 228px;
   font-size: 1.2em;
 }
+::placeholder { color: rgb(255, 255, 255); }
 </style>
 }

@@ -23,18 +23,16 @@ export default {
   },
   methods: {
     dateDisabled(ymd, date) {
-        // Disable weekends (Sunday = `0`, Saturday = `6`) 
-        const weekday = date.getDay()
-        const day = date.getDate()
-        // Return `true` if the date should be disabled
-        return weekday === 0 || weekday === 6
+     
+     
      },
-     //SelectedDate(date){
-       // const capday=capacitacion.fecha;
-        //const mttoprevoday= mantenimiento.fecha;
-        //const mttocorrday= mantenimientoc.fecha;
+    
+     SelectedDate(date){
+       const capday=capacitacion.fecha;
+       const mttoprevoday= mantenimiento.fecha;
+      const mttocorrday= mantenimientoc.fecha;
        
-     //},
+     },
    
   }
 };
