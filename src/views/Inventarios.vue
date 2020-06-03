@@ -25,13 +25,13 @@
             <tr v-for="(r, index) in inventarios" :key="index">
               <th scope="row">{{index+1}}</th>
               <td>{{r.nserie}}</td>
-              <td>{{r.estado}}</td>
-              <td>{{r.adquisicion}}</td>
+              <td>{{r.estadofuncional}}</td>
+              <td>{{r.fechadeadquisicion}}</td>
               <td>{{r.marca}}</td>
               <td>{{r.garantia}}</td>
-              <td>{{r.Departamento}}</td>
+              <td>{{r.departamentos}}</td>
               <td>{{r.modelo}}</td>
-              <td>{{r.mantenimiento}}</td>
+              <td>{{r.mantenimientosrealizado}}</td>
             </tr>
           </tbody>
         </table>
