@@ -24,7 +24,7 @@
            <tbody>
             <tr v-for="(r, index) in inventarios" :key="index">
               <th scope="row">{{index+1}}</th>
-              <td>{{r.serie}}</td>
+              <td>{{r.nserie}}</td>
               <td>{{r.estado}}</td>
               <td>{{r.adquisicion}}</td>
               <td>{{r.marca}}</td>
@@ -50,7 +50,7 @@ export default {
     data() {
       return {
         inventario: {
-          serie:"",
+          nserie:"",
           estado: "",
           adquisicion: "",
           marca: "",
@@ -65,8 +65,10 @@ export default {
     },  
 methods:{
     traerDispositivo() {
+              // .get( this.$store.state.url+"/Inventario/getDMdata")
+
       axios
-        .get( this.$store.state.url+"/Inventario/getDMdata")
+        .get( this.$store.state.url+"/Dispositivo/getDevices")
         .then(response => {
           this.inventarios = response.data;
           this.numeroinventarios = response.data.length;

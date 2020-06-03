@@ -17,6 +17,7 @@ const capacitacion= require('./rutas/Capacitacion')
 const dispositivos= require("./rutas/dispositivos")
 const tareas= require('./rutas/tareas');
 const AgregarProveedor= require("./rutas/AgregarProveedor")
+const agregarmtto= require("./rutas/AgregarMtto")
 
 app.use('/Usuarios', usuarios);
 app.use('/Reportes', reportes);

@@ -1,13 +1,13 @@
 const mongoose = require('mongoose')
 
 var datos = mongoose.Schema({
-    nameE: String,
-    nameC: String,
-    correo: String,
+    nombre: String,
+    contacto: String,
+    email: String,
     tel: String,
-    dir: String
+    address: String
 })
 
-var AgregarProveedor = mongoose.model('AddProveedor',datos);
+var AddProveedor = mongoose.model('AddProveedor',datos);
 
-module.exports = {AgregarProveedor}
+module.exports = {AddProveedor}

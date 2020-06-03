@@ -14,19 +14,19 @@ router.get('/getDatos', (req,res) => {
 
 //Datos del proveedor
 router.post('/addDatos', (req,res) => {
-    console.log(req.body.name)
+    console.log(req.body.nombre)
     AddProveedor.create({
-        nameE: req.body.nameE,
-        nameC: req.body.nameC,
+        nombre: req.body.nombre,
+        contacto: req.body.contacto,
         email: req.body.email,
-        dir: req.body.dir,
+        address: req.body.address,
         tel: req.body.tel
     }, err => {
         console.log(err)
         if(!err){
-            res.send("Usuario Agregado!")
+            res.send("Proveedor Agregado!")
         }else{
-            res.send("Hubo un problema, agregando al usuario")
+            res.send("Hubo un problema, agregando al prov")
         }
     })
 });
