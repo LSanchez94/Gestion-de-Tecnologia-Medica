@@ -15,6 +15,7 @@ const reportes = require('./rutas/reportes')
 const inventario= require('./rutas/inventario')
 const capacitacion= require('./rutas/Capacitacion')
 const dispositivos= require("./rutas/dispositivos")
+const tareas= require('./rutas/tareas');
 const AgregarProveedor= require("./rutas/AgregarProveedor")
 const AgregarMtto= require("./rutas/AgregarMtto")
 
