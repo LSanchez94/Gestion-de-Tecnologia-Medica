@@ -23,6 +23,8 @@ app.use('/Inventario', inventario);
 app.use('/Capacitacion', capacitacion);
 app.use("/Dispositivo", dispositivos);
 app.use("/AgregarProveedor", AgregarProveedor)
+app.use('/Tareas', tareas);
+app.use('/AgregarMtto', agregarmtto);
 
 app.get('/', (req,res) => {
     res.send('HOLO')

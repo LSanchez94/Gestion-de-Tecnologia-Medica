@@ -152,6 +152,12 @@ h4{
     max-height: 64vh;
 }
 
+#Linkreportes{
+
+    text-align: center;
+    color: ivory;
+   
+}
 
 
 </style>
