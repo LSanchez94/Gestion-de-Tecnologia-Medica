@@ -18,10 +18,22 @@
               <th scope="col">Garantía</th>
               <th scope="col">Departamento</th>
               <th scope="col">Modelo</th>
-              <th scope="col">Mttos. preventivos</th>
+              <th scope="col">Preventivos</th>
             </tr>
           </thead>
-          
+           <tbody>
+            <tr v-for="(r, index) in inventarios" :key="index">
+              <th scope="row">{{index+1}}</th>
+              <td>{{r.nserie}}</td>
+              <td>{{r.estado}}</td>
+              <td>{{r.adquisicion}}</td>
+              <td>{{r.marca}}</td>
+              <td>{{r.garantia}}</td>
+              <td>{{r.Departamento}}</td>
+              <td>{{r.modelo}}</td>
+              <td>{{r.mantenimiento}}</td>
+            </tr>
+          </tbody>
         </table>
       </div>
 
@@ -33,14 +45,78 @@
 
 
 <script>
-import axios from 'axios'
-    export default {
-      methods: {
+import axios from "axios"
+export default {
+    data() {
+      return {
+        inventario: {
+          nserie:"",
+          estado: "",
+          adquisicion: "",
+          marca: "",
+          garantia: "",
+          Departamento:"",
+          modelo:"",
+          mantenimientos:"",
+        }, 
+        inventarios:[],
+        numeroinventario: 0,
+      };
+    },  
+methods:{
+    traerDispositivo() {
+              // .get( this.$store.state.url+"/Inventario/getDMdata")
+
+      axios
+        .get( this.$store.state.url+"/Dispositivo/getDevices")
+        .then(response => {
+          this.inventarios = response.data;
+          this.numeroinventarios = response.data.length;
+        })
+        .catch(err => {
+          alert("NO FUNCIONA EL API");
+          console.log(err);
+        });
+    }
+},
+mounted(){
+    this.traerDispositivo();
+}
+};
+
+        /*
+        consultarDispositivos(){
+        axios
+        import axios from 'axios'
+        export default {
+        methods: {
         getInventario(){
           axios.get(this.$store.state.url + '/Inventario/getDMdata').then(response => {
             console.log(response)
           })
-        }
+        },
+            consultarDispositivos(){
+            axios
+        .get( this.$store.state.url + "/Dispositivo/getDevices")
+        .then(response => {
+          this.usuarios = response.data;
+          this.numeroUsuarios = response.data.length;
+          
+          this.administradores = 0;
+          this.medicos = 0;
+          response.data.forEach(element => {
+            if (element.perfil == "Administrador") {
+              this.administradores++;
+            } else {
+              this.medicos++;
+            }
+          });
+        })
+        .catch(err => {
+          alert("NO FUNCIONA EL API");
+          console.log(err);
+        });
+      }
       },
      /* computed:{
         filteredList() {
@@ -49,11 +125,6 @@ import axios from 'axios'
       })
      } */
     
-  
-      created(){
-        this.getInventario();
-      }
-    };
 </script>
 
 

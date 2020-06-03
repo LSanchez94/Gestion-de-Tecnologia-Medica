@@ -6,26 +6,26 @@
 <!-- Formulario para agregar datos de proveedor -->
   <form class="col-10">
     <div class="form-group Linea1">
-        <input type="text" class="form-control" id="Linea1" placeholder="Nombre de la empresa"/>
+        <input type="text" class="form-control" id="Linea1" v-model="proveedor.nombre" placeholder="Nombre de la empresa"/>
     </div>
       
 
           <div class="form-group Linea2">
-          <input type="text" class="form-control" id="Linea2" placeholder="Nombre del contacto" >
+          <input type="text" class="form-control" id="Linea2" v-model="proveedor.contacto" placeholder="Nombre del contacto" >
           </div>
       
     
           <div class="form-group Linea3">
-           <input type="email" class="form-control" id="Linea3"  placeholder="Correo electrónico" >
+           <input type="email" class="form-control" id="Linea3" v-model="proveedor.email"  placeholder="Correo electrónico" >
           </div>
 
 
           <div class="form-group Linea4">
-          <input type="text" class="form-control" id="Linea4" placeholder="Numero de teléfono" >
+          <input type="text" class="form-control" id="Linea4" v-model="proveedor.tel" placeholder="Numero de teléfono" >
           </div>
 
           <div class="form-group Linea5">
-         <input type="text" class="form-control" id="Linea5" placeholder="Dirección" >
+         <input type="text" class="form-control" id="Linea5" v-model="proveedor.address" placeholder="Dirección" >
           </div>
         </form>
 
@@ -35,7 +35,7 @@
         
       
 
-  | <button class="btn" id="RectanguloGuardar">Guardar</button>
+  | <button class="btn" id="RectanguloGuardar" @click="agregarProveedor()">Guardar</button>
     <button class="btn" id="RectanguloRegresar" onClick="history.go(-1);">REGRESAR</button>
 
           
@@ -44,6 +44,34 @@
      
                   
 </template>
+
+
+<script>
+import axios from 'axios'
+export default {
+  data(){
+    return{
+      proveedor: {
+        nombre: '',
+        contacto: '',
+        correo: '',
+        tel: '',
+        address: ''
+      }
+    }
+  },
+  methods: {
+    agregarProveedor(){
+      axios.post(this.$store.state.url + '/AgregarProveedor/addDatos', this.proveedor).then( response => {
+        alert('Todo bien todo correcto, y yo que me alegro');
+      }).catch(e => {
+        console.log(e)
+        alert('run b...')
+      })
+    }
+  }
+}
+</script>
 
 <style scoped>
 #AgregarProveedor{
@@ -127,5 +155,5 @@
 }
 
 
-
+::placeholder { color: rgb(255, 255, 255); }
 </style>

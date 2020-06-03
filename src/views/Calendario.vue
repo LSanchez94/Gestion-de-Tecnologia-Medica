@@ -3,49 +3,106 @@
   <div class="container-fluid">
     <div class="row">
       <b-calendar 
-      v-model="value" :date-info-fn="dateClass" 
+      v-model="value" :date-info-fn="dateClass"
       block locale="es"
-      :date-format-options="{ year: 'numeric', month: 'short', day: '2-digit', weekday: 'short' }"
-      :date-disabled-fn="dateDisabled"
-      today-variant="info"
-      selected-variant="warning" 
-      class="block"
+      selected-variant="info" 
+      class="calendar"
       ></b-calendar>
     </div>
+
+    <router-link to="/AgregarMtto" class="btn" id="Linkmtto">Agregar Mantenimiento</router-link>
+    <router-link to="/Capacitacion" class="btn" id="Linkcap">Agregar Capacitación</router-link>
+    <router-link to="/Tarea" class="btn" id="Linktarea">Agregar Tarea</router-link>
+
   </div>
+ 
 </template>
+
 
 <script>
 import axios from "axios";
 export default {
   data() {
-    value='';
+      return {
+        capacitacion: {
+          tema:"",
+          departamento: "",
+          descripcion: "",
+          fecha: "",
+          persona: "",
+        }, 
+        capacitaciones:[],
+        numerocapacitaciones: 0,
+      };
   },
   methods: {
-    dateDisabled(ymd, date) {
-        // Disable weekends (Sunday = `0`, Saturday = `6`) 
-        const weekday = date.getDay()
-        const day = date.getDate()
-        // Return `true` if the date should be disabled
-        return weekday === 0 || weekday === 6
-     },
-     SelectedDate(date){
-        const capday=capacitacion.fecha;
-        //const mttoprevoday= mantenimiento.fecha;
-        //const mttocorrday= mantenimientoc.fecha;
-        return capday === 0;
-     },
-   
-  }
-};
-    
+    //FALTA ESTABLECER LAS FECHAS CON CADA CAPACITACION, MTTO Y TAREA
+
+    dateClass(ymd, date) {
+        const daycap = date.getDate()
+        const dayprev= date.getDate()
+        const daycorr= date.getDate()
+        const daytar=date.getDate()
+        return daycap == 10 ? 'table-warning' : ''
+        return dayprev == 15 ? 'table-info' : ''
+        return daycorr == 20 ? 'table-success' : ''
+       return daytar == 5 ? 'table-danger' :''
+      },
+
+      dateClass(ymd,date){
+        const dayprev= date.getDate()
+        return dayprev == 15 ? 'table-info' : ''
+      },
+
+    traerCapacitacion() {
+      axios
+        .get("http://localhost:3000/Capacitacion/getEventData")
+        .then(response => {
+          this.capacitaciones = response.data;
+          this.numerocapacitaciones = response.data.length;
+        })
+        .catch(err => {
+          alert("NO FUNCIONA EL API");
+          console.log(err);
+        });
+    }
+},
+mounted(){
+    this.traerCapacitacion();
+}
+};  
 </script>
 
+
 <style scoped>
-.block{
+.calendar{
   color:#005082;
-  margin-left: 600px;
-  margin-top:80px;
+  margin-left: 100px;
+  margin-top:50px;
+  width:700px;
 }
 
+.row{
+  width: 2000px;
+}
+
+.btn{
+  color:#FFFF;
+  background: #00a8cc;
+  margin-left: 120px;
+  border: 25px;
+  width:300px;
+}
+#Linktarea{
+  margin-top:10px;
+}
+
+#Linkmtto{
+  margin-top:50px;
+}
+
+#Linkcap{
+  margin-top:50px;
+  margin-left:30px;
+}
 </style>

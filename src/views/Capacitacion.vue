@@ -39,7 +39,7 @@
 
             <div class="form-group">
               <input 
-                type="text" 
+                type="date" 
                 class="form-control" 
                 id="Fecha" 
                 placeholder="Fecha" 
@@ -157,6 +157,7 @@ mounted(){
     margin-top:15px;
     width:750px;
     background-color:#7ACEE0;
+    color: ivory;
   }
 
   #Descripcion{
@@ -193,6 +194,6 @@ mounted(){
     width: 228px;
     font-size:0.8em;
 }
-
+::placeholder { color: rgb(255, 255, 255); }
 
 </style>
