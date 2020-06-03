@@ -26,7 +26,7 @@ app.use('/Capacitacion', capacitacion);
 app.use("/Dispositivo", dispositivos);
 app.use("/AgregarProveedor", AgregarProveedor)
 app.use('/Tareas', tareas);
-app.use('/AgregarMtto', agregarmtto);
+app.use('/AgregarMtto', AgregarMtto);
 
 app.get('/', (req,res) => {
     res.send('HOLO')
