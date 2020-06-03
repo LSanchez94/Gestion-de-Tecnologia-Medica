@@ -24,6 +24,8 @@ import axios from "axios";
 export default {
   data() {
       return {
+        mes: null,
+        value:'',
         capacitacion: {
           tema:"",
           departamento: "",
@@ -37,22 +39,23 @@ export default {
   },
   methods: {
     //FALTA ESTABLECER LAS FECHAS CON CADA CAPACITACION, MTTO Y TAREA
-
+      //   return dayprev == 15 ? 'table-info' : ''
+      //   return daycorr == 20 ? 'table-success' : ''
+      //  return daytar == 5 ? 'table-danger' :''
     dateClass(ymd, date) {
-        const daycap = date.getDate()
-        const dayprev= date.getDate()
-        const daycorr= date.getDate()
-        const daytar=date.getDate()
-        return daycap == 10 ? 'table-warning' : ''
-        return dayprev == 15 ? 'table-info' : ''
-        return daycorr == 20 ? 'table-success' : ''
-       return daytar == 5 ? 'table-danger' :''
+        const day = date.getDate()
+        this.mes = day;
+        this.traerFechas()
+        // const dayprev= date.getDate()
+        // const daycorr= date.getDate()
+        // const daytar=date.getDate()
+        // return (daycap == 10 ? 'table-warning' : ''
+        return [day == 10 ? 'table-warning' : '', day == 15 ? 'table-info' : '' ]
       },
-
-      dateClass(ymd,date){
-        const dayprev= date.getDate()
-        return dayprev == 15 ? 'table-info' : ''
-      },
+      // dateClass(ymd,date){
+      //   const dayprev= date.getDate()
+      //   return dayprev == 15 ? 'table-info' : ''
+      // },
 
     traerCapacitacion() {
       axios
@@ -65,8 +68,12 @@ export default {
           alert("NO FUNCIONA EL API");
           console.log(err);
         });
-    }
-},
+    },
+    traerFechas(){
+      axios.post(this.$store.state.url + '/calendario/fechas', {'mes': this.mes}).then(response => {
+        console.log(response.data)
+        })
+}},
 mounted(){
     this.traerCapacitacion();
 }

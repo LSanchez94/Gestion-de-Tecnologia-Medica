@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const {Capacitacion} = require('../modelos/capacitacion');
+const {Calendario} = require('../modelos/calendario');
 
 
 //TRAE DATOS CAPACITACION
@@ -16,7 +17,9 @@ router.get('/getEventData', (req,res) => {
 //CREA CAPACITACION
 router.post('/addCap', (req,res) => {
     console.log("Capa");
-    console.log(req.body.tema)
+    console.log(req.body.fecha)
+    var fechas = req.body.fecha.split('-');
+    var mes = fechas[1];
     Capacitacion.create({
         tema: req.body.tema,
         departamento: req.body.departamento,
@@ -26,11 +29,18 @@ router.post('/addCap', (req,res) => {
     }, err => {
        // console.log(err)
         if(!err){
+            Calendario.create({
+                dia : fechas[0],
+                mes: fechas[1],
+                anio: fechas[2],
+                tipo: 1
+            })
             res.send("Capacitación Agregada!")
         }else{
             res.send("Hubo un problema agregando capacitación")
         }
     })
+
 });
 
 module.exports = router;

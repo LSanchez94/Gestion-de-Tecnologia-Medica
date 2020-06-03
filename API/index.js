@@ -18,6 +18,7 @@ const dispositivos= require("./rutas/dispositivos")
 const tareas= require('./rutas/tareas');
 const AgregarProveedor= require("./rutas/AgregarProveedor")
 const agregarmtto= require("./rutas/AgregarMtto")
+const calendario= require("./rutas/calendario")
 
 app.use('/Usuarios', usuarios);
 app.use('/Reportes', reportes);
@@ -26,7 +27,8 @@ app.use('/Capacitacion', capacitacion);
 app.use("/Dispositivo", dispositivos);
 app.use("/AgregarProveedor", AgregarProveedor)
 app.use('/Tareas', tareas);
-app.use('/AgregarMtto', AgregarMtto);
+app.use('/AgregarMtto', agregarmtto);
+app.use('/calendario', calendario);
 
 app.get('/', (req,res) => {
     res.send('HOLO')
