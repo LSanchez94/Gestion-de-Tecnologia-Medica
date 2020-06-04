@@ -10,6 +10,6 @@ var inventario = mongoose.Schema({
     mantenimientos: Number,
 })
 
-var AgregarMtto = mongoose.model('AddMantenimiento', inventario);
+var AgregarMtto = mongoose.model('addMantenimiento', inventario);
 
 module.exports = {AgregarMtto}

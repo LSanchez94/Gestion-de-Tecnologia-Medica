@@ -6,7 +6,7 @@ var dispositivo = mongoose.Schema({
     modelo:String,
     departamento:String,
     estadofuncional:String,
-    fechadeadquisicion: Date,
+    fechadeadquisicion: String,
     garantia:String,
     mantenimientosrealizado:String
 })

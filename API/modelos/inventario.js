@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 var inventario = mongoose.Schema({
     serie: String,
     estado: String,
-    adquisicion: Date,
+    adquisicion: String,
     marca: String,
     garantia: String,
     departamento: String,
