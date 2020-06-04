@@ -35,26 +35,5 @@ router.post('/addDM', (req,res) => {
         }
     })
 });
-+// ELIMINA DATO
-router.post('/deleteDM', (req,res) => {
-    console.log(req.body.name)
-    Inventario.findByIdAndDelete({
-        serie: req.body.serie,
-        estado: req.body.estado,
-        adquisicion: req.body.adquisicion,
-        marca: req.body.marca,
-        garantia: req.body.garantia,
-        Departamento: req.body.Departamento,
-        modelo: req.body.modelo,
-        mantenimientos: req.body.mantenimientos,   
-    }, err => {
-        console.log(err)
-        if(!err){
-            res.send("DM Eliminado!")
-        }else{
-            res.send("Hubo un problema, eliminando el DM")
-        }
-    })
-});
 
 module.exports = router;
