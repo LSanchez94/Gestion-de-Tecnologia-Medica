@@ -42,20 +42,13 @@ export default {
       //   return dayprev == 15 ? 'table-info' : ''
       //   return daycorr == 20 ? 'table-success' : ''
       //  return daytar == 5 ? 'table-danger' :''
+
     dateClass(ymd, date) {
         const day = date.getDate()
         this.mes = day;
         this.traerFechas()
-        // const dayprev= date.getDate()
-        // const daycorr= date.getDate()
-        // const daytar=date.getDate()
-        // return (daycap == 10 ? 'table-warning' : ''
         return [day == 10 ? 'table-warning' : '', day == 15 ? 'table-info' : '' ]
       },
-      // dateClass(ymd,date){
-      //   const dayprev= date.getDate()
-      //   return dayprev == 15 ? 'table-info' : ''
-      // },
 
     traerCapacitacion() {
       axios
@@ -69,6 +62,7 @@ export default {
           console.log(err);
         });
     },
+    
     traerFechas(){
       axios.post(this.$store.state.url + '/calendario/fechas', {'mes': this.mes}).then(response => {
         console.log(response.data)
