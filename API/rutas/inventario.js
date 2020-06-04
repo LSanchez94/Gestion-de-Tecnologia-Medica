@@ -22,7 +22,7 @@ router.post('/addDM', (req,res) => {
         adquisicion: req.body.adquisicion,
         marca: req.body.marca,
         garantia: req.body.garantia,
-        departamento: req.body.departamento,
+        Departamento: req.body.Departamento,
         modelo: req.body.modelo,
         mantenimientos: req.body.mantenimientos,
         
@@ -44,7 +44,7 @@ router.post('/deleteDM', (req,res) => {
         adquisicion: req.body.adquisicion,
         marca: req.body.marca,
         garantia: req.body.garantia,
-        departamento: req.body.departamento,
+        Departamento: req.body.Departamento,
         modelo: req.body.modelo,
         mantenimientos: req.body.mantenimientos,   
     }, err => {

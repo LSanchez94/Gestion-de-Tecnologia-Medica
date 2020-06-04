@@ -4,11 +4,12 @@ var dispositivo = mongoose.Schema({
     nserie:String,
     marca:String,
     modelo:String,
+    alias:String,
     departamento:String,
     estadofuncional:String,
-    fechadeadquisicion: Date,
+    fechadeadquisición:String,
     garantia:String,
-    mantenimientosrealizado:String
+    mantenimientosrealizado:String,
 })
 
 var Dispositivo = mongoose.model('dispositivos', dispositivo);
