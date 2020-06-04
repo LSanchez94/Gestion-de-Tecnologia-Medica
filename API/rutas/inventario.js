@@ -19,10 +19,10 @@ router.post('/addDM', (req,res) => {
     Inventario.create({
         serie: req.body.serie,
         estado: req.body.estado,
-        adquisicion: req.body.adquisicion,
+        fechadeadquisicion: req.body.fechadeadquisicion,
         marca: req.body.marca,
         garantia: req.body.garantia,
-        Departamento: req.body.Departamento,
+        departamento: req.body.departamento,
         modelo: req.body.modelo,
         mantenimientos: req.body.mantenimientos,
         
