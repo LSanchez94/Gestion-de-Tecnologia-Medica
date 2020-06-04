@@ -47,7 +47,7 @@
 
 
 <script>
-import axios from 'axios'
+import axios from 'axios';
 export default {
   data(){
     return{
@@ -62,7 +62,9 @@ export default {
   },
   methods: {
     agregarProveedor(){
-      axios.post(this.$store.state.url + '/AgregarProveedor/addDatos', this.proveedor).then( response => {
+      axios
+      .post(this.$store.state.url + '/AgregarProveedor/addDatos', this.proveedor)
+      .then( response => {
         alert('Todo bien todo correcto, y yo que me alegro');
       }).catch(e => {
         console.log(e)

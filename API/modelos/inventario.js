@@ -6,7 +6,7 @@ var inventario = mongoose.Schema({
     adquisicion: Date,
     marca: String,
     garantia: String,
-    Departamento: String,
+    departamento: String,
     modelo: String,
     mantenimientos: Number,
 

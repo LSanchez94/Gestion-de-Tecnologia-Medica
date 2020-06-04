@@ -29,7 +29,7 @@
               <td>{{r.fechadeadquisicion}}</td>
               <td>{{r.marca}}</td>
               <td>{{r.garantia}}</td>
-              <td>{{r.departamentos}}</td>
+              <td>{{r.departamento}}</td>
               <td>{{r.modelo}}</td>
               <td>{{r.mantenimientosrealizado}}</td>
             </tr>
@@ -45,17 +45,17 @@
 
 
 <script>
-import axios from "axios"
+import axios from "axios";
 export default {
     data() {
       return {
         inventario: {
           nserie:"",
           estado: "",
-          adquisicion: "",
+          fechadeadquisicion: "",
           marca: "",
           garantia: "",
-          Departamento:"",
+          departamento:"",
           modelo:"",
           mantenimientos:"",
         }, 
@@ -111,8 +111,9 @@ h2 {
   margin-left:35px;
   margin-right: 35px;
   border: 4px solid #005082;
-  overflow: hidden;
+  overflow-y: scroll;
   font-size: 1em;
+
 }
 
 #Linkmtto{
