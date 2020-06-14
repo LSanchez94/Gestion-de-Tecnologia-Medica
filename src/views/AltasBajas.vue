@@ -44,8 +44,8 @@
               <input
                 type="text"
                 class="form-control"
-                v-model="dispositivo.alias"
-                placeholder="Alias"
+                v-model="dispositivo.nombre"
+                placeholder="Nombre"
               />
             </div>
           </form>
@@ -237,7 +237,7 @@ export default {
   border-radius: 10px;
 }
 
-#Alias {
+#Nombre {
   width: 279px;
   height: 48px;
   left: 1293px;

@@ -29,6 +29,7 @@ router.post('/addDevice', (req,res) => {
     nserie:req.body.nserie, 
     marca:req.body.marca,
     modelo:req.body.modelo,
+    nombre:req.body.nombre,
     departamento:req.body.departamento,
     estadofuncional:req.body.estadofuncional,
     fechadeadquisicion:req.body.fechadeadquisicion,
