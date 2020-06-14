@@ -62,15 +62,37 @@ export default {
   },
   methods: {
     agregarProveedor(){
-      axios.post(this.$store.state.url + '/AgregarProveedor/addDatos', this.proveedor).then( response => {
+      axios
+      .post(this.$store.state.url + '/AgregarProveedor/addDatos', this.proveedor)
+      .then( response => {
         alert('Todo bien todo correcto, y yo que me alegro');
+        this.traerProveedores();
       }).catch(e => {
         console.log(e)
         alert('run b...')
       })
+    },
+
+    traerProveedores() {
+      axios
+        .get( this.$store.state.url +"/Agregarproveedor/getDatos")
+        .then(response => {
+          this.proveedores = response.data;
+          this.numeroproveedores = response.data.length;
+          })
+        .catch(err => {
+          alert("NO FUNCIONA EL API");
+          console.log(err);
+        });
     }
+
+
+
+  },
+  mounted() {
+    this.traerProveedores();
   }
-}
+};
 </script>
 
 <style scoped>
