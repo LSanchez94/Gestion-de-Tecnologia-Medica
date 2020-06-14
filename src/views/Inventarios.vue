@@ -1,6 +1,16 @@
 <template>
   <div class="container-fluid">
-    
+    <div class="form">
+      <input 
+      type="text"
+      class="form-control"
+      id="Buscar"
+      placeholder="buscar en inventario"
+      v-model="busqueda"
+      
+      />
+    </div>
+
     <div class="row">
       <h2>Inventario: </h2>
       <router-link to="/mantenimiento" class="btn" id="Linkmtto">Último mantenimiento</router-link>
@@ -51,6 +61,7 @@ import axios from "axios";
 export default {
     data() {
       return {
+        busqueda:"",
         inventario: {
           nombre:"",
           marca: "",
@@ -68,9 +79,10 @@ export default {
     },  
 methods:{
 
-   /* filter(value){
-      return ${value.nserie};
-    },*/
+   filter(value){
+      return $;{value.nombre};{value.marca};{value.modelo};{value.departamento};{value.nserie};{value.adq};{value.garantia};{value.edofuncional};{mttoprev};
+    },
+
     traerDispositivo() {
       axios
         .get( this.$store.state.url+"/Dispositivo/getDevices")
@@ -87,7 +99,11 @@ methods:{
 mounted(){
     this.traerDispositivo();
 }
-};
+},
+/*
+computed:{
+  filtroinventario(){}
+}
 
      /* computed:{
         filteredList() {
@@ -100,6 +116,16 @@ mounted(){
 
 
 <style scoped>
+#Buscar{
+  position: absolute;
+    width:75px;
+    margin-top:20px;
+    margin-left: 870px;
+    height:45px;
+    width: 220px;
+    background-color:#7ACEE0;
+}
+
 h2 {
   font-size: 1.6em;
   margin-left:45px;
@@ -128,7 +154,7 @@ h2 {
     background: #F09204;
     height: 45px;
     border-radius: 25px;
-    margin-left:500px;
+    margin-left:400px;
     margin-top: 20px;
     width:22%;
 }
