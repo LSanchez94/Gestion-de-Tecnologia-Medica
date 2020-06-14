@@ -6,7 +6,7 @@
       class="form-control"
       id="Buscar"
       placeholder="buscar en inventario"
-      v-model="busqueda"
+      v-model="search"
       
       />
     </div>
@@ -14,6 +14,7 @@
     <div class="row">
       <h2>Inventario: </h2>
       <router-link to="/mantenimiento" class="btn" id="Linkmtto">Último mantenimiento</router-link>
+      <router-link to="/BotonAgregarProveedor" class="btn" id="Proveedor">Proveedores</router-link>
 
       <!-- Tabla inventario-->
       <div class="table-container w-100 mt-1" id="Tabla">
@@ -33,7 +34,7 @@
             </tr>
           </thead>
            <tbody>
-            <tr v-for="(r, index) in inventarios" :key="index">
+             <tr v-for="(r, index) in filtroinventario" :key="index">
               <th scope="row">{{index+1}}</th>
               <td>{{r.nombre}}</td>
               <td>{{r.marca}}</td>
@@ -61,7 +62,7 @@ import axios from "axios";
 export default {
     data() {
       return {
-        busqueda:"",
+        search:'',
         inventario: {
           nombre:"",
           marca: "",
@@ -72,17 +73,14 @@ export default {
           garantia:"",
           edofuncional:"",
           mttoprev:"",
-        }, 
+      }, 
         inventarios:[],
         numeroinventario: 0,
-      };
-    },  
+    };
+  
+}, 
+    
 methods:{
-
-   filter(value){
-      return $;{value.nombre};{value.marca};{value.modelo};{value.departamento};{value.nserie};{value.adq};{value.garantia};{value.edofuncional};{mttoprev};
-    },
-
     traerDispositivo() {
       axios
         .get( this.$store.state.url+"/Dispositivo/getDevices")
@@ -96,35 +94,39 @@ methods:{
         });
     }
 },
+
+computed:{
+  filtroinventario: function(){
+    return this.inventarios.filter((inventario)=>{
+      return inventario.nombre.toLowerCase().match(this.search.toLowerCase())
+      || inventario.marca.toLowerCase().match(this.search.toLowerCase())
+      || inventario.modelo.toLowerCase().match(this.search.toLowerCase())
+      || inventario.departamento.toLowerCase().match(this.search.toLowerCase())
+      || inventario.nserie.toLowerCase().match(this.search.toLowerCase())
+      || inventario.adq.toLowerCase().match(this.search.toLowerCase())
+      || inventario.garantia.toLowerCase().match(this.search.toLowerCase())
+      || inventario.edofuncional.toLowerCase().match(this.search.toLowerCase())
+      || inventario.mttoprev.toLowerCase().match(this.search.toLowerCase())
+      
+    });
+  }
+},
+
 mounted(){
     this.traerDispositivo();
 },
 }
-
-/*
-computed:{
-  filtroinventario(){}
-}
-
-     /* computed:{
-        filteredList() {
-      return this.postList.filter(post => {
-        return post.title.Inventario.includes(this.search.toLowerCase())
-      })
-     } */
-    
 </script>
 
 
 <style scoped>
 #Buscar{
-  position: absolute;
+    position: absolute;
     width:75px;
     margin-top:20px;
     margin-left: 870px;
     height:45px;
     width: 220px;
-    background-color:#7ACEE0;
 }
 
 h2 {
@@ -151,18 +153,30 @@ h2 {
 }
 
 #Linkmtto{
+    position:absolute;
     color:#FFFF;
     background: #F09204;
     height: 45px;
     border-radius: 25px;
-    margin-left:400px;
-    margin-top: 20px;
+    margin-left:200px;
+    margin-top: 450px;
+    width:22%;
+}
+
+#Proveedor{
+    position:absolute;
+    color:#FFFF;
+    background: #F09204;
+    height: 45px;
+    border-radius: 25px;
+    margin-left:600px;
+    margin-top: 450px;
     width:22%;
 }
 
 #Regresar{
-    margin-left: 600px;
-    margin-top: 100px;
+    margin-left: 450px;
+    margin-top: 160px;
     background: #1DA0F2;
     box-sizing: border-box; 
     border-radius: 25px;
