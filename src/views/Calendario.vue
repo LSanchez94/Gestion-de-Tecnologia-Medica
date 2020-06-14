@@ -47,7 +47,8 @@ export default {
         const day = date.getDate()
         this.mes = day;
         this.traerFechas()
-        return [day == 10 ? 'table-warning' : '', day == 15 ? 'table-info' : '' ]
+        return day ? 'table-warning' : ''; 
+        //, day == 15 ? 'table-info' : '' ]
       },
 
     traerCapacitacion() {
@@ -65,7 +66,7 @@ export default {
     
     traerFechas(){
       axios.post(this.$store.state.url + '/calendario/fechas', {'mes': this.mes}).then(response => {
-        console.log(response.data)
+        console.log('dia',response.data)
         })
 }},
 mounted(){
@@ -95,7 +96,10 @@ mounted(){
   width:300px;
 }
 #Linktarea{
-  margin-top:30px;
+  position: absolute;
+  margin-top:100px;
+  left:500px;
+
 }
 
 #Linkmtto{
