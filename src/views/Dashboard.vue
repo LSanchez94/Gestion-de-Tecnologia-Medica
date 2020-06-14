@@ -11,7 +11,7 @@
             <tr>
               <th scope="col">#</th>
               <th scope="col">Departamento</th>
-              <th scope="col">Serie</th>
+              <th scope="col">Num. Serie</th>
               <th scope="col">Información</th>
               <th scope="col">Estado</th>
             </tr>
@@ -68,7 +68,7 @@ export default {
 
       reportes: [],
       numeroreportes: 0,
-      
+
       proveedores: [],
       numeroproveedores: 0,
 
