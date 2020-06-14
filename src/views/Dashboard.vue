@@ -40,7 +40,7 @@
         </div>
         <div class="color3">
           <h3>PROVEEDORES</h3>
-          <h4>300</h4>
+          <h4>{{numeroproveedores}}</h4>
         </div>
       </div>
     </div>
@@ -58,18 +58,32 @@ export default {
         info: "",
         estado: ""
       },
+      proveedores: {
+       nombre: "",
+        contacto: "",
+        email: "",
+        tel: "",
+        address: ""
+      },
+
       reportes: [],
       numeroreportes: 0,
+      
+      proveedores: [],
+      numeroproveedores: 0,
+
       usuario: {
         name: "",
         correo: "",
         password: "",
         perfil: ""
       },
+      
       usuarios: [],
       numeroUsuarios: 0,
       administradores: 0,
       medicos: 0,
+
         inventario: {
           nserie:"",
           estado: "",
@@ -83,6 +97,7 @@ export default {
         inventarios:[],
         numeroinventario: 0
               };
+    
     
   },
   methods: {
@@ -132,7 +147,20 @@ export default {
           alert("NO FUNCIONA EL API");
           console.log(err);
         });
+    },
+    traerProveedores() {
+      axios
+        .get( this.$store.state.url +"/Agregarproveedor/getDatos")
+        .then(response => {
+          this.proveedores = response.data;
+          this.numeroproveedores = response.data.length;
+          })
+        .catch(err => {
+          alert("NO FUNCIONA EL API");
+          console.log(err);
+        });
     }
+
 
   },
 
@@ -140,7 +168,9 @@ export default {
     this.traerReportes();
     this.traerDispositivo();
     this.traerUsuarios();
+    this.traerProveedores();
   }
+
 
   
 

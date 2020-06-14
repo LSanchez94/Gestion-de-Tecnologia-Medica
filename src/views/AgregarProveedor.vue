@@ -21,7 +21,7 @@
 
 
           <div class="form-group Linea4">
-          <input type="text" class="form-control" id="Linea4" v-model="proveedor.tel" placeholder="Numero de teléfono" >
+          <input type="text" class="form-control" id="Linea4" v-model="proveedor.tel" placeholder="Número de teléfono" >
           </div>
 
           <div class="form-group Linea5">
@@ -65,11 +65,11 @@ export default {
       axios
       .post(this.$store.state.url + '/AgregarProveedor/addDatos', this.proveedor)
       .then( response => {
-        alert('Todo bien todo correcto, y yo que me alegro');
+        alert('Proveedor agregado exitosamente');
         this.traerProveedores();
       }).catch(e => {
         console.log(e)
-        alert('run b...')
+        alert('No se agregó el proveedor')
       })
     },
 
