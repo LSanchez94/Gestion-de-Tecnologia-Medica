@@ -97,7 +97,7 @@ methods:{
 
 computed:{
   filtroinventario: function(){
-    this.inventarios.filter((inventario)=>{
+    return this.inventarios.filter((inventario)=>{
       return inventario.nombre.toLowerCase().match(this.search.toLowerCase())
       || inventario.marca.toLowerCase().match(this.search.toLowerCase())
       || inventario.modelo.toLowerCase().match(this.search.toLowerCase())
