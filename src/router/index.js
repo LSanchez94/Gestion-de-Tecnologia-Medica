@@ -17,7 +17,8 @@ import Departamentos from '../views/Departamentos.vue'
 import Contacto from '../views/contacto.vue'
 import ConfiguracionDR from '../views/ConfiguracionDR.vue'
 import BotonAgregarProveedor from '../views/BotonAgregarProveedor.vue'
-
+import Refacciones from '../views/BotonRefacciones.vue'
+import BotonRefacciones from '../views/BotonRefacciones.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -116,9 +117,20 @@ const routes = [
   {
     path: '/BotonAgregarProveedor',
     name: 'BotonAgregarProveedor',
-    component: ConfiguracionDR
+    component: BotonAgregarProveedor
   },
 
+  {
+    path: '/Refacciones',
+    name: 'Refacciones',
+    component: Refacciones
+  },
+
+  {
+    path: '/BotonRefacciones',
+    name: 'BotonRefacciones',
+    component: BotonRefacciones
+  },
 ]
 
 const router = new VueRouter({

@@ -1,27 +1,29 @@
 <template>
   <div class="container-fluid">
     <div class="row">
-      <h1 class="mt-3" id="Proveedores">Proveedores:</h1>
+      <h1 class="mt-3" id="Refacciones">Refacciones:</h1>
       <!-- Tabla reportes -->
       <div class="table-container">
         <table class="table table-striped">
            <thead>
             <tr>
               <th scope="col">Nombre</th>
-              <th scope="col">Contacto</th>
-              <th scope="col">Correo</th>
-              <th scope="col">Telefono</th>
-              <th scope="col">Dirección</th>
+              <th scope="col">Marca</th>
+              <th scope="col">Modelo</th>
+              <th scope="col">Equipo</th>
+              <th scope="col">Cantidad</th>
+              <th scope="col">Proveedor</th>
             </tr>
           </thead>
           <tbody>
-            <tr v-for="(r, index) in proveedores" :key="index">
+            <tr v-for="(r, index) in refacciones" :key="index">
               <th scope="row">{{index+1}}</th>
               <td>{{r.nombre}}</td>
-              <td>{{r.contacto}}</td>
-              <td>{{r.email}}</td>
-              <td>{{r.tel}}</td>
-              <td>{{r.address}}</td>
+              <td>{{r.marca}}</td>
+              <td>{{r.modelo}}</td>
+              <td>{{r.equipo}}</td>
+              <td>{{r.cantidad}}</td>
+              <td>{{r.proveedor}}</td>
             </tr>
           </tbody>
 
@@ -41,25 +43,26 @@ import axios from "axios";
 export default {
   data() {
     return {
-      proveedores: {
+     refacciones: {
        nombre: "",
-        contacto: "",
-        email: "",
-        tel: "",
-        address: ""
+       marca: "",
+        modelo: "",
+        equipo: "",
+       cantidad: "",
+       proveedor:""
       },
-      proveedores: [],
-      numeroproveedores: 0,
+      refacciones: [],
+      numerorefacciones: 0,
     };
   },
   methods: {
 
-     traerProveedores() {
+     traerRefaccion() {
       axios
-        .get( this.$store.state.url +"/AgregarProveedor/getDatos")
+        .get( this.$store.state.url +"/Refacciones/getDatosR")
         .then(response => {
-          this.proveedores = response.data;
-          this.numeroproveedores = response.data.length;
+          this.refacciones = response.data;
+          this.numerorefacciones = response.data.length;
           })
         .catch(err => {
           alert("NO FUNCIONA EL API");
@@ -71,7 +74,7 @@ export default {
     
   },
   mounted() {
-    this.traerProveedores();
+    this.traerRefaccion();
   }
   
 };
