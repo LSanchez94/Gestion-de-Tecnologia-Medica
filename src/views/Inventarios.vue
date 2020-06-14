@@ -11,13 +11,14 @@
           <thead>
             <tr>
               <th scope="col">#</th>
-              <th scope="col">Serie</th>
-              <th scope="col">Estado</th>
-              <th scope="col">Adquisición</th>
+              <th scope="col">Nombre</th>
               <th scope="col">Marca</th>
-              <th scope="col">Garantía</th>
-              <th scope="col">Departamento</th>
               <th scope="col">Modelo</th>
+              <th scope="col">Departamenro</th>
+              <th scope="col">N. Serie</th>
+              <th scope="col">Adquisición</th>
+              <th scope="col">Garantía</th>
+              <th scope="col">Estado</th>
               <th scope="col">Preventivos</th>
             </tr>
           </thead>
@@ -64,6 +65,10 @@ export default {
       };
     },  
 methods:{
+
+   /* filter(value){
+      return ${value.nserie};
+    },*/
     traerDispositivo() {
       axios
         .get( this.$store.state.url+"/Dispositivo/getDevices")
