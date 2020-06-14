@@ -36,7 +36,7 @@
           </div>
 
         
-  |<!-- <button class="btn" id="RectanguloGuardar" @click="agregarRefaccion()">Guardar</button>-->
+  | <button class="btn" id="RectanguloGuardar" @click="agregarRefaccion()">Guardar</button>
     <button class="btn" id="RectanguloRegresar" onClick="history.go(-1);">REGRESAR</button>
 
           
