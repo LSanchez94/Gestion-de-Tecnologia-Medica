@@ -98,16 +98,14 @@ methods:{
 },
 mounted(){
     this.traerDispositivo();
+},
 }
-};
+
 /*
 computed:{
-  filtroinventario(){
-    return this.inventario.filter((blog)=>{
-
-    }
-  }
+  filtroinventario(){}
 }
+
      /* computed:{
         filteredList() {
       return this.postList.filter(post => {
