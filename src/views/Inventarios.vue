@@ -25,14 +25,15 @@
            <tbody>
             <tr v-for="(r, index) in inventarios" :key="index">
               <th scope="row">{{index+1}}</th>
-              <td>{{r.nserie}}</td>
-              <td>{{r.estadofuncional}}</td>
-              <td>{{r.fechadeadquisicion}}</td>
+              <td>{{r.nombre}}</td>
               <td>{{r.marca}}</td>
-              <td>{{r.garantia}}</td>
-              <td>{{r.departamento}}</td>
               <td>{{r.modelo}}</td>
-              <td>{{r.mantenimientosrealizado}}</td>
+              <td>{{r.departamento}}</td>
+              <td>{{r.nserie}}</td>
+              <td>{{r.adq}}</td>
+              <td>{{r.garantia}}</td>
+              <td>{{r.edofuncional}}</td>
+              <td>{{r.mttoprev}}</td>
             </tr>
           </tbody>
         </table>
@@ -51,14 +52,15 @@ export default {
     data() {
       return {
         inventario: {
-          nserie:"",
-          estado: "",
-          fechadeadquisicion: "",
+          nombre:"",
           marca: "",
-          garantia: "",
-          departamento:"",
-          modelo:"",
-          mantenimientos:"",
+          modelo: "",
+          departamento: "",
+          nserie: "",
+          adq:"",
+          garantia:"",
+          edofuncional:"",
+          mttoprev:"",
         }, 
         inventarios:[],
         numeroinventario: 0,
