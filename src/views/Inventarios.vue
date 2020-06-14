@@ -25,7 +25,7 @@
               <th scope="col">Nombre</th>
               <th scope="col">Marca</th>
               <th scope="col">Modelo</th>
-              <th scope="col">Departamenro</th>
+              <th scope="col">Departamento</th>
               <th scope="col">N. Serie</th>
               <th scope="col">Adquisición</th>
               <th scope="col">Garantía</th>
