@@ -16,6 +16,7 @@ import Tarea from '../views/Tarea.vue'
 import Departamentos from '../views/Departamentos.vue'
 import Contacto from '../views/contacto.vue'
 import ConfiguracionDR from '../views/ConfiguracionDR.vue'
+import BotonAgregarProveedor from '../views/BotonAgregarProveedor'
 
 Vue.use(VueRouter)
 
@@ -109,6 +110,12 @@ const routes = [
   {
     path: '/ConfiguracionDR',
     name: 'ConfiguracionDR',
+    component: ConfiguracionDR
+  },
+
+  {
+    path: '/BotonAgregarProveedor',
+    name: 'BotonAgregarProveedor',
     component: ConfiguracionDR
   },
 
