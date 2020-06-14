@@ -17,7 +17,7 @@ import Departamentos from '../views/Departamentos.vue'
 import Contacto from '../views/contacto.vue'
 import ConfiguracionDR from '../views/ConfiguracionDR.vue'
 import BotonAgregarProveedor from '../views/BotonAgregarProveedor.vue'
-import Refacciones from '../views/Refacciones.vue'
+import Refacciones from '../views/BotonRefacciones.vue'
 import BotonRefacciones from '../views/BotonRefacciones.vue'
 Vue.use(VueRouter)
 
