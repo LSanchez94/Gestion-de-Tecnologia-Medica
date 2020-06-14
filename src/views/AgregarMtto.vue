@@ -43,7 +43,7 @@
           </form>
       </div>
 
-       <button class="Agregar" id="login_button" @click="validarUsuario()">AGREGAR</button>
+       <button class="Agregar" id="login_button" @click="agregarMtto()">AGREGAR</button>
        <button class="Regresar" onClick="history.go(-1);">REGRESAR</button>
       </div>
     </div>
@@ -67,7 +67,7 @@ export default {
   methods: {
         agregarMtto() {
         axios
-        .post(this.$store.state.url + "/AgregarMtto/AddMantenimiento", this.dispositivo)
+        .post(this.$store.state.url + "/AgregarMtto/addMtto", this.dispositivo)
         .then(response => {
           alert(response.data);
         })

@@ -29,21 +29,34 @@ router.post('/addDevice', (req,res) => {
     nserie:req.body.nserie, 
     marca:req.body.marca,
     modelo:req.body.modelo,
+    nombre:req.body.nombre,
     departamento:req.body.departamento,
     estadofuncional:req.body.estadofuncional,
     fechadeadquisicion:req.body.fechadeadquisicion,
     garantia:req.body.garantia,
     mantenimientosrealizado:req.body.mantenimientosrealizado,
-        
     }, err => {
         console.log("error")
         console.log(err)
         if(!err){
             res.send("Dispositivo Agregado!")
         }else{
-            res.send("Hubo un problema, agregando el dispositivo")
+            res.send("Hubo un problema agregando el dispositivo")
         }
     })
 });
 
+// ELIMINA DATO
+router.post('/deleteDevice', (req,res) => {
+    console.log("test de llegada")
+    console.log(req.body.nserie)
+    Dispositivo.findOneAndDelete({nserie: req.body.nserie}, err => {
+        if(!err){
+            res.send("Dispositivo Eliminado!")
+        }else{
+            res.send("Hubo un problema eliminando el dispositivo")
+        }
+    })
+})
+    
 module.exports = router;

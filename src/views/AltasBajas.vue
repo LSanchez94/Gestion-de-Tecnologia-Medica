@@ -44,8 +44,8 @@
               <input
                 type="text"
                 class="form-control"
-                v-model="dispositivo.alias"
-                placeholder="Alias"
+                v-model="dispositivo.nombre"
+                placeholder="Nombre"
               />
             </div>
           </form>
@@ -117,24 +117,12 @@
         </div>
         <form>
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Numero de Serie" />
+            <input type="text" v-model="dispositivo.nserie" class="form-control" placeholder="Numero de Serie" />
           </div>
         </form>
 
-        <form>
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Modelo" />
-          </div>
-        </form>
-
-        <form>
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Alias" />
-          </div>
-        </form>
-
-        <button class="DarBaja" id="login_button" @click="validarUsuario()">Dar de Baja</button>
-        <button class="Inventario" id="login_button" @click="validarUsuario()">Inventario</button>
+        <button class="DarBaja" id="login_button" @click="eliminarDispositivo()">Dar de Baja</button>
+        <router-link to="/Inventarios" class="btn" id="InventarioBtn" placeholder="InventarioBtn">Inventario</router-link>
         <button class="Regresar" onclick="history.go(-1);">REGRESAR</button>
       </div>
     </div>
@@ -165,7 +153,6 @@ export default {
         .post(this.$store.state.url + "/Dispositivo/addDevice", this.dispositivo)
         .then(response => {
           alert(response.data);
-
         })
         .catch(err => {
           alert("NO FUNCIONA EL API");
@@ -175,14 +162,13 @@ export default {
 
     eliminarDispositivo() {
       axios
-        .delete(this.$store.state.url + "/Dispositivo/deleteDevice", this.dispositivo)
-        .post(this.$store.state.url + "/Dispositivo/deleteDM", this.dispositivo)
+        .post(this.$store.state.url + "/Dispositivo/deleteDevice", this.dispositivo)
         .then(response => {
-        this.$emit('Dispositivo Eliminado')
         alert(response.data);
         })
         .catch(err => {
           alert("NO FUNCIONA EL API");
+          console.log(err);
         });
       }
     }
@@ -190,13 +176,7 @@ export default {
 </script>
 
 
-
-
-
-
-
 <style scoped>
-
 #login_button{
   color: ivory;
 }
@@ -257,7 +237,7 @@ export default {
   border-radius: 10px;
 }
 
-#Alias {
+#Nombre {
   width: 279px;
   height: 48px;
   left: 1293px;
@@ -384,7 +364,7 @@ export default {
   border-radius: 25px;
 }
 
-.Inventario {
+#InventarioBtn {
   width: 393px;
   height: 60px;
   left: 320px;

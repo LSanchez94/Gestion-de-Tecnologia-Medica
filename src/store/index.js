@@ -3,6 +3,8 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
+//holi
+
 export default new Vuex.Store({
   state: {
     user: {},
