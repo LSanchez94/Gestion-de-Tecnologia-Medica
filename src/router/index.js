@@ -16,7 +16,7 @@ import Tarea from '../views/Tarea.vue'
 import Departamentos from '../views/Departamentos.vue'
 import Contacto from '../views/contacto.vue'
 import ConfiguracionDR from '../views/ConfiguracionDR.vue'
-import BotonAgregarProveedor from '../views/BotonAgregarProveedor'
+import BotonAgregarProveedor from '../views/BotonAgregarProveedor.vue'
 
 Vue.use(VueRouter)
 
