@@ -6,7 +6,7 @@ var datosR = mongoose.Schema({
     modelo:String,
     equipo:String,
     cantidad:String,
-    proveedor: String,
+    proveedor:String
    
 })
 
