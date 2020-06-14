@@ -13,7 +13,7 @@
 
     <div class="row">
       <h2>Inventario: </h2>
-      <router-link to="/mantenimiento" class="btn" id="Linkmtto">Último mantenimiento</router-link>
+      <router-link to="/mantenimiento" class="btn" id="Linkmtto">Ver Equipo</router-link>
       <router-link to="/BotonAgregarProveedor" class="btn" id="Proveedor">Proveedores</router-link>
 
       <!-- Tabla inventario-->
@@ -26,7 +26,7 @@
               <th scope="col">Marca</th>
               <th scope="col">Modelo</th>
               <th scope="col">Departamento</th>
-              <th scope="col">N. Serie</th>
+              <th scope="col">No Serie</th>
               <th scope="col">Adquisición</th>
               <th scope="col">Garantía</th>
               <th scope="col">Estado</th>
