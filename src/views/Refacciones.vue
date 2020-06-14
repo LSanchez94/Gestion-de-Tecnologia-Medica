@@ -3,7 +3,7 @@
       <div class="row">
           <div id="Refacciones" class="col-8">
              <h2>Refacciones: </h2>
-<!-- Formulario para agregar refacciones -->
+<!-- Formulario para agregar refacciones-->
   <form class="col-10">
     <div class="form-group Linea1">
         <input type="text" class="form-control" id="Linea1" v-model="refaccion.nombre" placeholder="Nombre de la refaccion"/>
@@ -36,16 +36,11 @@
           </div>
 
         
-      
-
-  | <button class="btn" id="RectanguloGuardar" @click="agregarRefaccion()">Guardar</button>
+  |<!-- <button class="btn" id="RectanguloGuardar" @click="agregarRefaccion()">Guardar</button>-->
     <button class="btn" id="RectanguloRegresar" onClick="history.go(-1);">REGRESAR</button>
 
           
-        </div>
-  
-     
-                  
+</div>                  
 </template>
 
 
@@ -61,7 +56,9 @@ export default {
         equipo: '',
         cantidad: '',
         proveedor: ''
-      }
+      },
+      refacciones:[],
+      numerorefacciones: 0,
     }
   },
   methods: {

@@ -18,6 +18,7 @@ const tareas= require('./rutas/tareas');
 const AgregarProveedor= require("./rutas/AgregarProveedor")
 const agregarmtto= require("./rutas/AgregarMtto")
 const calendario= require("./rutas/calendario")
+const Refacciones= require("./rutas/Refacciones")
 
 app.use('/Usuarios', usuarios);
 app.use('/Reportes', reportes);
@@ -27,6 +28,7 @@ app.use("/AgregarProveedor", AgregarProveedor)
 app.use('/Tareas', tareas);
 app.use('/AgregarMtto', agregarmtto);
 app.use('/calendario', calendario);
+app.use('/Refacciones', Refacciones);
 
 app.get('/', (req,res) => {
     res.send('HOLO')
