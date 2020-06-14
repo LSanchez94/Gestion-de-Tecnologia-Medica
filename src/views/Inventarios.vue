@@ -99,12 +99,15 @@ methods:{
 mounted(){
     this.traerDispositivo();
 }
-},
+};
 /*
 computed:{
-  filtroinventario(){}
-}
+  filtroinventario(){
+    return this.inventario.filter((blog)=>{
 
+    }
+  }
+}
      /* computed:{
         filteredList() {
       return this.postList.filter(post => {
