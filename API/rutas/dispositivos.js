@@ -26,14 +26,15 @@ router.post('/Validate', (req,res) => {
 router.post('/addDevice', (req,res) => {
     console.log("entre")
     Dispositivo.create({
-    nserie:req.body.nserie, 
+    nombre:req.body.nombre, 
     marca:req.body.marca,
     modelo:req.body.modelo,
     departamento:req.body.departamento,
-    estadofuncional:req.body.estadofuncional,
-    fechadeadquisicion:req.body.fechadeadquisicion,
+    nserie:req.body.nserie,
+    adq:req.body.adq,
     garantia:req.body.garantia,
-    mantenimientosrealizado:req.body.mantenimientosrealizado,
+    edofuncional:req.body.edofuncional,
+    mttoprev:req.body.mttoprev,
     }, err => {
         console.log("error")
         console.log(err)
