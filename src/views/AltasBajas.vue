@@ -99,7 +99,7 @@
               <input
                 type="text"
                 class="form-control"
-                v-model="dispositivo.mantenimientosrealizado"
+                v-model="dispositivo.mttoprev"
                 placeholder="Mttos Prev. Realizados"
               />
             </div>
@@ -143,7 +143,7 @@ export default {
         edofuncional: null,
         adq: null,
         garantia: null,
-        mantenimientosrealizado: null
+        mttoprev: null
       }
     };
   },
