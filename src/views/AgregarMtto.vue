@@ -6,7 +6,7 @@
       <div class = "NumSerie" >
           <form>
           <div class="form-group">
-          <input type="text" class="form-control" id="NumSerie" placeholder="Numero de Serie">
+          <input type="text" class="form-control" id="NumSerie" placeholder="Número de Serie">
           </div>
           </form>
       </div>

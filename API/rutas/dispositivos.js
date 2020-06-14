@@ -13,14 +13,6 @@ router.get('/getDevices', (req,res) => {
 })
 
 
-//TRAE USUARIO SOLICITADO
-router.post('/Validate', (req,res) => {
-    Usuarios.find({ correo: req.body.email}).then(response => {
-        res.send(response)
-    }).catch(err => {
-        res.send(err)
-    })  
-})
 
 //INSERTAR DISPOSITIVOS
 router.post('/addDevice', (req,res) => {
@@ -35,6 +27,7 @@ router.post('/addDevice', (req,res) => {
     garantia:req.body.garantia,
     edofuncional:req.body.edofuncional,
     mttoprev:req.body.mttoprev,
+    
     }, err => {
         console.log("error")
         console.log(err)

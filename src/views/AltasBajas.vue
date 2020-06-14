@@ -4,7 +4,7 @@
       <div class="row">
         <div class="d-flex flex-wrap justify-content-between">
           <!--ALTA DE DM -->
-          <h1 class="w-100">Alta de Dispositivos Medicos:</h1>
+          <h1 class="w-100">Alta de Dispositivos Médicos:</h1>
 
           <form>
             <div class="form-group">
@@ -12,7 +12,7 @@
                 type="text"
                 class="form-control"
                 v-model="dispositivo.nserie"
-                placeholder="Numero de Serie"
+                placeholder="Número de Serie"
               />
             </div>
           </form>
@@ -66,7 +66,7 @@
               <input
                 type="text"
                 class="form-control"
-                v-model="dispositivo.estadofuncional"
+                v-model="dispositivo.edofuncional"
                 placeholder="Estado Funcional"
               />
             </div>
@@ -77,8 +77,8 @@
               <input
                 type="text"
                 class="form-control"
-                v-model="dispositivo.fechadeadquisicion"
-                placeholder="Fecha de Adquisicion"
+                v-model="dispositivo.adq"
+                placeholder="Fecha de Adquisición"
               />
             </div>
           </form>
@@ -89,7 +89,7 @@
                 type="text"
                 class="form-control"
                 v-model="dispositivo.garantia"
-                placeholder="Garantia"
+                placeholder="Garantía"
               />
             </div>
           </form>
@@ -99,8 +99,8 @@
               <input
                 type="text"
                 class="form-control"
-                v-model="dispositivo.mantenimientosrealizado"
-                placeholder="Mantenimientos Realizados"
+                v-model="dispositivo.mttoprev"
+                placeholder="Mttos Prev. Realizados"
               />
             </div>
           </form>
@@ -113,11 +113,11 @@
       <div class="mt-5 d-flex flex-wrap justify-content-between">
         <!--BAJA DE DM -->
         <div class="w-100">
-          <h1>Baja de Dispositivos Medicos:</h1>
+          <h1>Baja de Dispositivos Médicos:</h1>
         </div>
         <form>
           <div class="form-group">
-            <input type="text" v-model="dispositivo.nserie" class="form-control" placeholder="Numero de Serie" />
+            <input type="text" v-model="dispositivo.nserie" class="form-control" placeholder="Número de Serie" />
           </div>
         </form>
 
@@ -140,10 +140,10 @@ export default {
         modelo: null,
         nombre: null,
         departamento: null,
-        estadofuncional: null,
-        fechadeadquisicion: null,
+        edofuncional: null,
+        adq: null,
         garantia: null,
-        mantenimientosrealizado: null
+        mttoprev: null
       }
     };
   },

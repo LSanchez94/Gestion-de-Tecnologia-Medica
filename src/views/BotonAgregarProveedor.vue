@@ -7,7 +7,8 @@
         <table class="table table-striped">
            <thead>
             <tr>
-              <th scope="col">Nombre</th>
+              <th scope="col">#</th>
+              <th scope="col">Nombre de Empresa</th>
               <th scope="col">Contacto</th>
               <th scope="col">Correo</th>
               <th scope="col">Telefono</th>
@@ -88,6 +89,8 @@ export default {
   width:4000px;
   font-size:1.2em;
 }
+
+
 
 h1 {
   font-size: 1.6em;
