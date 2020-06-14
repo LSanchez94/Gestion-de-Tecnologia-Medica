@@ -138,7 +138,7 @@ export default {
         nserie: null,
         marca: null,
         modelo: null,
-        alias: null,
+        nombre: null,
         departamento: null,
         estadofuncional: null,
         fechadeadquisicion: null,
