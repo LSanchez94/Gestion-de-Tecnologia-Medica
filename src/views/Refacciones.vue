@@ -6,7 +6,7 @@
 <!-- Formulario para agregar refacciones-->
   <form class="col-10">
     <div class="form-group Linea1">
-        <input type="text" class="form-control" id="Linea1" v-model="refaccion.nombre" placeholder="Nombre de la refaccion"/>
+        <input type="text" class="form-control" id="Linea1" v-model="refaccion.nombre" placeholder="Nombre de la refacción"/>
     </div>
       
 
@@ -55,7 +55,7 @@ export default {
         modelo: '',
         equipo: '',
         cantidad: '',
-        proveedor: ''
+        proveedor: '',
       },
       refacciones:[],
       numerorefacciones: 0,

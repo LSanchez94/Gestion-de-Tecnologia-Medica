@@ -27,6 +27,7 @@ router.post('/addDevice', (req,res) => {
     garantia:req.body.garantia,
     edofuncional:req.body.edofuncional,
     mttoprev:req.body.mttoprev,
+    
     }, err => {
         console.log("error")
         console.log(err)

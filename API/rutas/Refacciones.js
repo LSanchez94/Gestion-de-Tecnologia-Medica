@@ -21,8 +21,9 @@ router.post('/addDatosR', (req,res) => {
         modelo: req.body.modelo,
         equipo: req.body.equipo,
         cantidad: req.body.cantidad,
-        proveedor: req.proveedor 
-    }, err => {
+        proveedor: req.body.proveedor,
+    }, 
+    err => {
         console.log(err)
         if(!err){
             res.send("Refacción Agregada!")
