@@ -66,7 +66,7 @@
               <input
                 type="text"
                 class="form-control"
-                v-model="dispositivo.estadofuncional"
+                v-model="dispositivo.edofuncional"
                 placeholder="Estado Funcional"
               />
             </div>
@@ -77,7 +77,7 @@
               <input
                 type="text"
                 class="form-control"
-                v-model="dispositivo.fechadeadquisicion"
+                v-model="dispositivo.adq"
                 placeholder="Fecha de Adquisición"
               />
             </div>
@@ -140,8 +140,8 @@ export default {
         modelo: null,
         nombre: null,
         departamento: null,
-        estadofuncional: null,
-        fechadeadquisicion: null,
+        edofuncional: null,
+        adq: null,
         garantia: null,
         mantenimientosrealizado: null
       }
