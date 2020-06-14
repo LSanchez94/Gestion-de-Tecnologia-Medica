@@ -100,7 +100,7 @@
                 type="text"
                 class="form-control"
                 v-model="dispositivo.mantenimientosrealizado"
-                placeholder="Mttos Realizados"
+                placeholder="Mttos Prev. Realizados"
               />
             </div>
           </form>
