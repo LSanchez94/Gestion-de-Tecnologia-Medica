@@ -13,9 +13,9 @@ router.get('/getMtto', (req,res) => {
 
 //INSERTA DATO
 router.post('/addMtto', (req,res) => {
-    console.log(req.body.name)
+    console.log(req.body.nserie)
     AgregarMtto.create({
-        serie: req.body.serie,
+        nserie: req.body.nserie,
         departamento: req.body.departamento,
         tipomantenimientos: req.body.tipomantenimientos,
         fechamantenimientos: req.body.fechamantenimientos,

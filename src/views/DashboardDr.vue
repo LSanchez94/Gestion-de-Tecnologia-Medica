@@ -20,12 +20,12 @@
           </div>
           <div class="form-group col-6" >
             <input
-              type="text"
-              class="form-control"
-              id="NumSerie"
-              aria-describedby="NumSerieHelp"
-              placeholder="Número de Serie"
-              v-model="reporte.NumSerie"
+
+            type="text"
+            class="form-control"
+            placeholder="Número de Serie"
+            v-model="reporte.NumSerie"
+             
             />
           </div>
           <div class="form-group col-6" >

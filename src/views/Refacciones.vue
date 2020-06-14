@@ -1,31 +1,34 @@
 <template>
   <div class="container-fluid">
       <div class="row">
-          <div id="AgregarProveedor" class="col-8">
-             <h2>Datos: </h2>
-<!-- Formulario para agregar datos de proveedor -->
+          <div id="Refacciones" class="col-8">
+             <h2>Refacciones: </h2>
+<!-- Formulario para agregar refacciones-->
   <form class="col-10">
     <div class="form-group Linea1">
-        <input type="text" class="form-control" id="Linea1" v-model="proveedor.nombre" placeholder="Nombre de la empresa"/>
+        <input type="text" class="form-control" id="Linea1" v-model="refaccion.nombre" placeholder="Nombre de la refacción"/>
     </div>
       
 
           <div class="form-group Linea2">
-          <input type="text" class="form-control" id="Linea2" v-model="proveedor.contacto" placeholder="Nombre del contacto" >
+          <input type="text" class="form-control" id="Linea2" v-model="refaccion.marca" placeholder="Nombre de la marca" >
           </div>
       
     
           <div class="form-group Linea3">
-           <input type="email" class="form-control" id="Linea3" v-model="proveedor.email"  placeholder="Correo electrónico" >
+           <input type="email" class="form-control" id="Linea3" v-model="refaccion.modelo"  placeholder="Modelo" >
           </div>
 
 
           <div class="form-group Linea4">
-          <input type="text" class="form-control" id="Linea4" v-model="proveedor.tel" placeholder="Número de teléfono" >
+          <input type="text" class="form-control" id="Linea4" v-model="refaccion.equipo" placeholder="Equipo" >
           </div>
 
           <div class="form-group Linea5">
-         <input type="text" class="form-control" id="Linea5" v-model="proveedor.address" placeholder="Dirección" >
+         <input type="text" class="form-control" id="Linea5" v-model="refaccion.cantidad" placeholder="Cantidad" >
+          </div>
+          <div class="form-group Linea6">
+         <input type="text" class="form-control" id="Linea6" v-model="refaccion.proveedor" placeholder="Proveedor" >
           </div>
         </form>
 
@@ -33,16 +36,11 @@
           </div>
 
         
-      
-
-  | <button class="btn" id="RectanguloGuardar" @click="agregarProveedor()">Guardar</button>
+  | <button class="btn" id="RectanguloGuardar" @click="agregarRefaccion()">Guardar</button>
     <button class="btn" id="RectanguloRegresar" onClick="history.go(-1);">REGRESAR</button>
 
           
-        </div>
-  
-     
-                  
+</div>                  
 </template>
 
 
@@ -51,34 +49,37 @@ import axios from 'axios'
 export default {
   data(){
     return{
-      proveedor: {
+      refaccion: {
         nombre: '',
-        contacto: '',
-        correo: '',
-        tel: '',
-        address: ''
-      }
+        marca: '',
+        modelo: '',
+        equipo: '',
+        cantidad: '',
+        proveedor: '',
+      },
+      refacciones:[],
+      numerorefacciones: 0,
     }
   },
   methods: {
-    agregarProveedor(){
+    agregarRefaccion(){
       axios
-      .post(this.$store.state.url + '/AgregarProveedor/addDatos', this.proveedor)
+      .post(this.$store.state.url + '/Refacciones/addDatosR', this.refaccion)
       .then( response => {
-        alert('Proveedor agregado exitosamente');
-        this.traerProveedores();
+        alert('Todo bien todo correcto, y yo que me alegro');
+        this.traerRefaccion();
       }).catch(e => {
         console.log(e)
-        alert('No se agregó el proveedor')
+        alert('run b...')
       })
     },
 
-    traerProveedores() {
+    traerRefaccion() {
       axios
-        .get( this.$store.state.url +"/Agregarproveedor/getDatos")
+        .get( this.$store.state.url +"/Refacciones/getDatosR")
         .then(response => {
-          this.proveedores = response.data;
-          this.numeroproveedores = response.data.length;
+          this.refacciones = response.data;
+          this.numerorefacciones = response.data.length;
           })
         .catch(err => {
           alert("NO FUNCIONA EL API");
@@ -90,7 +91,7 @@ export default {
 
   },
   mounted() {
-    this.traerProveedores();
+    this.traerRefaccion();
   }
 };
 </script>
@@ -137,6 +138,12 @@ export default {
   }
 
   #Linea5{
+    margin-top:15px;
+    width:750px;
+    background-color:#7ACEE0;
+  }
+
+ #Linea6{
     margin-top:15px;
     width:750px;
     background-color:#7ACEE0;

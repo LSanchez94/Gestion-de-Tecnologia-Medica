@@ -11,7 +11,7 @@
             <tr>
               <th scope="col">#</th>
               <th scope="col">Departamento</th>
-              <th scope="col">Serie</th>
+              <th scope="col">Num. Serie</th>
               <th scope="col">Información</th>
               <th scope="col">Estado</th>
             </tr>
@@ -32,15 +32,15 @@
       <div class="d-flex w-100 mt-3">
         <div class="color1">
           <h3>USUARIOS</h3>
-          <h4>100</h4>
+          <h4>{{numeroUsuarios}}</h4>
         </div>
         <div class="color2">
           <h3>EQUIPOS</h3>
-          <h4>200</h4>
+          <h4>{{numeroinventario}}</h4>
         </div>
         <div class="color3">
           <h3>PROVEEDORES</h3>
-          <h4>300</h4>
+          <h4>{{numeroproveedores}}</h4>
         </div>
       </div>
     </div>
@@ -58,9 +58,47 @@ export default {
         info: "",
         estado: ""
       },
+      proveedores: {
+       nombre: "",
+        contacto: "",
+        email: "",
+        tel: "",
+        address: ""
+      },
+
       reportes: [],
       numeroreportes: 0,
-    };
+
+      proveedores: [],
+      numeroproveedores: 0,
+
+      usuario: {
+        name: "",
+        correo: "",
+        password: "",
+        perfil: ""
+      },
+      
+      usuarios: [],
+      numeroUsuarios: 0,
+      administradores: 0,
+      medicos: 0,
+
+        inventario: {
+          nserie:"",
+          estado: "",
+          fechadeadquisicion: "",
+          marca: "",
+          garantia: "",
+          departamento:"",
+          modelo:"",
+          mantenimientos:"",
+        }, 
+        inventarios:[],
+        numeroinventario: 0
+              };
+    
+    
   },
   methods: {
     traerReportes() {
@@ -74,11 +112,65 @@ export default {
           alert("NO FUNCIONA EL API");
           console.log(err);
         });
+        
+    },
+    traerUsuarios() {
+      axios
+        .get( this.$store.state.url + "/Usuarios/getUsers")
+        .then(response => {
+          this.usuarios = response.data;
+          this.numeroUsuarios = response.data.length;
+
+          this.administradores = 0;
+          this.medicos = 0;
+          response.data.forEach(element => {
+            if (element.perfil == "Administrador") {
+              this.administradores++;
+            } else {
+              this.medicos++;
+            }
+          });
+        })
+        .catch(err => {
+          alert("NO FUNCIONA EL API");
+          console.log(err);
+        });
+    },
+    traerDispositivo() {
+      axios
+        .get( this.$store.state.url+"/Dispositivo/getDevices")
+        .then(response => {
+          this.inventarios = response.data;
+          this.numeroinventario = response.data.length;
+        })
+        .catch(err => {
+          alert("NO FUNCIONA EL API");
+          console.log(err);
+        });
+    },
+    traerProveedores() {
+      axios
+        .get( this.$store.state.url +"/Agregarproveedor/getDatos")
+        .then(response => {
+          this.proveedores = response.data;
+          this.numeroproveedores = response.data.length;
+          })
+        .catch(err => {
+          alert("NO FUNCIONA EL API");
+          console.log(err);
+        });
     }
+
+
   },
+
   mounted() {
     this.traerReportes();
+    this.traerDispositivo();
+    this.traerUsuarios();
+    this.traerProveedores();
   }
+
 
   
 

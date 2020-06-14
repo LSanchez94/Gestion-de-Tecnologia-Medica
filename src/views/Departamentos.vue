@@ -34,7 +34,7 @@
 #titulo{
   font-size:1.6em;
   background-color:#005082;
-  width:875px;
+  width:960px;
   color:#FFF;
   text-align: center;
 }
