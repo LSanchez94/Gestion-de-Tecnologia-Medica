@@ -66,7 +66,7 @@
               <input
                 type="text"
                 class="form-control"
-                v-model="dispositivo.edofuncional"
+                v-model="dispositivo.estadofuncional"
                 placeholder="Estado Funcional"
               />
             </div>
@@ -77,7 +77,7 @@
               <input
                 type="text"
                 class="form-control"
-                v-model="dispositivo.adq"
+                v-model="dispositivo.fechadeadquisicion"
                 placeholder="Fecha de Adquisicion"
               />
             </div>
@@ -99,7 +99,7 @@
               <input
                 type="text"
                 class="form-control"
-                v-model="dispositivo.mttoprev"
+                v-model="dispositivo.mantenimientosrealizado"
                 placeholder="Mantenimientos Realizados"
               />
             </div>
@@ -140,10 +140,10 @@ export default {
         modelo: null,
         nombre: null,
         departamento: null,
-        edofuncional: null,
-        adq: null,
+        estadofuncional: null,
+        fechadeadquisicion: null,
         garantia: null,
-        mttoprev: null
+        mantenimientosrealizado: null
       }
     };
   },
