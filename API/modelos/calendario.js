@@ -11,7 +11,7 @@ var calendario = mongoose.Schema({
     dia : Number,
     mes: Number,
     anio: Number,
-    tipo: Number
+    tipo: Number,
 })
 
 var Calendario = mongoose.model('Calendario', calendario);

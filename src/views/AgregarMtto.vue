@@ -6,7 +6,7 @@
       <div class = "NumSerie" >
           <form>
           <div class="form-group">
-          <input type="text" class="form-control" id="NumSerie" placeholder="Número de Serie">
+          <input type="text" class="form-control" id="NumSerie" placeholder="Número de Serie" v-model="mantenimiento.nserie"> 
           </div>
           </form>
       </div>
@@ -14,7 +14,7 @@
       <div class = "Departamento" >
           <form>
           <div class="form-group">
-          <input type="text" class="form-control" id="Departamento" placeholder="Departamento">
+          <input type="text" class="form-control" id="Departamento" placeholder="Departamento" v-model="mantenimiento.departamento">
           </div>
           </form>
       </div>
@@ -22,7 +22,7 @@
        <div class = "TipoMtto" >
           <form>
           <div class="form-group">
-          <input type="text" class="form-control" id="TipoMtto" placeholder="Tipo de Mantenimiento">
+          <input type="text" class="form-control" id="TipoMtto" placeholder="Tipo de Mantenimiento" v-model="mantenimiento.tipomantenimientos">
           </div>
           </form>
       </div>
@@ -30,7 +30,7 @@
        <div class = "FechaMtto">
           <form>
           <div class="form-group">
-          <input type="text" class="form-control" id="FechaMtto" placeholder="Fecha a dar Mantenimiento">
+          <input type="date" class="form-control" id="FechaMtto" placeholder="Fecha a dar Mantenimiento" v-model="mantenimiento.fechamantenimientos">
           </div>
           </form>
        </div>
@@ -38,7 +38,7 @@
        <div class = "Encargado">
           <form>
           <div class="form-group">
-          <input type="text" class="form-control" id="Encargado" placeholder="Encargado">
+          <input type="text" class="form-control" id="Encargado" placeholder="Encargado" v-model="mantenimiento.encargado">
           </div>
           </form>
       </div>
@@ -55,19 +55,22 @@ import axios from "axios";
 export default {
   data() {
     return {
-      dispositivo: {
-        nserie: null,
-        departamento: null,
-        tipomtto: null,
-        fechamtto: null,
-        encargado: null,
-      }
+        mantenimiento: {
+        nserie: "",
+        departamento: "",
+        tipomantenimientos: "",
+        fechamantenimientos: "",
+        encargado: "",
+      },
+      mantenimientos:[],
+      numeromantenimientos:0,
+
     };
   },
   methods: {
         agregarMtto() {
         axios
-        .post(this.$store.state.url + "/AgregarMtto/addMtto", this.dispositivo)
+        .post(this.$store.state.url + "/AgregarMtto/addMtto", this.mantenimiento)
         .then(response => {
           alert(response.data);
         })
@@ -76,23 +79,9 @@ export default {
           console.log(err);
         });
         },
-
-        traerMtto() {
-        axios
-        .get( this.$store.state.url +"/AgregarMtto/getMtto")
-        .then(response => {
-          this.reportes = response.data;
-          this.numeromtto = response.data.length;
-          })
-        .catch(err => {
-          alert("NO FUNCIONA EL API");
-          console.log(err);
-        });
-    }
   },
-  mounted() {
-    this.traerMtto();
-  }
+
+
 };
 </script>
 

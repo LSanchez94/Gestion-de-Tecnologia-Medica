@@ -26,6 +26,8 @@ export default {
       return {
         mes: null,
         value:'',
+        dcapa: [],
+        globalMonth: null,
         capacitacion: {
           tema:"",
           departamento: "",
@@ -45,12 +47,27 @@ export default {
 
     dateClass(ymd, date) {
         const day = date.getDate()
-        this.mes = day;
-        this.traerFechas()
-        return day ? 'table-warning' : ''; 
+        const month = date.getMonth()
+        const year = date.getFullYear()
+        var unico = day+'' + month+'' + year;
+
+        const found = this.dcapa.find(element => element.dia ==  unico);
+        // console.log(found)
+        if(found != undefined){
+          if(found.tipo == '1'){
+            return 'table-warning'
+          } else if(found.tipo == '2'){
+            return 'table-success'
+          } else if(found.tipo == '3'){
+            return 'table-info'
+          } 
+        } 
+        else {
+          return ''
+        }
+        // return dia ? 'table-warning' : '';
         //, day == 15 ? 'table-info' : '' ]
       },
-
     traerCapacitacion() {
       axios
         .get("http://localhost:3000/Capacitacion/getEventData")
@@ -65,11 +82,16 @@ export default {
     },
     
     traerFechas(){
-      axios.post(this.$store.state.url + '/calendario/fechas', {'mes': this.mes}).then(response => {
-        console.log('dia',response.data)
-        })
+      // console.log(d,m,a)
+      axios.post(this.$store.state.url + '/calendario/fechas', {anio : '2020'}).then(response => {
+          this.dcapa = response.data;
+      })
 }},
+created(){
+},
 mounted(){
+    this.traerFechas();
+
     this.traerCapacitacion();
 }
 };  

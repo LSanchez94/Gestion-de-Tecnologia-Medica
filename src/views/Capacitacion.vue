@@ -101,26 +101,6 @@ methods:{
           console.log(err);
         });
     },
-    traerCapacitacion() {
-      axios
-        .get("http://localhost:3000/Capacitacion/getEventData")
-        .then(response => {
-          this.capacitaciones = response.data;
-          this.numerocapacitaciones = response.data.length;
-
-          response.data.forEach(element => {
-            if (element.perfil == "Administrador") {
-              this.administradores++;
-            } else {
-              this.medicos++;
-            }
-          });
-        })
-        .catch(err => {
-          alert("NO FUNCIONA EL API");
-          console.log(err);
-        });
-    }
 },
 mounted(){
     this.traerCapacitacion();

@@ -30,11 +30,12 @@ router.post('/addCap', (req,res) => {
        // console.log(err)
         if(!err){
             Calendario.create({
-                dia : fechas[0],
+                anio : fechas[0],
                 mes: fechas[1],
-                anio: fechas[2],
-                tipo: 1
+                dia: fechas[2]+''+fechas[1]-1+''+fechas[0],
+                tipo: 1,
             })
+            
             res.send("Capacitación Agregada!")
         }else{
             res.send("Hubo un problema agregando capacitación")

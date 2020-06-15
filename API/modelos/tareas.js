@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 var tarea = mongoose.Schema({
     task: String,
-    fechaTarea: Date,
+    fechaTarea: String,
     descripcion: String,
 })
 
