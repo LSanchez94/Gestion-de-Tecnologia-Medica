@@ -5,15 +5,19 @@
       <b-calendar 
       v-model="value" :date-info-fn="dateClass"
       block locale="es"
-      selected-variant="info" 
+      selected-variant="info"
       class="calendar"
       ></b-calendar>
     </div>
-
+  
     <router-link to="/AgregarMtto" class="btn" id="Linkmtto">Agregar Mantenimiento</router-link>
     <router-link to="/Capacitacion" class="btn" id="Linkcap">Agregar Capacitación</router-link>
     <router-link to="/Tarea" class="btn" id="Linktarea">Agregar Tarea</router-link>
-
+    <router-link to="/ShowCap" class="btn" id="linkcaps">Capacitaciones Agendadas</router-link>
+    <router-link to="/ShowTarea" class="btn" id="linktr">Tareas Agendadas</router-link>
+    <router-link to="/ShowMtto" class="btn" id="linkmt">Mantenimientos Agendados</router-link>
+  <button class="btn" id="Regresar" onClick="history.go(-1);">REGRESAR</button>
+  
   </div>
  
 </template>
@@ -44,6 +48,20 @@ export default {
       //   return dayprev == 15 ? 'table-info' : ''
       //   return daycorr == 20 ? 'table-success' : ''
       //  return daytar == 5 ? 'table-danger' :''
+    displayevent(){
+      var selected = selectedDate;
+      
+      const found = this.dcapa.find(element => element.dia ==  selected);
+      if(found != undefined){
+        if(found.tipo == '1'){
+            return 
+          } else if(found.tipo == '2'){
+            return 
+          } else if(found.tipo == '3'){
+            return 
+          } 
+      }
+    },
 
     dateClass(ymd, date) {
         const day = date.getDate()
@@ -126,10 +144,43 @@ mounted(){
 
 #Linkmtto{
   margin-top:50px;
+  background-color:#6AB868;
 }
 
 #Linkcap{
   margin-top:50px;
   margin-left:30px;
+  background-color:#FAE88D;
+}
+
+#linkcaps{
+  position: absolute;
+  top:300px;
+  left:1050px;
+  background-color:#FAE88D;
+}
+
+#linktr{
+  position: absolute;
+  top:250px;
+  left:1050px;
+}
+
+#linkmt{
+  position: absolute;
+  top:350px;
+  left:1050px;
+  background-color:#6AB868;
+}
+
+#Regresar{
+    margin-left: 900px;
+    margin-top: 100px;
+    background: #1DA0F2;
+    box-sizing: border-box; 
+    border-radius: 25px;
+    color:#fff;
+    width: 228px;
+    font-size:1.6m;
 }
 </style>
