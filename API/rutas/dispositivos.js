@@ -27,8 +27,17 @@ router.post('/addDevice', (req,res) => {
     garantia:req.body.garantia,
     edofuncional:req.body.edofuncional,
     mttoprev:req.body.mttoprev,
+    cantidad:req.body.cantidad,
+    mttocorr:req.body.mttocorr,
+    propiedad:req.body.propiedad,
+    aptodonacion:req.body.aptodonacion,
+    capacitacion:req.body.capacitacion,
+    proveedor:req.body.proveedor,
+    refacciones:req.body.refacciones,
     
-    
+
+
+
     }, err => {
         console.log("error")
         console.log(err)

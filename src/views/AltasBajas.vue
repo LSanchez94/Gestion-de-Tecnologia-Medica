@@ -11,8 +11,20 @@
               <input
                 type="text"
                 class="form-control"
-                v-model="dispositivo.nserie"
-                placeholder="Número de Serie"
+                v-model="dispositivo.nombre"
+                placeholder="Nombre"
+              />
+            </div>
+          </form>
+
+
+          <form>
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                v-model="dispositivo.cantidad"
+                placeholder="Cantidad"
               />
             </div>
           </form>
@@ -44,17 +56,6 @@
               <input
                 type="text"
                 class="form-control"
-                v-model="dispositivo.nombre"
-                placeholder="Nombre"
-              />
-            </div>
-          </form>
-
-          <form>
-            <div class="form-group">
-              <input
-                type="text"
-                class="form-control"
                 v-model="dispositivo.departamento"
                 placeholder="Departamento"
               />
@@ -66,8 +67,8 @@
               <input
                 type="text"
                 class="form-control"
-                v-model="dispositivo.edofuncional"
-                placeholder="Estado Funcional"
+                v-model="dispositivo.nserie"
+                placeholder="Número de Serie"
               />
             </div>
           </form>
@@ -95,6 +96,18 @@
           </form>
 
           <form>
+           <div class="form-group">
+             <input
+             type="text"
+             class="form-control"
+             v-model="dispositivo.edofuncional"
+             placeholder="Estado Funcional"
+             />
+            </div>
+
+          </form>
+
+          <form>
             <div class="form-group">
               <input
                 type="text"
@@ -104,6 +117,73 @@
               />
             </div>
           </form>
+
+          <form>
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                v-model="dispositivo.mttocorr"
+                placeholder="Mttos Corr. Realizados"
+              />
+            </div>
+          </form>         
+
+          <form>
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                v-model="dispositivo.propiedad"
+                placeholder="Propiedad"
+              />
+            </div>
+          </form>
+
+          <form>
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                v-model="dispositivo.aptodonacion"
+                placeholder="Apto para Donación"
+              />
+            </div>
+          </form> 
+
+          <form>
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                v-model="dispositivo.capacitacion"
+                placeholder="Capacitación"
+              />
+            </div>
+          </form>          
+
+          <form>
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                v-model="dispositivo.proveedor"
+                placeholder="Proveedor"
+              />
+            </div>
+          </form>
+
+          <form>
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                v-model="dispositivo.refacciones"
+                placeholder="Refacciones"
+              />
+            </div>
+          </form>
+
           <div class="w-100">
             <button class="Agregar" id="login_button" @click="agregarDispositivo()">Agregar</button>
           </div>
@@ -142,8 +222,10 @@ export default {
         departamento: null,
         edofuncional: null,
         adq: null,
+        cantidad: null,
         garantia: null,
-        mttoprev: null
+        mttoprev: null,
+    
       }
     };
   },
