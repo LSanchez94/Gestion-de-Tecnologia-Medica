@@ -215,16 +215,22 @@ export default {
   data() {
     return {
       dispositivo: {
-        nserie: null,
-        marca: null,
-        modelo: null,
-        nombre: null,
-        departamento: null,
-        edofuncional: null,
-        adq: null,
-        cantidad: null,
-        garantia: null,
-        mttoprev: null,
+          nombre:"",
+          cantidad:"",
+          marca: "",
+          modelo: "",
+          departamento: "",
+          nserie: "",
+          adq:"",
+          garantia:"",
+          edofuncional:"",
+          mttoprev:"",
+          mttocorr:"",
+          propiedad:"",
+          aptodonacion:"",
+          capacitacion:"",
+          proveedor:"",
+          refacciones:"",
     
       }
     };

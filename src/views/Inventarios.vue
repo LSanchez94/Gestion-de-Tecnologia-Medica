@@ -16,25 +16,34 @@
       <router-link to="/BotonAgregarProveedor" class="btn" id="Proveedor">Proveedores</router-link>
       <!-- Tabla inventario-->
       <div class="table-container w-100 mt-1" id="Tabla">
-        <table class="table table-striped" >
+        <table class="table table-striped">
           <thead>
             <tr>
               <th scope="col">#</th>
               <th scope="col">Nombre</th>
+              <th scope="col">Cantidad</th>
               <th scope="col">Marca</th>
               <th scope="col">Modelo</th>
               <th scope="col">Departamento</th>
-              <th scope="col">No Serie</th>
+              <th scope="col">N.Serie</th>
               <th scope="col">Adquisición</th>
               <th scope="col">Garantía</th>
               <th scope="col">Estado</th>
               <th scope="col">Preventivos</th>
+              <th scope="col">Correctivos</th>
+              <th scope="col">Propiedad</th>
+              <th scope="col">Donación</th>
+              <th scope="col">Capacitación</th>
+              <th scope="col">Proveedor</th>
+              <th scope="col">Refacciones</th>
             </tr>
           </thead>
            <tbody>
              <tr v-for="(r, index) in filtroinventario" :key="index">
-              <th scope="row">{{index+1}}</th>
+              <th scope="row">{{index+1}}<input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+              </th>
               <td>{{r.nombre}}</td>
+              <td>{{r.cantidad}}</td>
               <td>{{r.marca}}</td>
               <td>{{r.modelo}}</td>
               <td>{{r.departamento}}</td>
@@ -43,6 +52,12 @@
               <td>{{r.garantia}}</td>
               <td>{{r.edofuncional}}</td>
               <td>{{r.mttoprev}}</td>
+              <td>{{r.mttocorr}}</td>
+              <td>{{r.propiedad}}</td>
+              <td>{{r.aptodonacion}}</td>
+              <td>{{r.capacitacion}}</td>
+              <td>{{r.proveedor}}</td>
+              <td>{{r.refacciones}}</td>
             </tr>
           </tbody>
         </table>
@@ -63,6 +78,7 @@ export default {
         search:'',
         inventario: {
           nombre:"",
+          cantidad:"",
           marca: "",
           modelo: "",
           departamento: "",
@@ -71,6 +87,12 @@ export default {
           garantia:"",
           edofuncional:"",
           mttoprev:"",
+          mttocorr:"",
+          propiedad:"",
+          aptodonacion:"",
+          capacitacion:"",
+          proveedor:"",
+          refacciones:"",
       }, 
         inventarios:[],
         numeroinventario: 0,
@@ -86,11 +108,12 @@ methods:{
           this.inventarios = response.data;
           this.numeroinventarios = response.data.length;
         })
+        console.log(numeroinventarios)
         .catch(err => {
           alert("NO FUNCIONA EL API");
           console.log(err);
         });
-    }
+    },
     
 },
 
@@ -106,6 +129,13 @@ computed:{
       || inventario.garantia.toLowerCase().match(this.search.toLowerCase())
       || inventario.edofuncional.toLowerCase().match(this.search.toLowerCase())
       || inventario.mttoprev.toLowerCase().match(this.search.toLowerCase())
+      || inventario.cantidad.toLowerCase().match(this.search.toLowerCase())
+      || inventario.mttocorr.toLowerCase().match(this.search.toLowerCase())
+      || inventario.propiedad.toLowerCase().match(this.search.toLowerCase())
+      || inventario.aptodonacion.toLowerCase().match(this.search.toLowerCase())
+      || inventario.capacitacion.toLowerCase().match(this.search.toLowerCase())
+      || inventario.proveedor.toLowerCase().match(this.search.toLowerCase())
+      || inventario.refacciones.toLowerCase().match(this.search.toLowerCase())
     });
   }
 },
@@ -147,6 +177,7 @@ h2 {
   border: 4px solid #005082;
   overflow-y: scroll;
   font-size: 1em;
+  overflow-x:scroll;
 
 }
 

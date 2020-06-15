@@ -34,10 +34,6 @@ router.post('/addDevice', (req,res) => {
     capacitacion:req.body.capacitacion,
     proveedor:req.body.proveedor,
     refacciones:req.body.refacciones,
-    
-
-
-
     }, err => {
         console.log("error")
         console.log(err)
