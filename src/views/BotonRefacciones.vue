@@ -7,6 +7,7 @@
         <table class="table table-striped">
            <thead>
             <tr>
+              <th scope="col">#</th>
               <th scope="col">Nombre</th>
               <th scope="col">Marca</th>
               <th scope="col">Modelo</th>
