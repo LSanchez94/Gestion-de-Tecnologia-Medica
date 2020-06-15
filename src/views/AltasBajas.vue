@@ -76,8 +76,8 @@
           <form>
             <div class="form-group">
               <input
-                type="text"
-                class="form-control"
+                type="date"
+                class="form-control" id="fecha"
                 v-model="dispositivo.adq"
                 placeholder="Fecha de Adquisición"
               />
@@ -275,6 +275,9 @@ export default {
   
 }
 
+#fecha{
+  color: #fff;
+}
 .color1 {
   background-color: #7acee0;
   color: #fff;
