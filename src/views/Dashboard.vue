@@ -18,7 +18,7 @@
           </thead>
           <tbody>
             <tr v-for="(r, index) in reportes" :key="index">
-              <th scope="row">{{index+1}}</th>
+              <th scope="row">{{index+1 }}  </th>
               <td>{{r.Departamento}}</td>
               <td>{{r.NumSerie}}</td>
               <td>{{r.info}}</td>

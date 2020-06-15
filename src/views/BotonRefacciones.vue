@@ -33,7 +33,10 @@
     
     </div>
   
-  <button class="btn" type="button" id="Button" onClick="history.go(-1)" >REGRESAR</button>
+  
+  
+<button class="btn" type="button" id="Button" onClick="history.go(-1)" >REGRESAR</button>
+<router-link to="/Refacciones" class="btn" id="Button1" placeholder="Button1">Agregar Refacción</router-link>
   </div>
 
 </template>
@@ -50,7 +53,7 @@ export default {
         modelo: "",
         equipo: "",
        cantidad: "",
-       proveedor:"",
+       proveedor:""
       },
       refacciones: [],
       numerorefacciones: 0,
@@ -109,7 +112,19 @@ margin-top: 50px;
 margin-left: 725px;
 color:#fff;
 font-size: 20px;
+background: #1DA0F2;
+box-sizing: border-box;
+border-radius: 25px;
+}
 
+#Button1{
+width: 200px;
+height: 49px;
+padding:0px;
+margin-top: 30px;
+margin-left: 725px;
+color:#fff;
+font-size: 20px;
 background: #1DA0F2;
 box-sizing: border-box;
 border-radius: 25px;
