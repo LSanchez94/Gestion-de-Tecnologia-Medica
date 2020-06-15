@@ -14,8 +14,8 @@ router.get('/getMtto', (req,res) => {
 
 //INSERTA DATO
 router.post('/addMtto', (req,res) => {
-   console.log("Mtto");
-   console.log(req.body.fechamantenimientos)
+   //console.log("Mtto");
+   //console.log(req.body.fechamantenimientos)
     var fechas = req.body.fechamantenimientos.split('-');
    var mes = fechas[1]-1;
     AgregarMtto.create({
@@ -25,7 +25,7 @@ router.post('/addMtto', (req,res) => {
         fechamantenimientos: req.body.fechamantenimientos,
         encargado: req.body.encargado,
     }, err => {
-         console.log(err)
+        // console.log(err)
          if(!err){
             Calendario.create({
                 anio : fechas[0],

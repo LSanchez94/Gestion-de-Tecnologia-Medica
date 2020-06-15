@@ -42,7 +42,7 @@ import axios from "axios";
 export default {
   data() {
     return {
-      proveedores: {
+      proveedor: {
        nombre: "",
         contacto: "",
         email: "",

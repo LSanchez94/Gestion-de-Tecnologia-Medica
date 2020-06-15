@@ -28,7 +28,8 @@
          <input type="text" class="form-control" id="Linea5" v-model="refaccion.cantidad" placeholder="Cantidad" >
           </div>
           <div class="form-group Linea6">
-         <input type="text" class="form-control" id="Linea6" v-model="refaccion.proveedor" placeholder="Proveedor" >
+         <input type="text" class="form-control" id="Linea6" v-model="refaccion.nombre" placeholder="Proveedor" >
+         
           </div>
         </form>
 
@@ -59,9 +60,32 @@ export default {
       },
       refacciones:[],
       numerorefacciones: 0,
+      proveedor:{
+        nombre: "",
+        contacto: "",
+        email: "",
+        tel: "",
+        address: ""
+      },
+      proveedores:[],
+      numeroproveedor:0,
+      
     }
   },
   methods: {
+    traerProveedores() {
+      axios
+        .get( this.$store.state.url +"/AgregarProveedor/getDatos")
+        .then(response => {
+          this.proveedores = response.data;
+          this.numeroproveedores = response.data.length;
+          })
+        .catch(err => {
+          alert("NO FUNCIONA EL API");
+          console.log(err);
+        });
+    },
+
     agregarRefaccion(){
       axios
       .post(this.$store.state.url + '/Refacciones/addDatosR', this.refaccion)
