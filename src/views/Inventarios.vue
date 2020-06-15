@@ -16,6 +16,7 @@
       <router-link to="/mantenimiento" class="btn" id="Linkmtto">Ver Equipo</router-link>
       <router-link to="/BotonAgregarProveedor" class="btn" id="Proveedor">Proveedores</router-link>
 
+ <!-- Tabla inventario-->
       <!-- Tabla inventario-->
       <div class="table-container w-100 mt-1" id="Tabla">
         <table class="table table-striped">
