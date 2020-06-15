@@ -26,6 +26,7 @@
           </tbody>
         </table>
       </div>   
+      <button class="Regresar" onClick="history.go(-1);">REGRESAR</button>
   </div>         
 </template>
 
@@ -93,5 +94,17 @@ h2 {
   overflow-y: scroll;
   font-size: 1em;
 
+}
+
+.Regresar{
+    position: absolute;
+    color:#FFF;
+    width: 228px;
+    height: 49px;
+    left: 975px;
+    top: 550px;
+    background:#1DA0F2;
+    border-radius: 25px;
+    font-size:1.2em;
 }
 </style>

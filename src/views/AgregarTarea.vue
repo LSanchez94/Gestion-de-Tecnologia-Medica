@@ -5,33 +5,86 @@
         <h1>Tarea a realizar:</h1>
     </div>
     <div>
-        <input type="text" class="formulario" id="Tarea" placeholder="Tarea"/>
-        <input type="date" class="formulario" id="Fecha" placeholder="Fecha"/>
+        <input type="text" 
+        class="formulario" 
+        id="Tarea" placeholder="Tarea" 
+        v-model="tarea.task"/>
+         </div>
+         <div>
+        <input type="date" 
+        class="formulario" 
+        id="Fecha" 
+        placeholder="Fecha"
+        v-model="tarea.fechaTarea"/>
     </div>
     <div>
-        <input type="text" class="formularioBreve" id="Descripcion" placeholder{ color: white; }="Descripción"/>
+        <input type="text" 
+        class="formularioBreve" 
+        id="Descripcion" 
+        placeholder{ color: white; }="Descripción"
+        v-model="tarea.descripcion"/>
     </div>
     <div>
         <button class="btn" id="Button" >Agregar</button>
-    </div>
     
-    <!-- <div class="AgregarMto">
-      <router-link to="/Mantenimiento" id="Linkmtto"> Agregar Mantenimiento </router-link>
     </div>
-    <div class="AgregarCap">
-      <router-link to="/Capacitacion" id="Linkcap"> Agregar Capacitación </router-link>
-    </div>
-    <div class="AgregarTarea">
-      <router-link to="/Tarea" id="Linktarea"> Agregar Tarea </router-link>
-    </div>
-    <div class="Calendario"> 
-    </div>
-    <div class="Semana">-->
+
     </div> 
 
   </div>
+  
 
 </template>
+
+
+<script>
+import axios from "axios"
+export default {
+    data() {
+      return {
+        tarea: {
+          task:"",
+          fechaTarea: "",
+          descripcion: "",
+        }, 
+        tareas:[],
+        numerotareas: 0,
+      };
+    },  
+methods:{
+    agregarTarea() {
+      axios
+        .post("http://localhost:3000/AgregarTarea/addTarea", this.tarea)
+        .then(response => {
+          alert(response.data);
+          console.log(response.data);
+          //this.traerUsuarios();
+        })
+        .catch(err => {
+          alert("NO FUNCIONA EL API");
+          console.log(err);
+        });
+    },
+},
+traerTarea() {
+      axios
+        .get( this.$store.state.url +"/AgregarTarea/getTareas")
+        .then(response => {
+          this.tareas = response.data;
+          this.numerotareas = response.data.length;
+          })
+        .catch(err => {
+          alert("NO FUNCIONA EL API");
+          console.log(err);
+        });
+    },
+
+  mounted() {
+    this.traerTarea();
+  }
+};
+</script>
+
 
 <style scoped>
 
@@ -84,6 +137,17 @@ h1 {
 
 }
 
+.Regresar{
+    position: absolute;
+    color:#FFF;
+    width: 228px;
+    height: 49px;
+    left: 900px;
+    top: 550px;
+    background:#1DA0F2;
+    border-radius: 25px;
+    font-size:1.2em;
+}
 
 #Button {
     /* Rectangle 107 */
@@ -101,5 +165,7 @@ h1 {
     border-radius: 25px;
     color: ivory;
 }
+
+
 ::placeholder { color: rgb(255, 255, 255); }
 </style>

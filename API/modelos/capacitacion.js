@@ -4,7 +4,7 @@ var capacitacion = mongoose.Schema({
     tema: String,
     departamento: String,
     descripcion: String,
-    fecha: Date,
+    fecha: String,
     persona: String,
 })
 

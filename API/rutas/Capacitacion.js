@@ -19,7 +19,7 @@ router.post('/addCap', (req,res) => {
     console.log("Capa");
     console.log(req.body.fecha)
     var fechas = req.body.fecha.split('-');
-    var mes = fechas[1];
+    var mes = fechas[1]-1;
     Capacitacion.create({
         tema: req.body.tema,
         departamento: req.body.departamento,
@@ -32,7 +32,7 @@ router.post('/addCap', (req,res) => {
             Calendario.create({
                 anio : fechas[0],
                 mes: fechas[1],
-                dia: fechas[2]+''+fechas[1]-1+''+fechas[0],
+                dia: fechas[2]+''+mes +''+fechas[0],
                 tipo: 1,
             })
             

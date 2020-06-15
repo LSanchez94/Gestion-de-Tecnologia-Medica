@@ -52,11 +52,11 @@ export default {
   data(){
     return{
       proveedor: {
-        nombre: '',
-        contacto: '',
-        correo: '',
-        tel: '',
-        address: ''
+        nombre: null,
+        contacto: null,
+        correo: null,
+        tel: null,
+        address: null
       }
     }
   },
