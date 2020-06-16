@@ -41,7 +41,7 @@
           </thead>
            <tbody>
              <tr v-for="(r, index) in filtroinventario" :key="index">
-              <th scope="row">{{index+1}}<input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+              <th scope="row">{{index+1}}<input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="..." onchange="agregarLugar(index)">
               </th>
               <td>{{r.nombre}}</td>
               <td>{{r.cantidad}}</td>
@@ -77,6 +77,7 @@ export default {
     data() {
       return {
         search:'',
+        Lugar:'',
         inventario: {
           nombre:"",
           cantidad:"",
@@ -94,9 +95,16 @@ export default {
           capacitacion:"",
           proveedor:"",
           refacciones:"",
+          g:'',
       }, 
         inventarios:[],
         numeroinventario: 0,
+
+        lugar:{
+          posicion:'',
+        },
+        lugares:[],
+        numerolugares:0,
     };
   
 }, 
@@ -115,7 +123,18 @@ methods:{
           console.log(err);
         });
     },
-    
+    agregarLugar(p){
+      axios
+      .post("http://localhost:3000/Lugar/addLugar", p)
+      .the(response=>{
+        alert(response.data);
+        console.log(response.data);
+      })
+      .catch(err=>{
+        alert("Ya valio queso");
+        console.log(err);
+      });
+    }
 },
 
 computed:{
