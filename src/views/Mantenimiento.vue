@@ -8,9 +8,15 @@
             <h3>Indicador Capacitaciones</h3>
             <h2>0.4</h2>
           </div>
-          
+          <div class="serie">
+            <h3>PRT989</h3>
+          </div>
+          <div class="mtto">
+            <h3>Proximo Mantenimieto</h3>
+            <h2>16-08-20</h2>
+         </div>
           <div class="color0">
-            <h3>Monitor SV</h3>
+            <h3>Monitor Signos Vitales </h3>
           </div>
 
           <div class="color2">
@@ -19,14 +25,12 @@
           </div>
 
           <div class="color3">
-            <h3>Manual de servicio</h3>
+            <h3><a href="http://www.integral-process.com/iso_album/h-046-002371-00(2.0)_imec_service_manual_en.pdf">Manual de Servicio</a></h3>
           </div>
-      
-  
           <div class="color4">
               <h3>Hoja de servicio</h3>
            </div>
-          
+        
 
         </div>
       </div>
@@ -81,6 +85,7 @@ export default {
   h3 {
     font-size: 2em;
     font-weight: bolder;
+    color: #ffffff;
   }
 
   h4 {
@@ -88,11 +93,23 @@ export default {
     font-weight: bolder;
   }
 
+.mtto{
+    background-color:  #005082;
+    color: #fff;
+    position:absolute;
+    margin-top:75px;
+    font-weight: bold;
+    margin-left: 100px;
+    width: 925px;
+    height: 100px;
+    text-align: center;
+    border-radius: 25px;
+}
 .color1{
     background-color: #FFA41B;
     color: #fff;
     position:absolute;
-    margin-top:120px;
+    margin-top:200px;
     font-weight: bold;
     left: 900px;
     width: 450px;
@@ -111,14 +128,14 @@ export default {
     padding: 30px;
     text-align: center;
     border-radius: 25px;
-    margin-top:120px;
+    margin-top:200px;
     margin-left:100px;
   }
   .color3 {
     background-color: #005082;
     color: #fff;
     position:absolute;
-    margin-top:340px;
+    margin-top:440px;
     font-weight: bold;
     left: 900px;
     width: 450px;
@@ -132,7 +149,7 @@ export default {
     background-color: #1DA0F2;
     color: #fff;
     position: absolute;
-    margin-top:340px;
+    margin-top:440px;
     font-weight: bold;
     margin-left: 100px;
     width: 450px;
@@ -149,7 +166,20 @@ export default {
     margin-top:15px;
     font-weight: bold;
     margin-left: 100px;
-    width: 925px;
+    width: 450px;
+    height: 50px;
+    text-align: center;
+    border-radius: 25px;
+  }
+
+  .serie{
+    background-color: #7ACEE0;
+    color: #fff;
+    position:absolute;
+    margin-top:15px;
+    font-weight: bold;
+    margin-left: 575px;
+    width: 450px;
     height: 50px;
     text-align: center;
     border-radius: 25px;
