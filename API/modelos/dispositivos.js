@@ -17,7 +17,6 @@ var dispositivo = mongoose.Schema({
     capacitacion:String,
     proveedor:String,
     refacciones:String,
-
 })
 
 var Dispositivo = mongoose.model('dispositivos', dispositivo);

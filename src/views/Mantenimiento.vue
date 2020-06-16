@@ -6,22 +6,21 @@
             <!--ESTAS SE MODIFICAN PARA QUE QUEDEN CON DATOS DEL INVENTARIO-->
           <div class="color1">
             <h3>Indicador Capacitaciones</h3>
-            <h2>0.4</h2>
+            <h2>{{icap}}</h2>
           </div>
           <div class="serie">
-            <h3>PRT989</h3>
+            <h3>{{inventario.nserie[lugar.posicion[numerolugares]]}}</h3>
           </div>
           <div class="mtto">
-            <h3>Proximo Mantenimieto</h3>
-            <h2>16-08-20</h2>
+            <router-link to="/MttoShow" id="l">Proximo Mantenimieto</router-link>
          </div>
           <div class="color0">
-            <h3>Monitor Signos Vitales </h3>
+            <h3>{{inventario.nombre[lugar.posicion[numerolugares]]}}</h3>
           </div>
 
           <div class="color2">
             <h3>Indicador Mantenimientos Correctivos:</h3>
-            <h2>0.625</h2>
+            <h2>{{icor}}</h2>
           </div>
 
           <div class="color3">
@@ -41,41 +40,68 @@
 <script>
 import axios from 'axios'
 export default {
-  data() {
-      return {
-        mantenimiento: {
-        nserie: "",
-        departamento: "",
-        tipomantenimientos: "",
-        fechamantenimientos: "",
-        encargado: "",
-        }, 
-        mantenimientos:[],
-        numeromantenimientos: 0,
-      };
-    }, 
-     methods: {
- 
-    traerMtto() {
+  data(){
+    return{
+      inventario:{
+        mttocorr:"",
+        nombre:'',
+      },
+      inventarios:[],
+      numeroinventarios:0,
+     
+     lugar:{
+       posicion:'',
+     },
+     lugares:[],
+     numerolugares:0,
+    }
+  },
+
+methods:{
+    traerDispositivo() {
       axios
-        .get( this.$store.state.url +"/AgregarMtto/getMtto")
+        .get( this.$store.state.url+"/Dispositivo/getDevices")
         .then(response => {
-          this.mantenimientos = response.data;
-          this.numeromantenimientos = response.data.length;
-          })
+          this.inventarios = response.data;
+          this.numeroinventarios = response.data.length;
+        })
+        console.log(numeroinventarios)
         .catch(err => {
           alert("NO FUNCIONA EL API");
           console.log(err);
         });
+    },
+    
+
+    traerLugar() {
+      axios
+        .get( this.$store.state.url+"/Lugar/getLugar")
+        .then(response => {
+          this.lugares = response.data;
+          this.numerolugares = response.data.length;
+        })
+        console.log(numeroinventarios)
+        .catch(err => {
+          alert("NO FUNCIONA EL API");
+          console.log(err);
+        });
+    },
+
+    ICap(){
+      var mDis = this.inventario.mttocorr[lugar.posicion[numerolugares]];
+      var i=numeroinventarios;
+      var prom= mDis/i;
+      return icap = mDis/prom
+    },
+
+    ICorr(){
+      var mCor = this.inventario.mttocorr[lugar.posicion[numerolugares]];
+      var i=numeroinventarios;
+      return icor = mCor/i
     }
-
-
-
-  },
-  mounted() {
-    this.traerMtto();
-  }
-};
+    
+},
+}
 </script>
 
 <style scoped>
@@ -133,7 +159,7 @@ export default {
   }
   .color3 {
     background-color: #005082;
-    color: #fff;
+    color: #ffff;
     position:absolute;
     margin-top:440px;
     font-weight: bold;
@@ -170,6 +196,12 @@ export default {
     height: 50px;
     text-align: center;
     border-radius: 25px;
+  }
+
+  #l{
+    font-size: 3em;
+    font-weight: bold;
+    color:#fff;
   }
 
   .serie{

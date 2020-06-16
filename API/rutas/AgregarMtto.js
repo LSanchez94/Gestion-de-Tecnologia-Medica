@@ -12,6 +12,7 @@ router.get('/getMtto', (req,res) => {
     })
 })
 
+
 //INSERTA DATO
 router.post('/addMtto', (req,res) => {
    //console.log("Mtto");

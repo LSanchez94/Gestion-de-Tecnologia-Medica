@@ -34,8 +34,7 @@ router.post('/addCap', (req,res) => {
                 mes: fechas[1],
                 dia: fechas[2]+''+mes +''+fechas[0],
                 tipo: 1,
-            })
-            
+            })            
             res.send("Capacitación Agregada!")
         }else{
             res.send("Hubo un problema agregando capacitación")
