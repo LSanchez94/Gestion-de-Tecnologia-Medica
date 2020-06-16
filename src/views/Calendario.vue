@@ -14,8 +14,8 @@
     <router-link to="/Capacitacion" class="btn" id="Linkcap">Agregar Capacitación</router-link>
     <router-link to="/Tarea" class="btn" id="Linktarea">Agregar Tarea</router-link>
     <router-link to="/ShowCap" class="btn" id="linkcaps">Capacitaciones Agendadas</router-link>
-    <router-link to="/ShowTarea" class="btn" id="linktr">Tareas Agendadas</router-link>
-    <router-link to="/ShowMtto" class="btn" id="linkmt">Mantenimientos Agendados</router-link>
+    <router-link to="/STareaShow" class="btn" id="linktr">Tareas Agendadas</router-link>
+    <router-link to="/MttoShow" class="btn" id="linkmt">Mantenimientos Agendados</router-link>
   <button class="btn" id="Regresar" onClick="history.go(-1);">REGRESAR</button>
   
   </div>

@@ -4,22 +4,18 @@
       <div class="row">
         <div class="d-flex w-100 mt-3">
             <!--ESTAS SE MODIFICAN PARA QUE QUEDEN CON DATOS DEL INVENTARIO-->
-          <div class="Linea1">
-            <h3>Nombre del equipo</h3>
-          </div>
-
-          <div class="Linea2">
-            <h3>Departamento</h3>
-          </div>
-
           <div class="color1">
-            <h3>Fecha del próximo mantenimiento</h3>
-            <h4>04/12/20</h4>
+            <h3>Indicador Capacitaciones</h3>
+            <h2>0.4</h2>
+          </div>
+          
+          <div class="color0">
+            <h3>Monitor SV</h3>
           </div>
 
           <div class="color2">
-            <h3>Último mantenimiento por:</h3>
-            <h4>Darcy Nava</h4>
+            <h3>Indicador Mantenimientos Correctivos:</h3>
+            <h2>0.625</h2>
           </div>
 
           <div class="color3">
@@ -39,9 +35,43 @@
 
 
 <script>
+import axios from 'axios'
 export default {
-  
-}
+  data() {
+      return {
+        mantenimiento: {
+        nserie: "",
+        departamento: "",
+        tipomantenimientos: "",
+        fechamantenimientos: "",
+        encargado: "",
+        }, 
+        mantenimientos:[],
+        numeromantenimientos: 0,
+      };
+    }, 
+     methods: {
+ 
+    traerMtto() {
+      axios
+        .get( this.$store.state.url +"/AgregarMtto/getMtto")
+        .then(response => {
+          this.mantenimientos = response.data;
+          this.numeromantenimientos = response.data.length;
+          })
+        .catch(err => {
+          alert("NO FUNCIONA EL API");
+          console.log(err);
+        });
+    }
+
+
+
+  },
+  mounted() {
+    this.traerMtto();
+  }
+};
 </script>
 
 <style scoped>
@@ -58,46 +88,40 @@ export default {
     font-weight: bolder;
   }
 
-  .table-container {
-    overflow-y: scroll;
-    min-height: 41vh;
-    max-height: 41vh;
-  }
-
-  .color1 {
-    background-color: #7acee0;
+.color1{
+    background-color: #FFA41B;
     color: #fff;
+    position:absolute;
+    margin-top:120px;
     font-weight: bold;
-    margin-left: 100px;
-    margin-right: 60px;
-    font-size: small;
-    width: 35%;
+    left: 900px;
+    width: 450px;
+    padding: 60px;
     height: 200px;
-    padding: 30px;
     text-align: center;
     border-radius: 25px;
-    margin-top:120px;
   }
   .color2 {
     background-color: #F09204;
     color: #fff;
     font-weight: bold;
     font-size: small;
-    width: 35%;
+    width: 450px;
     height: 200px;
     padding: 30px;
     text-align: center;
     border-radius: 25px;
     margin-top:120px;
+    margin-left:100px;
   }
   .color3 {
     background-color: #005082;
     color: #fff;
-    position: absolute;
+    position:absolute;
     margin-top:340px;
     font-weight: bold;
-    margin-left: 500px;
-    width: 25.5%;
+    left: 900px;
+    width: 450px;
     padding: 60px;
     height: 200px;
     text-align: center;
@@ -105,15 +129,28 @@ export default {
   }
 
   .color4{
-    background-color: #FFA41B;
+    background-color: #1DA0F2;
     color: #fff;
     position: absolute;
     margin-top:340px;
     font-weight: bold;
     margin-left: 100px;
-    width: 26%;
+    width: 450px;
     padding: 60px;
     height: 200px;
+    text-align: center;
+    border-radius: 25px;
+  }
+
+  .color0{
+    background-color: #7ACEE0;
+    color: #fff;
+    position:absolute;
+    margin-top:15px;
+    font-weight: bold;
+    margin-left: 100px;
+    width: 925px;
+    height: 50px;
     text-align: center;
     border-radius: 25px;
   }

@@ -30,6 +30,8 @@
         </div>
     
     </div>
+
+    <!--Tabla Refacciones-->
   
   <button class="btn" type="button" id="Button" onClick="history.go(-1)" >REGRESAR</button>
   </div>

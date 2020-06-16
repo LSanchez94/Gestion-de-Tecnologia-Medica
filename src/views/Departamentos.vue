@@ -66,7 +66,7 @@
 #titulo{
   font-size:1.6em;
   background-color:#005082;
-  width:960px;
+  width:1200px;
   color:#FFF;
   text-align: center;
 }

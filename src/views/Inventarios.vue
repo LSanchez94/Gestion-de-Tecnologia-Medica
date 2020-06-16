@@ -12,6 +12,7 @@
     </div>
     <div class="row">
       <h2>Inventario: </h2>
+      <router-link to="/BotonRefacciones" class="btn" id="Refaccion">Refacciones</router-link>
       <router-link to="/mantenimiento" class="btn" id="Linkmtto">Ver Equipo</router-link>
       <router-link to="/BotonAgregarProveedor" class="btn" id="Proveedor">Proveedores</router-link>
       <!-- Tabla inventario-->
@@ -205,7 +206,7 @@ h2 {
 
 #Regresar{
     margin-left: 450px;
-    margin-top: 160px;
+    margin-top: 200px;
     background: #1DA0F2;
     box-sizing: border-box; 
     border-radius: 25px;
@@ -213,4 +214,16 @@ h2 {
     width: 228px;
     font-size:0.8em;
 }
+#Refaccion{
+    position:absolute;
+    color:#FFFF;
+    background: #F09204;
+    height: 45px;
+    border-radius: 25px;
+    margin-left:400px;
+    margin-top: 505px;
+    width:22%;
+}
+
+
 </style>

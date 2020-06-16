@@ -16,8 +16,8 @@ router.get('/getTareas', (req,res) => {
 router.post('/addTarea', (req,res) => {
     console.log("Tar");
     console.log(req.body.fechaTarea)
-    var fec = req.body.fechaTarea.split('-');
-    var mes = fec[1]-1;
+    var fechas = req.body.fechaTarea.split('-');
+    var mes = fechas[1]-1;
     Tareas.create({
         task: req.body.task,
         fechaTarea: req.body.fechaTarea,
@@ -25,9 +25,9 @@ router.post('/addTarea', (req,res) => {
     },err => {
          if(!err){
              Calendario.create({
-               anio : fec[0],
-               mes: fec[1],
-               dia: fec[2]+''+mes+''+fec[0],
+               anio : fechas[0],
+               mes: fechas[1],
+               dia: fechas[2]+''+mes+''+fechas[0],
                 tipo: 3
              })
              res.send("Tarea Agregada!")

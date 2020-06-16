@@ -1,7 +1,7 @@
 <template>
   <div class="row">
       <h2>Tareas agendadas: </h2>
-      <!-- Tabla capacitaciones-->
+      <!-- Tabla tareas-->
       <div class="table-container w-100 mt-1" id="Tabla">
         <table class="table table-striped">
           <thead>
@@ -14,11 +14,11 @@
             </tr>
           </thead>
            <tbody>
-             <tr v-for="(r, index) in tareas" :key="index">
+             <tr v-for="(t, index) in tareas" :key="index">
               <th scope="row">{{index+1}}</th>
-              <td>{{r.task}}</td>
-              <td>{{r.fechaTarea}}</td>
-              <td>{{r.descripcion}}</td>
+              <td>{{t.task}}</td>
+              <td>{{t.fechaTarea}}</td>
+              <td>{{t.descripcion}}</td>
             
             </tr>
           </tbody>
@@ -35,9 +35,9 @@ export default {
     data() {
       return {
         tarea: {
-        task: "",
-        fechaTarea: "",
-        descripcion: "",
+        task: null,
+        fechaTarea: null,
+        descripcion: null
         }, 
         tareas:[],
         numerotareas: 0,
@@ -54,17 +54,17 @@ export default {
           this.numerotareas = response.data.length;
           })
         .catch(err => {
-          alert("NO FUNCIONA EL API");
+          alert("YA LLEVAME DIOSITO!!!");
           console.log(err);
         });
-    }
+    },
 
 
 
   },
   mounted() {
     this.traerTarea();
-  }
+  },
 };
 </script>
 

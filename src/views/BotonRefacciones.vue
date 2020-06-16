@@ -36,7 +36,6 @@
   
   
 <button class="btn" type="button" id="Button" onClick="history.go(-1)" >REGRESAR</button>
-<router-link to="/Refacciones" class="btn" id="Button1" placeholder="Button1">Agregar Refacción</router-link>
   </div>
 
 </template>

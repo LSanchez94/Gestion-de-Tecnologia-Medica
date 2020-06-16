@@ -20,8 +20,8 @@ import BotonAgregarProveedor from '../views/BotonAgregarProveedor.vue'
 import Refacciones from '../views/Refacciones.vue'
 import BotonRefacciones from '../views/BotonRefacciones.vue'
 import ShowCap from '../views/ShowCap.vue'
-import ShowMtto from '../views/ShowMtto.vue'
-import ShowTarea from '../views/ShowTarea.vue'
+import MttoShow from '../views/MttoShow.vue'
+import STareaShow from '../views/STareaShow.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -142,15 +142,15 @@ const routes = [
   },
 
   {
-    path: '/ShowMtto',
-    name: 'ShowMtto',
-    component: ShowMtto
+    path: '/MttoShow',
+    name: 'MttoShow',
+    component: MttoShow
   },
 
   {
-    path: '/ShowTarea',
-    name: 'ShowTarea',
-    component: ShowTarea
+    path: '/STareaShow',
+    name: 'STareaShow',
+    component: STareaShow
   },
 ]
 
