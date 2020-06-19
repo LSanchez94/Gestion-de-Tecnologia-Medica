@@ -41,8 +41,13 @@
           </thead>
            <tbody>
              <tr v-for="(r, index) in filtroinventario" :key="index">
-              <!-- <th scope="row">{{index+1}}<input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="..." onchange="agregarLugar(index)">
-              </th> -->
+
+
+      <!-- Bienvenidos a nuestro checkbox, aqui lo que hacemos es que mostramos un checkbox al lado del numero de dispositivo
+      dado de alta, para que? porque QUIERO. No no se crean, lo que hace el checkbox es que localiza la informacion que nos 
+      interesa y guarda el numero de serie en una variable no constante, esto nos permite trasladar la infromacion del dM
+      a la pestaña de ver equipo donde se muestra la informacion del equipo seleccionado-->
+             
               <th scope="row">{{index+1}}<input class="form-check-input position-static" type="radio" id="blankCheckbox" aria-label="..." :value="r.nserie" v-model="selectedop">
               </th>
               <td>{{r.nombre}}</td>
@@ -126,19 +131,20 @@ methods:{
           console.log(err);
         });
     },
-    /*agregarLugar(p){
-      axios
-      .post("http://localhost:3000/Lugar/addLugar", p)
-      .the(response=>{
-        alert(response.data);
-        console.log(response.data);
-      })
-      .catch(err=>{
-        alert("Ya valio queso");
-        console.log(err);
-      });
-    }*/
+
 },
+//Bienvenidos al filtro del inventario jjajaja, en este caso, creamos una funcion de nombre filtro inventario
+// esta funcion esta llamada a filtrar literalmente al conjunto de datos inventario, por ello en la parte de arriba
+// donde tenemos la linea de codigo: tr v-for="(r, index) in filtroinventario" :key="index", ya no ponemos 
+//v-for:... in inventario, porque al llamar la funcion filtroinventario, la cual esta filtrando la informacion
+//en la matriz inventario, ya nos muestra la informacion filtrada
+//sin embargo, para que nos muestre toda la info en el inventario cuando nosotros no escribamos nada en busqueda
+//se crea la variable "search" (esta arriba en data), esta variable esta iniciada en vacio '' y, cuando nosotros escribimos
+//algo en la casilla de busqueda (la cual guarda txt en la variable search), esta cambia en nuestra funcion filtroinventario y 
+//causa que solo se conserven los DM que contegan los mismos caracteres que search
+//OJO el toLoweCase es una funcion que pone a search en minusculas y lo hae tambien con los datos de la matriz
+//inventarios para que si lo escribimos todo con mayusculas o minusculas, de cualquier modo me vote el resultado
+//ya solamente ponermos el return para regresar el dispositivo que contega lo mismo que search (!! son or)
 
 computed:{
   filtroinventario: function(){

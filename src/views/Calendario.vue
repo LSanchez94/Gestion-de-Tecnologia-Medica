@@ -44,24 +44,18 @@ export default {
       };
   },
   methods: {
-    //FALTA ESTABLECER LAS FECHAS CON CADA CAPACITACION, MTTO Y TAREA
-      //   return dayprev == 15 ? 'table-info' : ''
-      //   return daycorr == 20 ? 'table-success' : ''
-      //  return daytar == 5 ? 'table-danger' :''
-    displayevent(){
-      var selected = selectedDate;
-      
-      const found = this.dcapa.find(element => element.dia ==  selected);
-      if(found != undefined){
-        if(found.tipo == '1'){
-            return 
-          } else if(found.tipo == '2'){
-            return 
-          } else if(found.tipo == '3'){
-            return 
-          } 
-      }
-    },
+    //funcion que le da el color al día dependiendo del tipo de dato traido, 
+    //el tipo de dato se trae directamente de la colección, donde al dar de alta un 
+    // mtto, tarea, capacitación, se guardan fechas en coleccion de calendarios con el tipo 
+    //  1: Capacitación 2: Mantenimiento 3: Tareas 
+    // Las fechas se separan con splits (dentro de la coleccion de cada una) y se guardan en las varibales año y mes 
+    // de forma normal, sin embargo al llegar a la variable dia, los caracteres anteriores se suman con la finalidad de 
+    //crear un numero unico y que el calendario no se confunda
+    //Ejemplo: yo tengo capacitacion el dia 01-02-2020, mi calendario guardará lo soguiente:
+    // año: 2020, mes: 02, dia:0122020 , tipo:1
+    //Despues en la funcion de abajo se crea del mismo modo un dia con la información del calendario
+    //se realiza la comparacion de numeros y si en alguno coincide el día del evento con el dia del calendario
+    //dependiendo del tipo de este, se guardará un color en el calendario
 
     dateClass(ymd, date) {
         const day = date.getDate()
@@ -83,8 +77,6 @@ export default {
         else {
           return ''
         }
-        // return dia ? 'table-warning' : '';
-        //, day == 15 ? 'table-info' : '' ]
       },
     traerCapacitacion() {
       axios

@@ -38,7 +38,6 @@
     </div>
 </template>
 
-
 <script>
 import axios from 'axios'
 export default {
@@ -93,15 +92,9 @@ methods:{
         });
     },
 
-
-
-    dateClass(ymd, date) {
-        const day = date.getDate()
-        const month = date.getMonth()
-        const year = date.getFullYear()
-        return month && year
-        },
-
+    //OJOOOOOO: los indicadores estan programados directamente en la funcion que trae la info de la coleccion mttos
+    //de esta manera se realiza el cálculo (el prom se calcula en la linea 81) del indicador de manera personalizada
+    //ya que ya tenemos los datos del equipo seleccionado en el inventario
 
     traerMantenimientos(){
       axios.get(this.$store.state.url + "/Mant/getMantenimiento").then( response => {
@@ -129,7 +122,15 @@ methods:{
 
       })
     }
+
 },
+
+
+//Helloooo, bienvenidos a la pestaña mantenimiento, bueno pues, pues esta pestaña si esta mas rara
+//para empezar en este create le estamos declarando a la variable nserie (que ya colocamos vacia en data)
+//que ahi es donde debe guardar la informacion que se obtuvo del checkbox, es decir, guarda el nserie del DM
+//seleccionado en la pestaña inventarios, esto nos permite conocer los datos del DM sin tener que localizar
+//con tanto problema la ubicacion exacta
 created(){
   this.nserie = this.$route.params.nserie;
   this.getDispositivo();
