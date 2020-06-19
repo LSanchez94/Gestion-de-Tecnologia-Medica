@@ -33,4 +33,19 @@ router.post('/addDatosR', (req,res) => {
     })
 });
 
+//DELETE
+
+router.post('/deleteRef', (req,res) => {
+    console.log("test de llegada")
+    console.log(req.body.modelo)
+    AddRefacciones.findOneAndDelete({modelo: req.body.modelo}, err => {
+        if(!err){
+            res.send("Refacción Eliminado!")
+        }else{
+            res.send("Hubo un problema eliminando la refacción")
+        }
+    })
+})
+
+
 module.exports = router;

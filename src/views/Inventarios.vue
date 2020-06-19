@@ -13,7 +13,7 @@
     <div class="row">
       <h2>Inventario: </h2>
       <router-link to="/BotonRefacciones" class="btn" id="Refaccion">Refacciones</router-link>
-      <router-link to="/mantenimiento" class="btn" id="Linkmtto">Ver Equipo</router-link>
+      <router-link :to="{name: 'Mantenimiento', params: { nserie: selectedop}}" class="btn" id="Linkmtto">Ver Equipo</router-link>
       <router-link to="/BotonAgregarProveedor" class="btn" id="Proveedor">Proveedores</router-link>
       <!-- Tabla inventario-->
       <div class="table-container w-100 mt-1" id="Tabla">
@@ -41,7 +41,9 @@
           </thead>
            <tbody>
              <tr v-for="(r, index) in filtroinventario" :key="index">
-              <th scope="row">{{index+1}}<input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="..." onchange="agregarLugar(index)">
+              <!-- <th scope="row">{{index+1}}<input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="..." onchange="agregarLugar(index)">
+              </th> -->
+              <th scope="row">{{index+1}}<input class="form-check-input position-static" type="radio" id="blankCheckbox" aria-label="..." :value="r.nserie" v-model="selectedop">
               </th>
               <td>{{r.nombre}}</td>
               <td>{{r.cantidad}}</td>
@@ -76,6 +78,7 @@ import axios from "axios";
 export default {
     data() {
       return {
+        selectedop: null,
         search:'',
         Lugar:'',
         inventario: {
@@ -98,7 +101,7 @@ export default {
           g:'',
       }, 
         inventarios:[],
-        numeroinventario: 0,
+        numeroinventario: [],
 
         lugar:{
           posicion:'',
@@ -117,13 +120,13 @@ methods:{
           this.inventarios = response.data;
           this.numeroinventarios = response.data.length;
         })
-        console.log(numeroinventarios)
+        //console.log(numeroinventarios)
         .catch(err => {
           alert("NO FUNCIONA EL API");
           console.log(err);
         });
     },
-    agregarLugar(p){
+    /*agregarLugar(p){
       axios
       .post("http://localhost:3000/Lugar/addLugar", p)
       .the(response=>{
@@ -134,7 +137,7 @@ methods:{
         alert("Ya valio queso");
         console.log(err);
       });
-    }
+    }*/
 },
 
 computed:{

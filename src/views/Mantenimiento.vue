@@ -6,28 +6,30 @@
             <!--ESTAS SE MODIFICAN PARA QUE QUEDEN CON DATOS DEL INVENTARIO-->
           <div class="color1">
             <h3>Indicador Capacitaciones</h3>
-            <h2>{{icap}}</h2>
+            <h2>{{ca}}</h2>
           </div>
           <div class="serie">
-            <h3>{{inventario.nserie[lugar.posicion[numerolugares]]}}</h3>
+            <h3>{{nserie}}</h3>
           </div>
           <div class="mtto">
             <router-link to="/MttoShow" id="l">Proximo Mantenimieto</router-link>
          </div>
+
           <div class="color0">
-            <h3>{{inventario.nombre[lugar.posicion[numerolugares]]}}</h3>
+            <h3>{{dispositivo[0].nombre}}</h3>
           </div>
 
           <div class="color2">
             <h3>Indicador Mantenimientos Correctivos:</h3>
-            <h2>{{icor}}</h2>
+            <h2>{{mc}}</h2>
+       
           </div>
 
           <div class="color3">
             <h3><a href="http://www.integral-process.com/iso_album/h-046-002371-00(2.0)_imec_service_manual_en.pdf">Manual de Servicio</a></h3>
           </div>
           <div class="color4">
-              <h3>Hoja de servicio</h3>
+              <h3><a href="https://drive.google.com/file/d/1CDapDCSPRd-6PZwDCv9WlrofWDTf3q-7/view?usp=sharing">Hoja de servicio</a></h3>
            </div>
         
 
@@ -42,13 +44,24 @@ import axios from 'axios'
 export default {
   data(){
     return{
+
+      nserie: null,
+      dispositivo: [{
+        nombre: ' '
+      }],
       inventario:{
         mttocorr:"",
         nombre:'',
+        capacitacion:'',
       },
+      ca: '0',
+      mc: '0',
       inventarios:[],
-      numeroinventarios:0,
-     
+      numeroinventarios: '2',
+      numeromantenimientos: '2',
+      promd: 0,
+      promc:0,
+
      lugar:{
        posicion:'',
      },
@@ -64,43 +77,63 @@ methods:{
         .then(response => {
           this.inventarios = response.data;
           this.numeroinventarios = response.data.length;
+
+
+          response.data.forEach(element => {
+            this.promd = this.promd + element.mttocorr;
+            this.promc = this.promc + element.capacitacion;
+          });
+
+            this.traerMantenimientos();
+
         })
-        console.log(numeroinventarios)
         .catch(err => {
           alert("NO FUNCIONA EL API");
           console.log(err);
         });
+    },
+
+
+
+    dateClass(ymd, date) {
+        const day = date.getDate()
+        const month = date.getMonth()
+        const year = date.getFullYear()
+        return month && year
+        },
+
+
+    traerMantenimientos(){
+      axios.get(this.$store.state.url + "/Mant/getMantenimiento").then( response => {
+        this.numeromantenimientos = response.data.length;
+        // console.log('yolo')
+        // console.log(this.dispositivo[0].adq)
+   
+
+        var a = this.dispositivo[0].adq;
+        var b = a.split('-')
+        var c = 2020 - b[0] + 1;
+    
+        this.mc = (this.dispositivo[0].mttocorr / this.promd) * c;
+
+        var ab= this.dispositivo[0].capacitacion;
+        this.ca= (this.dispositivo[0].capacitacion / this.promc)*c; 
+      })
     },
     
+    getDispositivo(){
+      axios.post( this.$store.state.url + "/Dispositivo/getDevice", {"nserie" : this.nserie}).then(response => {
+        console.log(response.data)
+        this.dispositivo = response.data;
+          this.traerDispositivo();
 
-    traerLugar() {
-      axios
-        .get( this.$store.state.url+"/Lugar/getLugar")
-        .then(response => {
-          this.lugares = response.data;
-          this.numerolugares = response.data.length;
-        })
-        console.log(numeroinventarios)
-        .catch(err => {
-          alert("NO FUNCIONA EL API");
-          console.log(err);
-        });
-    },
-
-    ICap(){
-      var mDis = this.inventario.mttocorr[lugar.posicion[numerolugares]];
-      var i=numeroinventarios;
-      var prom= mDis/i;
-      return icap = mDis/prom
-    },
-
-    ICorr(){
-      var mCor = this.inventario.mttocorr[lugar.posicion[numerolugares]];
-      var i=numeroinventarios;
-      return icor = mCor/i
+      })
     }
-    
 },
+created(){
+  this.nserie = this.$route.params.nserie;
+  this.getDispositivo();
+}
 }
 </script>
 
@@ -243,4 +276,5 @@ methods:{
     text-align: center;
     border-radius: 25px;
   }
+  ::placeholder { color: rgb(255, 255, 255); }
 </style>

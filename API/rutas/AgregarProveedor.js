@@ -31,4 +31,19 @@ router.post('/addDatos', (req,res) => {
     })
 });
 
+// ELIMINA DATO
+router.post('/deleteProv', (req,res) => {
+    console.log("test de llegada")
+    console.log(req.body.nombre)
+    AddProveedor.findOneAndDelete({nombre: req.body.nombre}, err => {
+        if(!err){
+            res.send("Proveedor Eliminado!")
+        }else{
+            res.send("Hubo un problema eliminando el proveedor")
+        }
+    })
+})
+
+
+
 module.exports = router;

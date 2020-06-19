@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid">
-      <div class="row">
+    <div class="row">
           <div id="Refacciones" class="col-8">
              <h2>Refacciones: </h2>
 <!-- Formulario para agregar refacciones-->
@@ -33,8 +33,20 @@
           </div>
         </form>
 
+    </div>
+
+      <div class="w-100" id="ref">
+          <h2>Baja de Refacciones:</h2>
+        </div>
+        <form>
+          <div class="form-group">
+            <input type="text" v-model="refaccion.modelo" class="form-control" id="modref" placeholder="Modelo de Refacción" />
           </div>
-          </div>
+        </form>
+
+        <button class="DarBaja" id="login_button" @click="eliminarRefaccion()">Dar de Baja</button>
+          
+    </div>
 
         
   | <button class="btn" id="RectanguloGuardar" @click="agregarRefaccion()">Guardar</button>
@@ -109,7 +121,20 @@ export default {
           alert("NO FUNCIONA EL API");
           console.log(err);
         });
-    }
+    },
+
+    
+    eliminarRefaccion() {
+      axios
+        .post(this.$store.state.url + "/Refacciones/deleteRef", this.refaccion)
+        .then(response => {
+        alert(response.data);
+        })
+        .catch(err => {
+          alert("NO FUNCIONA EL API");
+          console.log(err);
+        });
+      }
 
 
 
@@ -175,9 +200,10 @@ export default {
 
 
 #RectanguloGuardar{
+    position: absolute;
     width: 200px;
     margin-left: 600px;
-    top: 35px;
+    top: 505px;
     background: #005082;
     box-sizing: border-box; 
     border-radius: 25px;
@@ -207,6 +233,26 @@ export default {
     font-size:1.2em;
 }
 
+#ref{
+  color:#000;
+  margin-top:100px;
+  margin-left:30px;
+}
+
+#login_button{
+    width: 200px;
+    height:50px;
+    margin-left: 100px;
+    top: 35px;
+    background: #005082;
+    border-radius: 25px;
+    color:#fff;
+}
+
+#modref{
+  background-color:#7ACEE0;
+  margin-left: 30px;
+}
 
 ::placeholder { color: rgb(255, 255, 255); }
 </style>

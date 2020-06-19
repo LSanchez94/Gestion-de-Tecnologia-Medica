@@ -15,6 +15,7 @@ const reportes = require('./rutas/reportes')
 const capacitacion= require('./rutas/Capacitacion')
 const dispositivos= require("./rutas/dispositivos")
 const tareas= require('./rutas/tareas');
+const mant= require('./rutas/mantenimiento');
 const AgregarProveedor= require("./rutas/AgregarProveedor")
 const agregarmtto= require("./rutas/AgregarMtto")
 const calendario= require("./rutas/calendario")
@@ -26,6 +27,7 @@ app.use('/Capacitacion', capacitacion);
 app.use("/Dispositivo", dispositivos);
 app.use("/AgregarProveedor", AgregarProveedor)
 app.use('/Tareas', tareas);
+app.use('/Mant', mant);
 app.use('/AgregarMtto', agregarmtto);
 app.use('/calendario', calendario);
 app.use('/Refacciones', Refacciones);

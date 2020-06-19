@@ -33,6 +33,16 @@
           </div>
 
         
+      <div class="w-100" id="ref">
+                <h2>Baja de Proveedor:</h2>
+              </div>
+              <form>
+                <div class="form-group">
+                  <input type="text" v-model="proveedor.nombre" class="form-control" id="modref" placeholder="Nombre del proveedor" />
+                </div>
+              </form>
+
+              <button class="DarBaja" id="login_button" @click="eliminarProveedor()">Dar de Baja</button>
       
 
   | <button class="btn" id="RectanguloGuardar" @click="agregarProveedor()">Guardar</button>
@@ -84,7 +94,18 @@ export default {
           alert("NO FUNCIONA EL API");
           console.log(err);
         });
-    }
+    },
+  eliminarProveedor() {
+      axios
+        .post(this.$store.state.url + "/AgregarProveedor/deleteProv", this.proveedor)
+        .then(response => {
+        alert(response.data);
+        })
+        .catch(err => {
+          alert("NO FUNCIONA EL API");
+          console.log(err);
+        });
+      }
 
 
 
@@ -144,9 +165,10 @@ export default {
 
 
 #RectanguloGuardar{
+  position: absolute;
     width: 200px;
-    margin-left: 600px;
-    top: 35px;
+    margin-left: 400px;
+    top: 505px;
     background: #005082;
     box-sizing: border-box; 
     border-radius: 25px;
@@ -176,6 +198,27 @@ export default {
     font-size:1.2em;
 }
 
+#ref{
+  color:#000;
+  margin-top:100px;
+  margin-left:30px;
+}
+
+#login_button{
+    width: 200px;
+    height:50px;
+    margin-left: 150px;
+    top: 20px;
+    background: #005082;
+    border-radius: 25px;
+    color:#fff;
+}
+
+#modref{
+  background-color:#7ACEE0;
+  margin-left: 50px;
+  width:300px;
+}
 
 ::placeholder { color: rgb(255, 255, 255); }
 </style>

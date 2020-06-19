@@ -13,6 +13,13 @@ router.get('/getDevices', (req,res) => {
 })
 
 
+router.post('/getDevice', (req,res) => {
+    Dispositivo.find({nserie: req.body.nserie}).then(response => {
+        res.send(response)
+    })
+})
+
+
 
 //INSERTAR DISPOSITIVOS
 router.post('/addDevice', (req,res) => {

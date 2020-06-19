@@ -5,7 +5,7 @@
             <li v-if="userProfile == 'Administrador'"><router-link to="/Dashboard">Dashboard</router-link> </li>
             <li v-if="userProfile == 'Administrador'"><router-link to="/Configuracion">Configuración</router-link> </li>
             <li v-if="userProfile == 'Administrador'"><router-link to="/AgregarProveedor">Agregar <br /> Proveedor</router-link> </li>
-            <li v-if="userProfile == 'Administrador'"><router-link to="/BotonRefacciones">Agregar<br />Refacción</router-link> </li>  
+            <li v-if="userProfile == 'Administrador'"><router-link to="/Refacciones">Agregar<br />Refacción</router-link> </li>  
             <li v-if="userProfile == 'Administrador'"><router-link to="/Inventarios">Inventario</router-link> </li>           
             <li v-if="userProfile == 'Administrador'"><router-link to="/Calendario">Calendario</router-link> </li>
             <li v-if="userProfile == 'Administrador'"><router-link to="/AltasBajas">Altas/Bajas<br />Dispositivos</router-link> </li>

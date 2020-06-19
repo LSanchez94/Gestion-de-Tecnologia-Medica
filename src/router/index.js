@@ -46,7 +46,7 @@ const routes = [
     component: AgregarProveedor
   },
   {
-    path: '/Mantenimiento',
+    path: '/Mantenimiento/:nserie',
     name: 'Mantenimiento',
     component: Mantenimiento
   },

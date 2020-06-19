@@ -35,9 +35,9 @@ export default {
     data() {
       return {
         tarea: {
-        task: null,
-        fechaTarea: null,
-        descripcion: null
+        task: '',
+        fechaTarea: '',
+        descripcion: '',
         }, 
         tareas:[],
         numerotareas: 0,
@@ -48,7 +48,7 @@ export default {
  
     traerTarea() {
       axios
-        .get( this.$store.state.url +"/AgregarTarea/getTareas")
+        .get( this.$store.state.url +"/Tareas/getTareas")
         .then(response => {
           this.tareas = response.data;
           this.numerotareas = response.data.length;

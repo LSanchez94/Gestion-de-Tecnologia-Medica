@@ -2,21 +2,30 @@
 <div>
     <div class="container-fluid">
       <div class="row">
-      <h1> Datos del Dispositivo Médico: </h1>
+      <h1 class="w-100"> Datos del Dispositivo Médico: </h1>
+      <div class="d-flex w-100">
+
       <div class = "NumSerie" >
           <form>
           <div class="form-group">
-          <input type="text" class="form-control" id="NumSerie" placeholder="Número de Serie" v-model="mantenimiento.nserie"> 
+          <!-- <input type="text" class="form-control" id="NumSerie" placeholder="Número de Serie" v-model="mantenimiento.nserie">  -->
+          <select class="form-control w-100" id="NumSerie">
+              <option value="null">-- Seleccione un Dispositivo -- </option>
+              <option v-for="(d, index) in dispositivos" value="" :key="index">{{d.nserie}}</option>
+          </select>
+          </div>
+
+                    <div class="form-group">
+          <input type="text" class="form-control" id="Departamento" placeholder="Departamento" v-model="mantenimiento.departamento">
           </div>
           </form>
       </div>
 
       <div class = "Departamento" >
           <form>
-          <div class="form-group">
-          <input type="text" class="form-control" id="Departamento" placeholder="Departamento" v-model="mantenimiento.departamento">
-          </div>
+
           </form>
+      </div>
       </div>
 
        <div class = "TipoMtto" >
@@ -62,6 +71,7 @@ export default {
         fechamantenimientos: "",
         encargado: "",
       },
+      dispositivos: [],
       mantenimientos:[],
       numeromantenimientos:0,
 
@@ -79,7 +89,15 @@ export default {
           console.log(err);
         });
         },
+        traerDispositivos(){
+            axios.get(this.$store.state.url + "/Dispositivo/getDevices").then(response => {
+                this.dispositivos = response.data;
+            })
+        }
   },
+  mounted(){
+      this.traerDispositivos();
+  }
 
 
 };
@@ -96,12 +114,11 @@ h1{
     margin-left: 30px;
 }
 
-#NumSerie{
-    position: absolute;
-    width: 350px;
+ #NumSerie{
+    width: 500px;
     height: 48px;
-    left: 350px;
-    top: 175px;
+    margin-left: 35px;
+    margin-top: 25px;
     background: #7ACEE0;
 }
 
@@ -139,7 +156,7 @@ h1{
     left: 715px;
     top: 285px;
     background: #7ACEE0;
-}
+} 
 
 .Agregar{
     position: absolute;
